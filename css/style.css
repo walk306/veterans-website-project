@@ -1,0 +1,77 @@
+/*fix weird issue with 5*/
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+.container-fluid {
+  height: 75vh;
+  width: 100vw;
+  padding: 0%;
+}
+.row-att {
+	height: inherit;
+  width: inherit;
+  
+}
+
+.cool{
+  padding:0px;
+}
+.cont { 
+  height: auto;
+  width: 63vh;
+}
+
+.mainCol {
+  height: 0px;
+  padding-bottom: 118%;
+  position: relative;
+}
+
+.col4box {
+  border-style: solid;
+  border-width: 1px;
+  border-color: green;
+  height: 0px;
+  padding-bottom: 100%;
+}
+
+.row-small{
+  position: absolute;
+  height: 0px;
+  padding-bottom: 9%;
+  padding-top:1px;
+  
+}
+.row-medium{
+  height: 0px;
+  padding-top:1px;
+  padding-bottom: 28%;
+}
+.row-large{
+  padding-top:1px;
+  height: 0px;
+  padding-bottom: 45%;
+}
+.row-small-div{
+  padding-bottom: inherit;
+  
+  border: 1px;
+  border-color: orange;
+  border-style: solid;
+}
+.row-medium-div{
+ 
+  padding-bottom: inherit;
+  border: 1px;
+  border-color: orange;
+  border-style: solid;
+}
+.row-large-div{
+  
+  padding-bottom: inherit;
+  border: 1px;
+  border-color: orange;
+  border-style: solid;
+}
