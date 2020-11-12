@@ -1,50 +1,50 @@
 function main() {
   // Get the modal bottom of html doc
-  var b1c2modal = document.getElementById("b1c2modal");
-  var b2c2modal = document.getElementById("b2c2modal");
-  var b3c2modal = document.getElementById("b3c2modal");
-  var b1c3modal = document.getElementById("b1c3modal");
-  var b2c3modal = document.getElementById("b2c3modal");
-  var b3c3modal = document.getElementById("b3c3modal");
-  var b1c4modal = document.getElementById("b1c4modal");
+  var bamodal = document.getElementById("bamodal");
+  var bbmodal = document.getElementById("bbmodal");
+  var bcmodal = document.getElementById("bcmodal");
+  var bdmodal = document.getElementById("bdmodal");
+  var bemodal = document.getElementById("bemodal");
+  var bfmodal = document.getElementById("bfmodal");
+  var bgmodal = document.getElementById("bgmodal");
 
   // Get the iframe that opens the modal iframe
-  var b1c2 = document.getElementById("b1c2");
-  var b2c2 = document.getElementById("b2c2");
-  var b3c2 = document.getElementById("b3c2");
-  var b1c3 = document.getElementById("b1c3");
-  var b2c3 = document.getElementById("b2c3");
-  var b3c3 = document.getElementById("b3c3");
-  var b1c4 = document.getElementById("b1c4");
+  var ba = document.getElementById("ba");
+  var bb = document.getElementById("bb");
+  var bc = document.getElementById("bc");
+  var bd = document.getElementById("bd");
+  var be = document.getElementById("be");
+  var bf = document.getElementById("bf");
+  var bg = document.getElementById("bg");
 
-  b1c2modal.style.display = "none";
-  b2c2modal.style.display = "none";
-  b3c2modal.style.display = "none";
-  b1c3modal.style.display = "none";
-  b2c3modal.style.display = "none";
-  b3c3modal.style.display = "none";
-  b1c4modal.style.display = "none";
+  bamodal.style.display = "none";
+  bbmodal.style.display = "none";
+  bcmodal.style.display = "none";
+  bdmodal.style.display = "none";
+  bemodal.style.display = "none";
+  bfmodal.style.display = "none";
+  bgmodal.style.display = "none";
 
-  b1c2.contentDocument.onclick = function(){
-    click(b1c2modal);
+  ba.contentDocument.onclick = function(){
+    click(bamodal);
   }
-  b2c2.contentDocument.onclick = function(){
-    click(b2c2modal);
+  bb.contentDocument.onclick = function(){
+    click(bbmodal);
   }
-  b3c2.contentDocument.onclick = function(){
-    click(b3c2modal);
+  bc.contentDocument.onclick = function(){
+    click(bcmodal);
   }
-  b1c3.contentDocument.onclick = function(){
-    click(b1c3modal);
+  bd.contentDocument.onclick = function(){
+    click(bdmodal);
   }
-  b2c3.contentDocument.onclick = function(){
-    click(b2c3modal);
+  be.contentDocument.onclick = function(){
+    click(bemodal);
   }
-  b3c3.contentDocument.onclick = function(){
-    click(b3c3modal);
+  bf.contentDocument.onclick = function(){
+    click(bfmodal);
   }
-  b1c4.contentDocument.onclick = function(){
-    click(b1c4modal);
+  bg.contentDocument.onclick = function(){
+    click(bgmodal);
   }
 
 }
@@ -57,51 +57,51 @@ function click(modal) {
 }
 
 function closeModalSpan() {
-  var b1c2modal = document.getElementById("b1c2modal");
-  var b2c2modal = document.getElementById("b2c2modal");
-  var b3c2modal = document.getElementById("b3c2modal");
-  var b1c3modal = document.getElementById("b1c3modal");
-  var b2c3modal = document.getElementById("b2c3modal");
-  var b3c3modal = document.getElementById("b3c3modal");
-  var b1c4modal = document.getElementById("b1c4modal");
+  var bamodal = document.getElementById("bamodal");
+  var bbmodal = document.getElementById("bbmodal");
+  var bcmodal = document.getElementById("bcmodal");
+  var bdmodal = document.getElementById("bdmodal");
+  var bemodal = document.getElementById("bemodal");
+  var bfmodal = document.getElementById("bfmodal");
+  var bgmodal = document.getElementById("bgmodal");
 
-  b1c2modal.style.display = "none";
-  b2c2modal.style.display = "none";
-  b3c2modal.style.display = "none";
-  b1c3modal.style.display = "none";
-  b2c3modal.style.display = "none";
-  b3c3modal.style.display = "none";
-  b1c4modal.style.display = "none";
+  bamodal.style.display = "none";
+  bbmodal.style.display = "none";
+  bcmodal.style.display = "none";
+  bdmodal.style.display = "none";
+  bemodal.style.display = "none";
+  bfmodal.style.display = "none";
+  bgmodal.style.display = "none";
 }
 
 function closeModalWindow(event) {
-  var b1c2modal = document.getElementById("b1c2modal");
-  var b2c2modal = document.getElementById("b2c2modal");
-  var b3c2modal = document.getElementById("b3c2modal");
-  var b1c3modal = document.getElementById("b1c3modal");
-  var b2c3modal = document.getElementById("b2c3modal");
-  var b3c3modal = document.getElementById("b3c3modal");
-  var b1c4modal = document.getElementById("b1c4modal");
+  var bamodal = document.getElementById("bamodal");
+  var bbmodal = document.getElementById("bbmodal");
+  var bcmodal = document.getElementById("bcmodal");
+  var bdmodal = document.getElementById("bdmodal");
+  var bemodal = document.getElementById("bemodal");
+  var bfmodal = document.getElementById("bfmodal");
+  var bgmodal = document.getElementById("bgmodal");
 
-  if(event.target == b1c2modal) {
-    b1c2modal.style.display = "none";
+  if(event.target == bamodal) {
+    bamodal.style.display = "none";
   }
-  else if(event.target == b2c2modal) {
-    b2c2modal.style.display = "none";
+  else if(event.target == bbmodal) {
+    bbmodal.style.display = "none";
   }
-  else if(event.target == b3c2modal) {
-    b3c2modal.style.display = "none";
+  else if(event.target == bcmodal) {
+    bcmodal.style.display = "none";
   }
-  else if(event.target == b1c3modal) {
-    b1c3modal.style.display = "none";
+  else if(event.target == bdmodal) {
+    bdmodal.style.display = "none";
   }
-  else if(event.target == b2c3modal) {
-    b2c3modal.style.display = "none";
+  else if(event.target == bemodal) {
+    bemodal.style.display = "none";
   }
-  else if(event.target == b3c3modal) {
-    b3c3modal.style.display = "none";
+  else if(event.target == bfmodal) {
+    bfmodal.style.display = "none";
   }
-  else if(event.target == b1c4modal) {
-    b1c4modal.style.display = "none";
+  else if(event.target == bgmodal) {
+    bgmodal.style.display = "none";
   }
 }

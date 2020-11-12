@@ -1,12 +1,13 @@
 /*fix weird issue with 5*/
-html {
-  height: 100vh;
-  width: 100vw;
+
+
+img {
+  height: 88px;
 }
 
 .container-fluid {
-  height: 75vh;
-  width: 100vw;
+  height: 84vh;
+  margin: 0%;
   padding: 0%;
 }
 .row-att {
@@ -24,54 +25,163 @@ html {
 }
 
 .mainCol {
-  height: 0px;
-  padding-bottom: 118%;
-  position: relative;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(51, 1fr);
+  grid-template-rows: repeat(68, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
 
-.col4box {
-  border-style: solid;
+.brickStyle {
   border-width: 1px;
+  border-style: solid;
   border-color: green;
-  height: 0px;
-  padding-bottom: 100%;
 }
 
-.row-small{
-  position: absolute;
-  height: 0px;
-  padding-bottom: 9%;
-  padding-top:1px;
-  
+/* 
+  brickgroupA: 21x18 rows: 12 Columns: 14
+  brickgroupB: 21x42 rows: 28 col: 14
+  brickgroupc: 21x18 same as a
+  brickgroupd&f: 24x18 rows 12 col: 16
+  brickgroupe: 24x42 rows 28 col: 16
+  seperating: col 4 rows 4
+  col4: 8 col wide
+
+*/
+
+.brickR1C1 { grid-area: 1/1/5/5; }
+.brickR1C2 { grid-area: 1/5/5/19; }
+.brickR1C3 { grid-area: 1/19/5/23; }
+.brickR1C4 { grid-area: 1/23/5/39; }
+.brickR1C5 { grid-area: 1/39/5/43; }
+
+/* column 4 */
+.brickR1C6 { grid-area: 1/43/5/51}
+.brickR2C6 { grid-area: 5/43/69/51;}
+.brickR7C6 { grid-area: 65/43/69/51;}
+
+.brickR2C1 { grid-area: 5/1/17/5; }
+.brickR2C2 { grid-area: 5/5/17/19; }
+.brickR2C3 { grid-area: 5/19/17/23 }
+.brickR2C4 { grid-area: 5/23/17/39; }
+.brickR2C5 { grid-area: 5/39/17/43; }
+
+.brickR3C1 { grid-area: 17/1/21/5; }
+.brickR3C2 { grid-area: 17/5/21/19; }
+.brickR3C3 { grid-area: 17/19/21/23; }
+.brickR3C4 { grid-area: 17/23/21/39; }
+.brickR3C5 { grid-area: 17/39/21/43; }
+
+.brickR4C1 { grid-area: 21/1/49/5; }
+.brickR4C2 { grid-area: 21/5/49/19; }
+.brickR4C3 { grid-area: 21/19/49/23; }
+.brickR4C4 { grid-area: 21/23/49/39; }
+.brickR4C5 { grid-area: 21/39/49/43; }
+
+.brickR5C1 { grid-area: 49/1/53/5; }
+.brickR5C2 { grid-area: 49/5/53/19; }
+.brickR5C3 { grid-area: 49/19/53/23; }
+.brickR5C4 { grid-area: 49/23/53/39; }
+.brickR5C5 { grid-area: 49/39/53/43; }
+
+.brickR6C1 { grid-area: 53/1/65/5; }
+.brickR6C2 { grid-area: 53/5/65/19; }
+.brickR6C3 { grid-area: 53/19/65/23; }
+.brickR6C4 { grid-area: 53/23/65/39; }
+.brickR6C5 { grid-area: 53/39/65/43; }
+
+.brickR7C1 { grid-area: 65/1/69/5; }
+.brickR7C2 { grid-area: 65/5/69/19; }
+.brickR7C3 { grid-area: 65/19/69/23; }
+.brickR7C4 { grid-area: 65/23/69/39; }
+.brickR7C5 { grid-area: 65/39/69/43; }
+
+
+iframe {
+  width: 100%;
+  height: 100%;
 }
-.row-medium{
-  height: 0px;
-  padding-top:1px;
-  padding-bottom: 28%;
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 3%; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-.row-large{
-  padding-top:1px;
-  height: 0px;
-  padding-bottom: 45%;
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  height: 600px;
 }
-.row-small-div{
-  padding-bottom: inherit;
-  
-  border: 1px;
-  border-color: orange;
-  border-style: solid;
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
-.row-medium-div{
- 
-  padding-bottom: inherit;
-  border: 1px;
-  border-color: orange;
-  border-style: solid;
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
-.row-large-div{
-  
-  padding-bottom: inherit;
-  border: 1px;
-  border-color: orange;
-  border-style: solid;
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #searchBar {
+    width: 75%;
+    margin-right: 5px;
+  }
+
+  img {
+    height: 58px;
+  }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  img {
+    height: 58px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+  img {
+    height: 88px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  img {
+    height: 88px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  img {
+    height: 88px;
+  }
 }
