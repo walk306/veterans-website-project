@@ -6,7 +6,7 @@ img {
 }
 
 .container-fluid {
-  height: 84vh;
+  height: 63vh;
   margin: 0%;
   padding: 0%;
 }
@@ -21,15 +21,15 @@ img {
 }
 .cont { 
   height: auto;
-  width: 63vh;
+  width: 84vh;
 }
 
 .mainCol {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(51, 1fr);
-  grid-template-rows: repeat(68, 1fr);
+  grid-template-columns: repeat(68, 1fr);
+  grid-template-rows: repeat(51, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
@@ -50,53 +50,59 @@ img {
   col4: 8 col wide
 
 */
-
+/* Top skinny Row */
 .brickR1C1 { grid-area: 1/1/5/5; }
-.brickR1C2 { grid-area: 1/5/5/19; }
-.brickR1C3 { grid-area: 1/19/5/23; }
-.brickR1C4 { grid-area: 1/23/5/39; }
-.brickR1C5 { grid-area: 1/39/5/43; }
+.brickR1C2 { grid-area: 1/5/5/17; }
+.brickR1C3 { grid-area: 1/17/5/21; }
+.brickR1C4 { grid-area: 1/21/5/49; }
+.brickR1C5 { grid-area: 1/49/5/53; }
+.brickR1C6 { grid-area: 1/53/5/65; }
+.brickR1C7 { grid-area: 1/65/5/69; }
 
-/* column 4 */
-.brickR1C6 { grid-area: 1/43/5/51}
-.brickR2C6 { grid-area: 5/43/69/51;}
-.brickR7C6 { grid-area: 65/43/69/51;}
+/* Row with boxes A, B, C*/
+.brickR2C1 { grid-area: 5/1/19/5; }
+.brickR2C2 { grid-area: 5/5/19/17; }
+.brickR2C3 { grid-area: 5/17/19/21; }
+.brickR2C4 { grid-area: 5/21/19/49; }
+.brickR2C5 { grid-area: 1/49/19/53; }
+.brickR2C6 { grid-area: 1/53/19/65; }
+.brickR2C7 { grid-area: 1/65/19/69; }
 
-.brickR2C1 { grid-area: 5/1/17/5; }
-.brickR2C2 { grid-area: 5/5/17/19; }
-.brickR2C3 { grid-area: 5/19/17/23 }
-.brickR2C4 { grid-area: 5/23/17/39; }
-.brickR2C5 { grid-area: 5/39/17/43; }
+/* skinny Row */
+.brickR3C1 { grid-area: 19/1/23/5; }
+.brickR3C2 { grid-area: 19/5/23/17; }
+.brickR3C3 { grid-area: 19/17/23/21; }
+.brickR3C4 { grid-area: 19/21/23/49; }
+.brickR3C5 { grid-area: 19/49/23/53; }
+.brickR3C6 { grid-area: 19/53/23/65; }
+.brickR3C7 { grid-area: 19/65/23/69; }
 
-.brickR3C1 { grid-area: 17/1/21/5; }
-.brickR3C2 { grid-area: 17/5/21/19; }
-.brickR3C3 { grid-area: 17/19/21/23; }
-.brickR3C4 { grid-area: 17/23/21/39; }
-.brickR3C5 { grid-area: 17/39/21/43; }
+/* Row with boxes D, E, F*/
+.brickR4C1 { grid-area: 23/1/39/5; }
+.brickR4C2 { grid-area: 23/5/39/17; }
+.brickR4C3 { grid-area: 23/17/39/21; }
+.brickR4C4 { grid-area: 23/21/39/49; }
+.brickR4C5 { grid-area: 23/49/39/53; }
+.brickR4C6 { grid-area: 23/53/39/65; }
+.brickR4C7 { grid-area: 23/65/39/69; }
 
-.brickR4C1 { grid-area: 21/1/49/5; }
-.brickR4C2 { grid-area: 21/5/49/19; }
-.brickR4C3 { grid-area: 21/19/49/23; }
-.brickR4C4 { grid-area: 21/23/49/39; }
-.brickR4C5 { grid-area: 21/39/49/43; }
+/* skinny Row */
+.brickR5C1 { grid-area: 39/1/43/5; }
+.brickR5C2 { grid-area: 39/5/43/17; }
+.brickR5C3 { grid-area: 39/17/43/21; }
+.brickR5C4 { grid-area: 39/21/43/49; }
+.brickR5C5 { grid-area: 39/49/43/53; }
+.brickR5C6 { grid-area: 39/53/43/65; }
+.brickR5C7 { grid-area: 39/65/43/69; }
 
-.brickR5C1 { grid-area: 49/1/53/5; }
-.brickR5C2 { grid-area: 49/5/53/19; }
-.brickR5C3 { grid-area: 49/19/53/23; }
-.brickR5C4 { grid-area: 49/23/53/39; }
-.brickR5C5 { grid-area: 49/39/53/43; }
-
-.brickR6C1 { grid-area: 53/1/65/5; }
-.brickR6C2 { grid-area: 53/5/65/19; }
-.brickR6C3 { grid-area: 53/19/65/23; }
-.brickR6C4 { grid-area: 53/23/65/39; }
-.brickR6C5 { grid-area: 53/39/65/43; }
-
-.brickR7C1 { grid-area: 65/1/69/5; }
-.brickR7C2 { grid-area: 65/5/69/19; }
-.brickR7C3 { grid-area: 65/19/69/23; }
-.brickR7C4 { grid-area: 65/23/69/39; }
-.brickR7C5 { grid-area: 65/39/69/43; }
+/* Row for formrly col 4 */
+.brickR6C1 { grid-area: 43/1/52/5; }
+.brickR6C2 { grid-area: 43/5/52/17; }
+.brickR6C3 { grid-area: 43/17/52/21; }
+.brickR6C4 { grid-area: 43/21/52/49; }
+.brickR6C5 { grid-area: 43/49/52/53; }
+.brickR6C6 { grid-area: 43/53/52/65; }
+.brickR6C7 { grid-area: 43/65/52/69; }
 
 
 iframe {
