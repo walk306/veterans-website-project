@@ -97,11 +97,7 @@ img {
 
 /* Row for formrly col 4 */
 .brickR6C1 { grid-area: 43/1/52/5; }
-.brickR6C2 { grid-area: 43/5/52/17; }
-.brickR6C3 { grid-area: 43/17/52/21; }
-.brickR6C4 { grid-area: 43/21/52/49; }
-.brickR6C5 { grid-area: 43/49/52/53; }
-.brickR6C6 { grid-area: 43/53/52/65; }
+.brickR6C2 { grid-area: 43/5/52/65; }
 .brickR6C7 { grid-area: 43/65/52/69; }
 
 
