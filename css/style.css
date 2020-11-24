@@ -64,9 +64,9 @@ img {
 .brickR2C2 { grid-area: 5/5/19/17; }
 .brickR2C3 { grid-area: 5/17/19/21; }
 .brickR2C4 { grid-area: 5/21/19/49; }
-.brickR2C5 { grid-area: 1/49/19/53; }
-.brickR2C6 { grid-area: 1/53/19/65; }
-.brickR2C7 { grid-area: 1/65/19/69; }
+.brickR2C5 { grid-area: 5/49/19/53; }
+.brickR2C6 { grid-area: 5/53/19/65; }
+.brickR2C7 { grid-area: 5/65/19/69; }
 
 /* skinny Row */
 .brickR3C1 { grid-area: 19/1/23/5; }
