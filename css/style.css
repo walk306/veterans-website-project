@@ -29,7 +29,7 @@ img {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(68, 1fr);
-  grid-template-rows: repeat(51, 1fr);
+  grid-template-rows: repeat(50, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
@@ -41,65 +41,119 @@ img {
 }
 
 /* 
-  brickgroupA: 21x18 rows: 12 Columns: 14
-  brickgroupB: 21x42 rows: 28 col: 14
-  brickgroupc: 21x18 same as a
+  brickgroupA: 18x21 rows: 12 Columns: 14
+  brickgroupB: 42x21 rows: 28 col: 14
+  brickgroupc: 18x21 same as a
   brickgroupd&f: 24x18 rows 12 col: 16
-  brickgroupe: 24x42 rows 28 col: 16
+  brickgroupe: 42x24 rows 28 col: 16
   seperating: col 4 rows 4
   col4: 8 col wide
 
 */
-/* Top skinny Row */
+
+/* Row for formrly col 4  8 high*/
 .brickR1C1 { grid-area: 1/1/9/5; }
 .brickR1C2 { grid-area: 1/5/9/65; }
 .brickR1C7 { grid-area: 1/65/9/69; }
 
+/* skinny Row  4 high*/
+.brickR2C1 { grid-area: 9/1/13/5; }
+.brickR2C2 { grid-area: 9/5/13/17; }
+.brickR2C3 { grid-area: 9/17/13/21; }
+.brickR2C4 { grid-area: 9/21/13/49; }
+.brickR2C5 { grid-area: 9/49/13/53; }
+.brickR2C6 { grid-area: 9/53/13/65; }
+.brickR2C7 { grid-area: 9/65/13/69; }
+
+/* Row with boxes D, E, F 16 high*/
+.brickR3C1 { grid-area: 13/1/29/5; }
+.brickR3C2 { grid-area: 13/5/29/17; }
+.brickR3C3 { grid-area: 13/17/29/21; }
+.brickR3C4 { grid-area: 13/21/29/49; }
+.brickR3C5 { grid-area: 13/49/29/53; }
+.brickR3C6 { grid-area: 13/53/29/65; }
+.brickR3C7 { grid-area: 13/65/29/69; }
+
+
+/* skinny Row 4 high */
+.brickR4C1 { grid-area: 29/1/33/5; }
+.brickR4C2 { grid-area: 29/5/33/17; }
+.brickR4C3 { grid-area: 29/17/33/21; }
+.brickR4C4 { grid-area: 29/21/33/49; }
+.brickR4C5 { grid-area: 29/49/33/53; }
+.brickR4C6 { grid-area: 29/53/33/65; }
+.brickR4C7 { grid-area: 29/65/33/69; }
+
+/* Row with boxes A, B, C 14 high*/
+.brickR5C1 { grid-area: 33/1/47/5; }
+.brickR5C2 { grid-area: 33/5/47/17; }
+.brickR5C3 { grid-area: 33/17/47/21; }
+.brickR5C4 { grid-area: 33/21/47/49; }
+.brickR5C5 { grid-area: 33/49/47/53; }
+.brickR5C6 { grid-area: 33/53/47/65; }
+.brickR5C7 { grid-area: 33/65/47/69; }
+
+
+/* Bottom skinny Row 4 high */
+.brickR6C1 { grid-area: 47/1/51/5; }
+.brickR6C2 { grid-area: 47/5/51/17; }
+.brickR6C3 { grid-area: 47/17/51/21; }
+.brickR6C4 { grid-area: 47/21/51/49; }
+.brickR6C5 { grid-area: 47/49/51/53; }
+.brickR6C6 { grid-area: 47/53/51/65; }
+.brickR6C7 { grid-area: 47/65/51/69; }
+
+/* Top skinny Row */
+/* 
+.brickR1C1 { grid-area: 1/1/5/5; }
+.brickR1C2 { grid-area: 1/5/5/17; }
+.brickR1C3 { grid-area: 1/17/5/21; }
+.brickR1C4 { grid-area: 1/21/5/49; }
+.brickR1C5 { grid-area: 1/49/5/53; }
+.brickR1C6 { grid-area: 1/53/5/65; }
+.brickR1C7 { grid-area: 1/65/5/69; }*/
 
 /* Row with boxes A, B, C*/
-.brickR3C1 { grid-area: /1//5; }
-.brickR3C2 { grid-area: /5//17; }
-.brickR3C3 { grid-area: /17//21; }
-.brickR3C4 { grid-area: /21//49; }
-.brickR3C5 { grid-area: /49//53; }
-.brickR3C6 { grid-area: /53//65; }
-.brickR3C7 { grid-area: /65//69; }
+/*
+.brickR2C1 { grid-area: 5/1/19/5; }
+.brickR2C2 { grid-area: 5/5/19/17; }
+.brickR2C3 { grid-area: 5/17/19/21; }
+.brickR2C4 { grid-area: 5/21/19/49; }
+.brickR2C5 { grid-area: 5/49/19/53; }
+.brickR2C6 { grid-area: 5/53/19/65; }
+.brickR2C7 { grid-area: 5/65/19/69; }*/
 
-/* skinny Row */
-.brickR4C1 { grid-area: /1//5; }
-.brickR4C2 { grid-area: /5//17; }
-.brickR4C3 { grid-area: /17//21; }
-.brickR4C4 { grid-area: /21//49; }
-.brickR4C5 { grid-area: /49//53; }
-.brickR4C6 { grid-area: /53//65; }
-.brickR4C7 { grid-area: /65//69; }
+/* skinny Row *//*
+.brickR3C1 { grid-area: 19/1/23/5; }
+.brickR3C2 { grid-area: 19/5/23/17; }
+.brickR3C3 { grid-area: 19/17/23/21; }
+.brickR3C4 { grid-area: 19/21/23/49; }
+.brickR3C5 { grid-area: 19/49/23/53; }
+.brickR3C6 { grid-area: 19/53/23/65; }
+.brickR3C7 { grid-area: 19/65/23/69; }*/
 
-/* Row with boxes D, E, F*/
-.brickR5C1 { grid-area: /1//5; }
-.brickR5C2 { grid-area: /5//17; }
-.brickR5C3 { grid-area: /17//21; }
-.brickR5C4 { grid-area: /21//49; }
-.brickR5C5 { grid-area: /49//53; }
-.brickR5C6 { grid-area: /53//65; }
-.brickR5C7 { grid-area: /65//69; }
+/* Row with boxes D, E, F*//*
+.brickR4C1 { grid-area: 23/1/39/5; }
+.brickR4C2 { grid-area: 23/5/39/17; }
+.brickR4C3 { grid-area: 23/17/39/21; }
+.brickR4C4 { grid-area: 23/21/39/49; }
+.brickR4C5 { grid-area: 23/49/39/53; }
+.brickR4C6 { grid-area: 23/53/39/65; }
+.brickR4C7 { grid-area: 23/65/39/69; }*/
 
-/* skinny Row */
-.brickR6C1 { grid-area: /1//5; }
-.brickR6C2 { grid-area: /5//17; }
-.brickR6C3 { grid-area: /17//21; }
-.brickR6C4 { grid-area: /21//49; }
-.brickR6C5 { grid-area: /49//53; }
-.brickR6C6 { grid-area: /53//65; }
-.brickR6C7 { grid-area: /65//69; }
+/* skinny Row *//*
+.brickR5C1 { grid-area: 39/1/43/5; }
+.brickR5C2 { grid-area: 39/5/43/17; }
+.brickR5C3 { grid-area: 39/17/43/21; }
+.brickR5C4 { grid-area: 39/21/43/49; }
+.brickR5C5 { grid-area: 39/49/43/53; }
+.brickR5C6 { grid-area: 39/53/43/65; }
+.brickR5C7 { grid-area: 39/65/43/69; }*/
 
-/* Row for formrly col 4 */
-.brickR7C1 { grid-area: /1//5; }
-.brickR7C2 { grid-area: /5//17; }
-.brickR7C3 { grid-area: /17//21; }
-.brickR7C4 { grid-area: /21//49; }
-.brickR7C5 { grid-area: /49//53; }
-.brickR7C6 { grid-area: /53//65; }
-.brickR7C7 { grid-area: /65//69; }
+/* Row for formrly col 4 *//*
+.brickR6C1 { grid-area: 43/1/52/5; }
+.brickR6C2 { grid-area: 43/5/52/65; }
+.brickR6C7 { grid-area: 43/65/52/69; }*/
 
 
 iframe {
