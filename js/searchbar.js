@@ -1,4 +1,4 @@
-var brickGroupA = document.getElementById("ba");
+var brickGroupA = document.getElementById("ba").contentDocument;
 
 function filter(str) {
 	var xhttp = new XMLHttpRequest();
@@ -14,6 +14,8 @@ function filter(str) {
   }
   
   function searchBar(str) {
+
+	
   
 	if (str.length == 0) {
 	  document.getElementById("tem2").innerHTML = "";
