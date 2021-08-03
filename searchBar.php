@@ -31,14 +31,22 @@
 				  $stmt->bindParam(1, $input, PDO::PARAM_STR, 50);
 				  $stmt->bindParam(2, $input, PDO::PARAM_STR, 50);
 				  $stmt->bindParam(3, $input, PDO::PARAM_STR, 50);
+				  $stmt->bindParam(4, $input, PDO::PARAM_STR, 50);
+				  $stmt->bindParam(5, $input, PDO::PARAM_STR, 50);
+				  $stmt->bindParam(6, $input, PDO::PARAM_STR, 50);
+				  $stmt->bindParam(7, $input, PDO::PARAM_STR, 50);
 				  $stmt->execute();
 				  break;
 
-		    case "lastname":
-				  $stmt = $conn->prepare("SELECT 'a' as source, brickNum, firstName, lastName, brickDescription FROM a_brick_group WHERE lastName LIKE ? UNION SELECT 'b' as source, brickNum, firstName, lastName, brickDescription FROM b_brick_group WHERE lastName LIKE ? UNION SELECT 'c' as source, brickNum, firstName, lastName, brickDescription FROM c_brick_group WHERE lastName LIKE ? UNION SELECT 'd' as source, brickNum, firstName, lastName, brickDescription FROM d_brick_group WHERE lastName LIKE ? UNION SELECT 'e' as source, brickNum, firstName, lastName, brickDescription FROM e_brick_group WHERE lastName LIKE ? UNION SELECT 'f' as source, brickNum, firstName, lastName, brickDescription FROM f_brick_group WHERE lastName LIKE ? UNION SELECT 'g' as source, brickNum, firstName, lastName, brickDescription FROM g_brick_group WHERE lastName LIKE ?				  ");
+		    	case "lastname":
+				  $stmt = $conn->prepare("SELECT 'a' as source, brickNum, firstName, lastName, brickDescription FROM a_brick_group WHERE lastName LIKE ? UNION SELECT 'b' as source, brickNum, firstName, lastName, brickDescription FROM b_brick_group WHERE lastName LIKE ? UNION SELECT 'c' as source, brickNum, firstName, lastName, brickDescription FROM c_brick_group WHERE lastName LIKE ? UNION SELECT 'd' as source, brickNum, firstName, lastName, brickDescription FROM d_brick_group WHERE lastName LIKE ? UNION SELECT 'e' as source, brickNum, firstName, lastName, brickDescription FROM e_brick_group WHERE lastName LIKE ? UNION SELECT 'f' as source, brickNum, firstName, lastName, brickDescription FROM f_brick_group WHERE lastName LIKE ? UNION SELECT 'g' as source, brickNum, firstName, lastName, brickDescription FROM g_brick_group WHERE lastName LIKE ?");
 				  $stmt->bindParam(1, $input, PDO::PARAM_STR, 50);
 				  $stmt->bindParam(2, $input, PDO::PARAM_STR, 50);
 				  $stmt->bindParam(3, $input, PDO::PARAM_STR, 50);
+				  $stmt->bindParam(4, $input, PDO::PARAM_STR, 50);
+				  $stmt->bindParam(5, $input, PDO::PARAM_STR, 50);
+				  $stmt->bindParam(6, $input, PDO::PARAM_STR, 50);
+				  $stmt->bindParam(7, $input, PDO::PARAM_STR, 50);
 				  $stmt->execute();
 				  break;
 

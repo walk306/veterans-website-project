@@ -1,5 +1,15 @@
 var brickGroupA = document.getElementById("ba").contentDocument;
 
+var input = document.getElementById("searchbar");
+
+input.addEventListener("keydown", function(event) {
+	console.log("are we getting here?!?!?");
+	if(event.key === "Enter"){
+		event.preventDefault();
+		return false;
+	}
+})
+
 function filter(str) {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
@@ -13,9 +23,7 @@ function filter(str) {
   
   }
   
-  function searchBar(str) {
-
-	
+function searchBar(str) {
   
 	if (str.length == 0) {
 	  document.getElementById("tem1").innerHTML = "";

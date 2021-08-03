@@ -9,8 +9,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script
-  src="js/script.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/searchbar.js"></script>
+ 
   <style>
   .fakeimg {
     height: 200px;
@@ -52,7 +53,7 @@
     <input class="form-control mr-sm-2" id="searchbar" type="text" placeholder="Search" onkeyup="searchBar(this.value)">
     <label for="searchFilter" class="font">Filter Search:</label>
 			<br/>
-			<select name="searchFilter" onchange="filter(this.value)" id="searchFilter">
+			<select name="searchFilter"  id="searchFilter">
 		        <option value="firstname">First Name</option>
 		        <option value="lastname">Last Name</option>
 		  </select>
