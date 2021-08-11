@@ -33,6 +33,7 @@ function loadedUp(){
 
 function searchNameClicked(brick)
 {
+	console.log("clicking the name");
 	if(brick[0] = "a"){
 		var doc = aDoc
 	}
@@ -54,6 +55,8 @@ function searchNameClicked(brick)
 	if(brick[0] = "g"){
 		var doc = gDoc
 	}
+
+	// a002
 
 	if(lastBrick != ""){
 		doc.getElementById(lastBrick).innerHTML = "";

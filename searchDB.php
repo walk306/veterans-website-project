@@ -26,7 +26,7 @@
 			switch($groupName)
 			{
 				case "a":
-					$stmt = $conn->prepare("SELECT firstname, lastname, age FROM atable WHERE brickNum = ?");
+					$stmt = $conn->prepare("SELECT brickDescription FROM a_brick_group WHERE brickNum = ?");
 				  $stmt->bindParam(1, $brickNumber, PDO::PARAM_INT, 3);
 				  $stmt->execute();
 				  break;
@@ -44,34 +44,13 @@
 			    break;
 			}
 
-			 $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-			 $result = $stmt->fetchAll();
-			 $maxShow = 0;
+			$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+			$result = $stmt->fetchAll();
 
-			 if($result)
-			 {
-			   echo "<br/>";
-
-			   foreach($result as $assocArray)
-			   {
-				   //$assocArray = $result[0];
-				   //echo "<br/>";
-				   echo $assocArray["firstname"] . " " . $assocArray["lastname"] . " " . $assocArray["age"] . " Years Old";
-				   echo "<br/>";
-				   //echo $assocArray["lastname"];
-				   //echo "<br/";
-				   //echo $assocArray["age"];
-				   //echo "<br/";
-
-				   $maxShow++;
-
-				   if($maxShow > 2)
-				   {
-				     break;
-				   }
-			   }
-			   echo "<br/>";
-			 }
+			if($result)
+			{
+				echo $assocArray["brickDescription"];
+			}
 
 
 		}

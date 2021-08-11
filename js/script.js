@@ -47,6 +47,8 @@ function main() {
     click(bgmodal);
   }
 
+  loadedUp();
+
 }
 
 function click(modal) {
