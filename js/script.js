@@ -47,7 +47,8 @@ function main() {
     click(bgmodal);
   }
 
-  loadedUp();
+  loadUpSearchBar();
+  loadUpBrickClicked();
 
 }
 

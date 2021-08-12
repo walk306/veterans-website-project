@@ -1,6 +1,22 @@
-var brickGroupA = document.getElementById("ba").contentDocument;
+let brickGroupA = null; 
 
-var input = document.getElementById("searchbar");
+function loadUpSearchBar(){
+	var aDoc = document.getElementById("ba")
+	brickGroupA = aDoc.contentDocument || aDoc.contentWindow.document;
+
+	if(!brickGroupA){
+		throw "WE CAN't GET IT!";
+		console.log("nevermind");
+		
+	}
+	else{
+		console.log("em k");
+	}
+
+	
+}
+
+let input = document.getElementById("searchbar");
 
 input.addEventListener("keydown", function(event) {
 	console.log("are we getting here?!?!?");

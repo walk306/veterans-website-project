@@ -1,79 +1,101 @@
 var lastBrick = ""
-var aDoc = null;
-var bDoc = null;
-var cDoc = null; 
-var dDoc = null; 
-var eDoc = null; 
-var fDoc = null; 
-var gDoc = null;
+var docA = null;
+var docB = null;
+var docC = null; 
+var docD = null; 
+var docE = null; 
+var docF = null; 
+var docG = null;
 
-function loadedUp(){
-	var brickGroupA = document.getElementById("ba");
-    aDoc = brickGroupA.contentDocument || brickGroupA.contentWindow.document;
+function loadUpBrickClicked(){
+	console.log("inside loadupbrickclicked");
+
+	var aBrickGroup = document.getElementById("ba");
+    docA = aBrickGroup.contentDocument || aBrickGroup.contentWindow.document;
+
+	if(!docA){
+		throw "WE CAN't GET IT!";
+		console.log("nevermind");
+		
+	}
+	else{
+		console.log("em k");
+	}
+	
 
 	var brickGroupB = document.getElementById("bb");
-	bDoc = brickGroupB.contentDocument || brickGroupB.contentWindow.document;
+	docB = brickGroupB.contentDocument || brickGroupB.contentWindow.document;
 	
 	var brickGroupC = document.getElementById("bc");
-    cDoc = brickGroupC.contentDocument || brickGroupC.contentWindow.document;
+    docC = brickGroupC.contentDocument || brickGroupC.contentWindow.document;
 
 	var brickGroupD = document.getElementById("bd");
-	dDoc = brickGroupD.contentDocument || brickGroupD.contentWindow.document;
+	docD = brickGroupD.contentDocument || brickGroupD.contentWindow.document;
 	
 	var brickGroupE = document.getElementById("be");
-    eDoc = brickGroupE.contentDocument || brickGroupE.contentWindow.document;
+    docE = brickGroupE.contentDocument || brickGroupE.contentWindow.document;
 
 	var brickGroupF = document.getElementById("bf");
-	fDoc = brickGroupF.contentDocument || brickGroupF.contentWindow.document;
+	docF = brickGroupF.contentDocument || brickGroupF.contentWindow.document;
 
 	var brickGroupG = document.getElementById("bg");
-	gDoc = brickGroupG.contentDocument || brickGroupG.contentWindow.document;
+	docG = brickGroupG.contentDocument || brickGroupG.contentWindow.document;
+
 
 }
 
 function searchNameClicked(brick)
 {
-	console.log("clicking the name");
-	if(brick[0] = "a"){
-		var doc = aDoc
+	//docA.getElementById("a012").innerHTML = "WHY WON";
+	console.log(brick);
+	if(brick[0] == "a"){
+		var doc = docA;
 	}
-	if(brick[0] = "b"){
-		var doc = bDoc
+	
+	if(brick[0] == "b"){
+		var doc = docB;
 	}
-	if(brick[0] = "c"){
-		var doc = cDoc
+	if(brick[0] == "c"){
+		var doc = docC;
 	}
-	if(brick[0] = "d"){
-		var doc = dDoc
+	if(brick[0] == "d"){
+		var doc = docD;
 	}
-	if(brick[0] = "e"){
-		var doc = eDoc
+	if(brick[0] =="e"){
+		var doc = docE;
 	}
-	if(brick[0] = "f"){
-		var doc = fDoc
+	if(brick[0] == "f"){
+		var doc = docF;
 	}
-	if(brick[0] = "g"){
-		var doc = gDoc
+	if(brick[0] == "g"){
+		var doc = docG;
 	}
+	
+	console.log(doc);
+	console.log(docA);
 
 	// a002
-
+	// Clear last brick filled with information
 	if(lastBrick != ""){
 		doc.getElementById(lastBrick).innerHTML = "";
 	}
 
 	var xmlhttp = new XMLHttpRequest();
 
+	console.log('brick: ', brick);
+	//docA.getElementById(brick).innerHTML = "WHYYY";
+
 	// This Receiving Data back from PHP
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			doc.getElementById(brick).innerHTML = this.responseText;
+			doc.getElementById(brick).innerHTML = this.response; //this.responseText;
+			console.log(this.response);
 		}
 	};
 
 	
 	lastBrick = brick;
-	console.log(lastBrick);
+	
 	
 
 	//Sending data to the PHP file

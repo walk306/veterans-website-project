@@ -49,7 +49,10 @@
 
 			if($result)
 			{
-				echo $assocArray["brickDescription"];
+				foreach($result as $assocArray)
+				{
+					echo $assocArray["brickDescription"];
+				}
 			}
 
 
