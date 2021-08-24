@@ -48,7 +48,7 @@ function main() {
   }
 
   loadUpSearchBar();
-  loadUpBrickClicked();
+  //loadUpBrickClicked();
 
 }
 
