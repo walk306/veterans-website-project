@@ -409,5 +409,16 @@
       <div class="brickStyle brickR21C17" id="a377" onclick="brickClicked('a377')"></div>
       <div class="brickStyle brickR21C18" id="a378" onclick="brickClicked('a378')"></div>
     </div>
+    <div class="popup" onclick="myFunction()">Click me!
+      <span class="popuptext" id="myPopup">Popdown text...</span>
+    </div>
+    <script>
+      // When the user clicks on <div>, open the popup
+      function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+      }
+      </script>      
   </body>
 </html>
+
