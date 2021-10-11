@@ -27,7 +27,7 @@ function main() {
 
   ba.contentDocument.onclick = function(){
     click(bamodal);
-    populatorOfBricks("a_brick_group");
+    populatorOfBricks("a");
   }
   bb.contentDocument.onclick = function(){
     click(bbmodal);

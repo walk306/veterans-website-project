@@ -73,7 +73,6 @@ function brickClicked(brick)
 
 	//Sending data to the PHP file
 	let variables = "groupName=" + brick[0] + "&brickNumber=" + brick[1] + brick[2] + brick[3];
-	console.log(variables);
 	xmlhttp.open("GET", "searchDB.php?" + variables, true);
 	xmlhttp.send();
 }
