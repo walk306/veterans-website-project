@@ -18,14 +18,17 @@ function populatorOfBricks(table) {
             }
             modalDoc.getElementById(brick).innerHTML = this.response; //this.responseText;
             lastModal = modalDoc;*/
-            var passedArray = this.response;
+            var passedArray = JSON.parse(this.response);
+            console.log(passedArray[12]);
+
+            //12 -> a012 getElementById(a012)
 
             // Need to retrieve all the data from database to show
-
+/*
             for(var i = 0; i < passedArray.length; i++){
                 console.log(passedArray[i]);
             }
-            
+      */      
         }
     };
 
