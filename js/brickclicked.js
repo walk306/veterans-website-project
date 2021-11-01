@@ -5,8 +5,6 @@ function searchNameClicked(brick)
 {
 	var doc = "m" + brick[0];
 
-	console.log(doc);
-
 	if(lastBrick != ""){
 		lastModal.getElementById(lastBrick).innerHTML = "";
 	}
@@ -19,7 +17,7 @@ function searchNameClicked(brick)
 	// This Receiving Data back from PHP
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			click(document.getElementById("bamodal"));
+			//click(document.getElementById("bamodal"));
 			var brickGroup = document.getElementById(doc);
 			modalDoc = brickGroup.contentDocument || brickGroup.contentWindow.document;
 
@@ -68,7 +66,6 @@ function brickClicked(brick)
 
 	
 	lastBrick = brick;
-	console.log(lastBrick);
 	
 
 	//Sending data to the PHP file

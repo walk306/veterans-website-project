@@ -56,7 +56,6 @@ function main() {
 function click(modal) {
   if(modal.style.display == "none"){
     modal.style.display = "block";
-    console.log('if youre reading this you win a cookie');
     }
 }
 
