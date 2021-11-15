@@ -50,26 +50,26 @@ function searchNameClicked(brick)
 
 function brickClicked(brick)
 {
-	//document.getElementById(brick).innerHTML = brick;
-	if(lastBrick != ""){
-		document.getElementById(lastBrick).innerHTML = "";
-	}
 
 	var xmlhttp = new XMLHttpRequest();
 
 	// This Receiving Data back from PHP
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			document.getElementById(brick).innerHTML = this.responseText;
+			var popup = document.getElementById('myPopup');
+			document.getElementById('myPopup').innerHTML = this.responseText;
+			popup.classList.toggle("show");
 		}
 	};
-
-	
-	lastBrick = brick;
-	
 
 	//Sending data to the PHP file
 	let variables = "groupName=" + brick[0] + "&brickNumber=" + brick[1] + brick[2] + brick[3];
 	xmlhttp.open("GET", "searchDB.php?" + variables, true);
 	xmlhttp.send();
+
+	// When the user clicks on <div>, open the popup
+	/*function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+      }*/
 }
