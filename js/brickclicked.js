@@ -29,6 +29,7 @@ function searchNameClicked(brick)
 			else{
 				console.log("em k");
 			}
+			// the problem is HERE v v v
 			modalDoc.getElementById(brick).innerHTML = this.response; //this.responseText;
 			console.log(this.response);
 			lastModal = modalDoc;
@@ -57,7 +58,17 @@ function brickClicked(brick)
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			var popup = document.getElementById('myPopup');
-			document.getElementById('myPopup').innerHTML = this.responseText;
+			document.getElementById('myPopup').innerHTML = "";
+			var popupArr = this.responseText.split('|');
+
+			for (var i = 0; i < popupArr.length; i++){
+				if (i == popupArr.length - 1){
+					document.getElementById('myPopup').innerHTML += popupArr[i];
+				}
+				else {
+					document.getElementById('myPopup').innerHTML += popupArr[i] + "<br/>";
+				}
+			}
 			popup.classList.toggle("show");
 		}
 	};
