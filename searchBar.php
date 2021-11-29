@@ -68,7 +68,7 @@
 				   }
 				   $tempString = $assocArray["source"] . $tempString;
 				 
-				   echo "<div onclick=\"searchNameClicked('" . $tempString . "')\">". $assocArray["firstName"] . " " . $assocArray["lastName"] . "</div>";
+				   echo "<div onclick=\"searchNameClickedModal('" . $tempString . "')\">". $assocArray["firstName"] . " " . $assocArray["lastName"] . "</div>";
 				   echo "<br/>";
 
 

@@ -11,7 +11,7 @@ function searchNameClicked(brick)
 
 	var xmlhttp = new XMLHttpRequest();
 
-	console.log('brick: ', brick);
+	console.log('doc: ', doc);
 	//docA.getElementById(brick).innerHTML = "WHYYY";
 
 	// This Receiving Data back from PHP
@@ -28,11 +28,12 @@ function searchNameClicked(brick)
 			}
 			else{
 				console.log("em k");
+				// the problem is HERE v v v
+				modalDoc.getElementById(brick).innerHTML = this.responseText; //this.responseText;
+				console.log(this.responseText);
+				lastModal = modalDoc;
 			}
-			// the problem is HERE v v v
-			modalDoc.getElementById(brick).innerHTML = this.response; //this.responseText;
-			console.log(this.response);
-			lastModal = modalDoc;
+
 		}
 	};
 

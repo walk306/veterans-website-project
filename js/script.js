@@ -51,6 +51,15 @@ function main() {
   loadUpSearchBar();
   //loadUpBrickClicked();
 
+
+}
+
+function searchNameClickedModal(brick){
+  if (brick[0] == "a"){
+    click(bamodal);
+    populatorOfBricks("a");
+  }
+  searchNameClicked(brick);
 }
 
 function click(modal) {
