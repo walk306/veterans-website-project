@@ -59,6 +59,31 @@ function searchNameClickedModal(brick){
     click(bamodal);
     populatorOfBricks("a");
   }
+  else if (brick[0] == "b"){
+    //start here next week, model shows up unpopulated
+      click(bbmodal);
+      populatorOfBricks("b");
+  }
+  else if (brick[0] == "c"){
+    click(bcmodal);
+    populatorOfBricks("c");
+  }
+  else if (brick[0] == "d"){
+      click(bdmodal);
+      populatorOfBricks("d");
+  }
+  else if (brick[0] == "e"){
+    click(bemodal);
+    populatorOfBricks("e");
+  }
+  else if (brick[0] == "f"){
+    click(bfmodal);
+    populatorOfBricks("f");
+  }
+  else if (brick[0] == "g"){
+    click(bgmodal);
+    populatorOfBricks("g");
+  }
   searchNameClicked(brick);
 }
 

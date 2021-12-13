@@ -5,13 +5,11 @@ function searchNameClicked(brick)
 {
 	var doc = "m" + brick[0];
 
-	if(lastBrick != ""){
+	/*if(lastBrick != ""){
 		lastModal.getElementById(lastBrick).innerHTML = "";
-	}
+	}*/
 
 	var xmlhttp = new XMLHttpRequest();
-
-	console.log('doc: ', doc);
 	//docA.getElementById(brick).innerHTML = "WHYYY";
 
 	// This Receiving Data back from PHP
@@ -28,17 +26,32 @@ function searchNameClicked(brick)
 			}
 			else{
 				console.log("em k");
-				// the problem is HERE v v v
 				modalDoc.getElementById(brick).innerHTML = this.responseText; //this.responseText;
 				console.log(this.responseText);
 				lastModal = modalDoc;
+
+				if (this.readyState == 4 && this.status == 200) {
+					var popup = modalDoc.getElementById('myPopup');
+					modalDoc.getElementById('myPopup').innerHTML = "";
+					var popupArr = this.responseText.split('|');
+			
+					for (var i = 0; i < popupArr.length; i++){
+						if (i == popupArr.length - 1){
+							modalDoc.getElementById('myPopup').innerHTML += popupArr[i];
+						}
+						else {
+							modalDoc.getElementById('myPopup').innerHTML += popupArr[i] + "<br/>";
+						}
+					}
+					popup.classList.toggle("show");
+				}
 			}
 
 		}
 	};
 
 	
-	lastBrick = brick;
+	//lastBrick = brick;
 	
 	
 	
@@ -70,7 +83,7 @@ function brickClicked(brick)
 					document.getElementById('myPopup').innerHTML += popupArr[i] + "<br/>";
 				}
 			}
-			popup.classList.toggle("show");
+			//popup.classList.toggle("show");
 		}
 	};
 

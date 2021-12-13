@@ -28,6 +28,21 @@
 			else if($table === "b"){
 				$stmt = $conn->prepare("SELECT 'b' as source, brickNum, firstName, lastName FROM b_brick_group");
 			}
+			else if($table === "c"){
+				$stmt = $conn->prepare("SELECT 'c' as source, brickNum, firstName, lastName FROM c_brick_group");
+			}
+			else if($table === "d"){
+				$stmt = $conn->prepare("SELECT 'd' as source, brickNum, firstName, lastName FROM d_brick_group");
+			}
+			else if($table === "e"){
+				$stmt = $conn->prepare("SELECT 'e' as source, brickNum, firstName, lastName FROM e_brick_group");
+			}
+			else if($table === "f"){
+				$stmt = $conn->prepare("SELECT 'f' as source, brickNum, firstName, lastName FROM f_brick_group");
+			}
+			else if($table === "g"){
+				$stmt = $conn->prepare("SELECT 'g' as source, brickNum, firstName, lastName FROM g_brick_group");
+			}
 			$stmt->execute();
 
 			$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
