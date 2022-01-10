@@ -4,13 +4,11 @@ var lastModal = "";
 function searchNameClicked(brick)
 {
 	var doc = "m" + brick[0];
-
 	/*if(lastBrick != ""){
 		lastModal.getElementById(lastBrick).innerHTML = "";
 	}*/
 
 	var xmlhttp = new XMLHttpRequest();
-	//docA.getElementById(brick).innerHTML = "WHYYY";
 
 	// This Receiving Data back from PHP
 	xmlhttp.onreadystatechange = function() {
@@ -25,11 +23,6 @@ function searchNameClicked(brick)
 				
 			}
 			else{
-				console.log("em k");
-				modalDoc.getElementById(brick).innerHTML = this.responseText; //this.responseText;
-				console.log(this.responseText);
-				lastModal = modalDoc;
-
 				if (this.readyState == 4 && this.status == 200) {
 					var popup = modalDoc.getElementById('myPopup');
 					modalDoc.getElementById('myPopup').innerHTML = "";
@@ -65,7 +58,6 @@ function searchNameClicked(brick)
 
 function brickClicked(brick)
 {
-
 	var xmlhttp = new XMLHttpRequest();
 
 	// This Receiving Data back from PHP

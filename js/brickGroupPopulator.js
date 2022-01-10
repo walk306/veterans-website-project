@@ -27,6 +27,7 @@ function populatorOfBricks(table) {
 
             for(var i = 0; i < passedArray.length; i++){
                 if (passedArray[i].firstName !== null){
+                    console.log(passedArray[i].brickNum);
                     modalDoc.getElementById(passedArray[i].brickNum).innerHTML = passedArray[i].firstName + " " + passedArray[i].lastName;
                 }
                 

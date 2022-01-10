@@ -31,17 +31,37 @@
 				  $stmt->execute();
 				  break;
 
-		    case "b":
-					$stmt = $conn->prepare("SELECT firstname, lastname, age FROM btable WHERE brickNum = ?");
+		    	case "b":
+					$stmt = $conn->prepare("SELECT brickDescription FROM b_brick_group WHERE brickNum = ?");
 				  $stmt->bindParam(1, $brickNumber, PDO::PARAM_INT, 3);
 				  $stmt->execute();
 				  break;
 
-		    case "c":
-					$stmt = $conn->prepare("SELECT firstname, lastname, age	FROM ctable WHERE brickNum = ?");
-				  $stmt->bindParam(1, $brickNumber, PDO::PARAM_INT, 3);
-				  $stmt->execute();
-			    break;
+				case "c":
+						$stmt = $conn->prepare("SELECT brickDescription	FROM c_brick_group WHERE brickNum = ?");
+					$stmt->bindParam(1, $brickNumber, PDO::PARAM_INT, 3);
+					$stmt->execute();
+					break;
+				case "d":
+					$stmt = $conn->prepare("SELECT brickDescription	FROM d_brick_group WHERE brickNum = ?");
+				$stmt->bindParam(1, $brickNumber, PDO::PARAM_INT, 3);
+				$stmt->execute();
+				break;
+				case "e":
+					$stmt = $conn->prepare("SELECT brickDescription	FROM e_brick_group WHERE brickNum = ?");
+				$stmt->bindParam(1, $brickNumber, PDO::PARAM_INT, 3);
+				$stmt->execute();
+				break;
+				case "f":
+					$stmt = $conn->prepare("SELECT brickDescription	FROM f_brick_group WHERE brickNum = ?");
+				$stmt->bindParam(1, $brickNumber, PDO::PARAM_INT, 3);
+				$stmt->execute();
+				break;
+				case "g":
+					$stmt = $conn->prepare("SELECT brickDescription	FROM g_brick_group WHERE brickNum = ?");
+				$stmt->bindParam(1, $brickNumber, PDO::PARAM_INT, 3);
+				$stmt->execute();
+				break;
 			}
 
 			$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);

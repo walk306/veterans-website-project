@@ -23,7 +23,7 @@
 			$stmt = null;
 			//$table .= '%';
 			if($table === "a"){
-			$stmt = $conn->prepare("SELECT 'a' as source, brickNum, firstName, lastName FROM a_brick_group");
+				$stmt = $conn->prepare("SELECT 'a' as source, brickNum, firstName, lastName FROM a_brick_group");
 			}
 			else if($table === "b"){
 				$stmt = $conn->prepare("SELECT 'b' as source, brickNum, firstName, lastName FROM b_brick_group");

@@ -31,21 +31,27 @@ function main() {
   }
   bb.contentDocument.onclick = function(){
     click(bbmodal);
+    populatorOfBricks("b")
   }
   bc.contentDocument.onclick = function(){
     click(bcmodal);
+    populatorOfBricks("c")
   }
   bd.contentDocument.onclick = function(){
     click(bdmodal);
+    populatorOfBricks("d")
   }
   be.contentDocument.onclick = function(){
     click(bemodal);
+    populatorOfBricks("e")
   }
   bf.contentDocument.onclick = function(){
     click(bfmodal);
+    populatorOfBricks("f")
   }
   bg.contentDocument.onclick = function(){
     click(bgmodal);
+    populatorOfBricks("g")
   }
 
   loadUpSearchBar();
@@ -60,9 +66,8 @@ function searchNameClickedModal(brick){
     populatorOfBricks("a");
   }
   else if (brick[0] == "b"){
-    //start here next week, model shows up unpopulated
-      click(bbmodal);
-      populatorOfBricks("b");
+    click(bbmodal);
+    populatorOfBricks("b");
   }
   else if (brick[0] == "c"){
     click(bcmodal);
