@@ -490,3 +490,34 @@ body {
 
   }
 }
+/* Popup container */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+
+  /*position: relative;
+  float: center;
+  display: inline-block;
+  cursor: pointer;
+  */
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  /*by changing this to visible it works every time but no animation - thoughts?*/
+  visibility: visible;
+  max-width: 400px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
