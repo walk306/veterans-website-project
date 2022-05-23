@@ -43,6 +43,7 @@ grid-template-areas:
   border-color: blue;
   border-style: solid;
   border-width: 1px;
+  font-size: 162px;
 }
 
 .brickR1C1 { grid-area: brickR1C1; }
