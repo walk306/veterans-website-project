@@ -14,6 +14,7 @@ body {
   padding: 0px; 
   margin: 0px;
   
+  
 grid-template-areas: 
   "brickR1C1 brickR1C1 brickR1C3 brickR1C3 brickR1C5 brickR1C5 brickR1C7 brickR1C7 brickR1C9 brickR1C9 brickR1C11 brickR1C11 brickR1C13 brickR1C13 brickR1C15 brickR1C15 brickR1C17 brickR1C17"
   "brickR2C1 brickR2C2 brickR2C2 brickR2C4 brickR2C5 brickR2C5 brickR2C7 brickR2C8 brickR2C8 brickR2C10 brickR2C10 brickR2C12 brickR2C12 brickR2C14 brickR2C14 brickR2C16 brickR2C16 brickR2C18"
@@ -38,12 +39,11 @@ grid-template-areas:
   "brickR21C1 brickR21C1 brickR21C3 brickR21C3 brickR21C5 brickR21C5 brickR21C7 brickR21C7 brickR21C9 brickR21C9 brickR21C11 brickR21C11 brickR21C13 brickR21C13 brickR21C15 brickR21C15 brickR21C17 brickR21C17";
 }
 
-
 .brickStyle{
   border-color: blue;
   border-style: solid;
   border-width: 1px;
-  font-size: 162px;
+  font-size: 10px;
 }
 
 .brickR1C1 { grid-area: brickR1C1; }
@@ -428,11 +428,18 @@ grid-template-areas:
   @media (max-aspect-ratio: 7/6) {
   .parent {
 
-    width: 98vh;
-    height: 84vh;
+    width: 98vw;
+    height: 84vw;
 
   }
+  .brickStyle{
+    border-color: blue;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 15%;
+  }
 }
+
 /* Popup container */
 .popup {
   position: fixed;

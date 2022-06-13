@@ -147,3 +147,7 @@ function closeModalWindow(event) {
     bgmodal.style.display = "none";
   }
 }
+
+function model_size() {
+  //document.getElementById("p2").style.color = "blue";
+}

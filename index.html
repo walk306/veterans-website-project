@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Veterans Memorial</title>
   <meta charset="utf-8">
@@ -15,208 +16,219 @@
   <script src="js/brickGroupPopulator.js"></script>
 
 
- 
+
   <style>
-  .fakeimg {
-    height: 200px;
-    background: #aaa;
-  }
+    .fakeimg {
+      height: 200px;
+      background: #aaa;
+    }
   </style>
 </head>
+
 <body onload="main()">
-<!-- Title Box -->
-<div class="jumbotron cool text-center" id="topthingy" style="margin:0">
-  <h1>Veterans Memorial Map</h1>
-  <!-- <p style="margin:0">The City of Manchester, Missouri</p> -->
+  <!-- Title Box -->
+  <div class="jumbotron cool text-center" id="topthingy" style="margin:0">
+    <h1>Veterans Memorial Map</h1>
+    <!-- <p style="margin:0">The City of Manchester, Missouri</p> -->
 
-  <img alt="Click to Home" class="bannerObject"  src="images/CityofManchesterLogo.png">
+    <img alt="Click to Home" class="bannerObject" src="images/CityofManchesterLogo.png">
 
-</div>
-
-<!-- Nav Bar -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" href="#"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-      </li>
-    </ul>
   </div>
-  <form class="form-inline" action="/action_page.php">
-    <span id="tem1"></span>
-    <input class="form-control mr-sm-2" id="searchbar" type="text" placeholder="Search" onkeyup="searchBar(this.value)">
-    <label for="searchFilter" class="font">Filter Search:</label>
-			<br/>
-			<select name="searchFilter"  id="searchFilter">
-		        <option value="firstname">First Name</option>
-		        <option value="lastname">Last Name</option>
-		  </select>
-  </form>
-</nav>
 
-<!-- Main Body -->
-<div class="container-fluid" >
-  <div class="row-att d-flex bg-primary">
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+      </ul>
+    </div>
+    <form class="form-inline" action="/action_page.php">
+      <span id="tem1"></span>
+      <input class="form-control mr-sm-2" id="searchbar" type="text" placeholder="Search"
+        onkeyup="searchBar(this.value)">
+      <label for="searchFilter" class="font">Filter Search:</label>
+      <br />
+      <select name="searchFilter" id="searchFilter">
+        <option value="firstname">First Name</option>
+        <option value="lastname">Last Name</option>
+      </select>
+    </form>
+  </nav>
 
-    <!-- Rest of Columns --> 
-    
-      <div class=" cont flex-grow-1 ">
-        <div class=" mainCol bg-dark">
-          <!-- Row 1 -->
-          <div class="brickStyle brickR1C1"></div> 
-          <div class="brickStyle brickR1C2">
-            <iframe src="brickgroupg.html" id="bg">
-            </iframe> 
+  <!-- Main Body -->
+  <div class="mainBody">
+    <div class="stretchyWrapper">
+      <div class="childWrapper">
+
+        <div class="row-att bg-primary">
+
+          <!-- Rest of Columns -->
+
+          <div class=" cont flex-grow-1 ">
+            <div class=" mainCol bg-dark">
+
+
+              <!-- Row 1 -->
+              <div class="brickStyle brickR1C1"></div>
+              <div class="brickStyle brickR1C2">
+                <iframe src="brickgroupg.html" id="bg">
+                </iframe>
+              </div>
+              <div class="brickStyle brickR1C7"></div>
+              <!-- Row 2 -->
+              <div class="brickStyle brickR2C1"></div>
+              <div class="brickStyle brickR2C2"></div>
+              <div class="brickStyle brickR2C3"></div>
+              <div class="brickStyle brickR2C4"></div>
+              <div class="brickStyle brickR2C5"></div>
+              <div class="brickStyle brickR2C6"></div>
+              <div class="brickStyle brickR2C7"></div>
+              <!-- Row 3 -->
+              <div class="brickStyle brickR3C1"></div>
+              <div class="brickStyle brickR3C2">
+                <iframe src="brickgroupd.html" id="bd">
+                </iframe>
+              </div>
+              <div class="brickStyle brickR3C3"></div>
+              <div class="brickStyle brickR3C4">
+                <iframe src="brickgroupe.html" id="be">
+                </iframe>
+              </div>
+              <div class="brickStyle brickR3C5"></div>
+              <div class="brickStyle brickR3C6">
+                <iframe src="brickgroupf.html" id="bf">
+                </iframe>
+              </div>
+              <div class="brickStyle brickR3C7"></div>
+              <!-- Row 4 -->
+              <div class="brickStyle brickR4C1"></div>
+              <div class="brickStyle brickR4C2"></div>
+              <div class="brickStyle brickR4C3"></div>
+              <div class="brickStyle brickR4C4"></div>
+              <div class="brickStyle brickR4C5"></div>
+              <div class="brickStyle brickR4C6"></div>
+              <div class="brickStyle brickR4C7"></div>
+              <!-- Row 5 -->
+              <div class="brickStyle brickR5C1"></div>
+              <div class="brickStyle brickR5C2">
+                <iframe src="brickgroupa.html" id="ba" onclick="resize_model()">
+                </iframe>
+              </div>
+              <div class="brickStyle brickR5C3"></div>
+              <div class="brickStyle brickR5C4">
+                <iframe src="brickgroupb.html" id="bb">
+                </iframe>
+              </div>
+              <div class="brickStyle brickR5C5"></div>
+              <div class="brickStyle brickR5C6">
+                <iframe src="brickgroupc.html" id="bc">
+                </iframe>
+              </div>
+              <div class="brickStyle brickR5C7"></div>
+              <!-- Row 6 -->
+              <div class="brickStyle brickR6C1"></div>
+              <div class="brickStyle brickR6C2"></div>
+              <div class="brickStyle brickR6C3"></div>
+              <div class="brickStyle brickR6C4"></div>
+              <div class="brickStyle brickR6C5"></div>
+              <div class="brickStyle brickR6C6"></div>
+              <div class="brickStyle brickR6C7"></div>
+            </div>
           </div>
-          <div class="brickStyle brickR1C7"></div>
-          <!-- Row 2 -->
-          <div class="brickStyle brickR2C1"></div>
-          <div class="brickStyle brickR2C2"></div>
-          <div class="brickStyle brickR2C3"></div>
-          <div class="brickStyle brickR2C4"></div>
-          <div class="brickStyle brickR2C5"></div>
-          <div class="brickStyle brickR2C6"></div>
-          <div class="brickStyle brickR2C7"></div>
-          <!-- Row 3 -->
-          <div class="brickStyle brickR3C1"></div>
-          <div class="brickStyle brickR3C2">
-            <iframe src="brickgroupd.html" id="bd">
-            </iframe>
-          </div>
-          <div class="brickStyle brickR3C3"></div>
-          <div class="brickStyle brickR3C4">
-            <iframe src="brickgroupe.html" id="be">
-            </iframe>
-          </div>
-          <div class="brickStyle brickR3C5"></div>
-          <div class="brickStyle brickR3C6">
-            <iframe src="brickgroupf.html" id="bf">
-            </iframe>
-          </div>
-          <div class="brickStyle brickR3C7"></div>
-          <!-- Row 4 -->
-          <div class="brickStyle brickR4C1"></div>
-          <div class="brickStyle brickR4C2"></div>
-          <div class="brickStyle brickR4C3"></div>
-          <div class="brickStyle brickR4C4"></div>
-          <div class="brickStyle brickR4C5"></div>
-          <div class="brickStyle brickR4C6"></div>
-          <div class="brickStyle brickR4C7"></div>
-          <!-- Row 5 -->
-          <div class="brickStyle brickR5C1"></div>
-          <div class="brickStyle brickR5C2">
-            <iframe src="brickgroupa.html" id="ba">
-            </iframe>
-          </div>
-          <div class="brickStyle brickR5C3"></div>
-          <div class="brickStyle brickR5C4">
-            <iframe src="brickgroupb.html" id="bb">
-            </iframe>
-          </div>
-          <div class="brickStyle brickR5C5"></div>
-          <div class="brickStyle brickR5C6">
-            <iframe src="brickgroupc.html" id="bc">
-            </iframe>
-          </div>
-          <div class="brickStyle brickR5C7"></div>
-          <!-- Row 6 -->
-          <div class="brickStyle brickR6C1"></div>
-          <div class="brickStyle brickR6C2"></div>
-          <div class="brickStyle brickR6C3"></div>
-          <div class="brickStyle brickR6C4"></div>
-          <div class="brickStyle brickR6C5"></div>
-          <div class="brickStyle brickR6C6"></div>
-          <div class="brickStyle brickR6C7"></div>
         </div>
       </div>
+    </div>
   </div>
-</div>
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <p>Last edited June 21st, 2021.</p>
-</div>
-    
-<!-- The Box1Col2 Modal -->
-<div id="bamodal" class="modal" onclick="closeModalWindow(event)">
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    <p>Last edited June 21st, 2021.</p>
+  </div>
+
+  <!-- The Box1Col2 Modal -->
+  <div id="bamodal" class="modal" onclick="closeModalWindow(event)">
 
     <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="closeModalSpan()">&times;</span>
-    <iframe src="brickgroupa.html" id="ma">
-    </iframe>
+    <div class="modal-content">
+      <span class="close" onclick="closeModalSpan()">&times;</span>
+      <iframe src="brickgroupa.html" id="ma">
+      </iframe>
+    </div>
   </div>
-</div>
-<!-- The Box2Col2 Modal -->
-<div id="bbmodal" class="modal" onclick="closeModalWindow(event)">
+  <!-- The Box2Col2 Modal -->
+  <div id="bbmodal" class="modal" onclick="closeModalWindow(event)">
 
     <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="closeModalSpan()">&times;</span>
-    <iframe src="brickgroupb.html" id="mb">
-    </iframe>
+    <div class="modal-content">
+      <span class="close" onclick="closeModalSpan()">&times;</span>
+      <iframe src="brickgroupb.html" id="mb">
+      </iframe>
+    </div>
   </div>
-</div>
 </body>
+
 </html>
 
 <!-- The Box3Col2 Modal -->
 <div id="bcmodal" class="modal" onclick="closeModalWindow(event)">
 
-    <!-- Modal content -->
+  <!-- Modal content -->
   <div class="modal-content">
     <span class="close" onclick="closeModalSpan()">&times;</span>
-    <iframe src="brickgroupc.html"id="mc">
+    <iframe src="brickgroupc.html" id="mc">
     </iframe>
   </div>
 </div>
 <!-- The Box1Col3 Modal -->
 <div id="bdmodal" class="modal" onclick="closeModalWindow(event)">
 
-    <!-- Modal content -->
+  <!-- Modal content -->
   <div class="modal-content">
     <span class="close" onclick="closeModalSpan()">&times;</span>
-    <iframe src="brickgroupd.html"id="md">
+    <iframe src="brickgroupd.html" id="md">
     </iframe>
   </div>
 </div>
 <!-- The Box2Col3 Modal -->
 <div id="bemodal" class="modal" onclick="closeModalWindow(event)">
 
-    <!-- Modal content -->
+  <!-- Modal content -->
   <div class="modal-content">
     <span class="close" onclick="closeModalSpan()">&times;</span>
-    <iframe src="brickgroupe.html"id="me">
+    <iframe src="brickgroupe.html" id="me">
     </iframe>
   </div>
 </div>
 <!-- The Box3Col3 Modal -->
 <div id="bfmodal" class="modal" onclick="closeModalWindow(event)">
 
-    <!-- Modal content -->
+  <!-- Modal content -->
   <div class="modal-content">
     <span class="close" onclick="closeModalSpan()">&times;</span>
-    <iframe src="brickgroupf.html"id="mf">
+    <iframe src="brickgroupf.html" id="mf">
     </iframe>
   </div>
 </div>
 <!-- The Box1Col4 Modal -->
 <div id="bgmodal" class="modal" onclick="closeModalWindow(event)">
 
-    <!-- Modal content -->
+  <!-- Modal content -->
   <div class="modal-content">
     <span class="close" onclick="closeModalSpan()">&times;</span>
-    <iframe src="brickgroupg.html"id="mg">
+    <iframe src="brickgroupg.html" id="mg">
     </iframe>
   </div>
 </div>
 </body>
+
 </html>
