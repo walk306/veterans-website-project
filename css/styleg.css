@@ -1,3 +1,55 @@
+.mainBody{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 75%;
+}
+
+.wrapper {
+  --frame-max-height: 40rem;
+  --frame-ratio-w: 15;
+  --frame-ratio-h: 2;
+  background-color: orange;
+  width: 300%;
+  height: 100%;
+  max-width: 300%;
+  max-height: var(--frame-max-height);
+  margin: 0 auto;
+}
+
+.bodyFrame {
+    /* Padding is width/height, since % padding is based off the element's width */
+    --ratio: calc(var(--frame-ratio-h, 1) / var(--frame-ratio-w, 1) * 100%);
+    /**
+     * The height of the frame is either the calculated padding value, or a maximum
+     * passed in (using --frame-max-height). This effectively clamps the height.
+     */
+    --frame-height: min(var(--ratio), var(--frame-max-height));
+    position: relative;
+    padding-bottom: var(--frame-height);
+    /** 
+     * The width should be 100% where possible, but should maintain aspect ratio
+     * first and foremost. In order to do so we can take the calculated height
+     * and reverse engineer the width.
+     */
+    width: min(calc(var(--frame-height, 0) * (var(--frame-ratio-w) / var(--frame-ratio-h))), 100%);
+    height: 0;
+    
+    /**
+     * Irrelevant
+     */
+    background-color: orange;
+    margin: 0 auto;
+}
+
+.gridParent{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
 body {
     margin: 0px;
     background-color: orange;
@@ -9,13 +61,13 @@ body {
     grid-template-rows: repeat(12, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    width: 1500vh;
-    height: 112vh;
+    width: inherit;
+    height: inherit;
     padding: 0px; 
     margin: 0px;
   
     grid-template-areas: 
-      "brickR1C1 brickR1C1 brickR1C3 brickR1C4 brickR1C4 brickR1C6 brickR1C6 brickR1C8 brickR1C8 brickR1C10 brickR1C1140 brickR1C12 brickR1C12 brickR1C14 brickR1C14 brickR1C16 brickR1C16 brickR1C18 brickR1C18 brickR1C20 brickR1C20 brickR1C22 brickR1C22 brickR1C24 brickR1C24 brickR1C26 brickR1C26 brickR1C28 brickR1C28 brickR1C30 brickR1C30 brickR1C32 brickR1C32 brickR1C34 brickR1C34 brickR1C36 brickR1C36 brickR1C38 brickR1C38 brickR1C40 brickR1C40 brickR1C42 brickR1C42 brickR1C44 brickR1C44 brickR1C46 brickR1C46 brickR1C48 brickR1C48 brickR1C50 brickR1C50 brickR1C52 brickR1C52 brickR1C54 brickR1C54 brickR1C56 brickR1C56 brickR1C58 brickR1C58 brickR1C60 brickR1C60 brickR1C62 brickR1C62 brickR1C64 brickR1C64 brickR1C66 brickR1C66 brickR1C68 brickR1C68 brickR1C70 brickR1C70 brickR1C72 brickR1C72 brickR1C74 brickR1C74 brickR1C76 brickR1C76 brickR1C78 brickR1C78 brickR1C80 brickR1C80 brickR1C82 brickR1C82 brickR1C84 brickR1C84 brickR1C86 brickR1C86 brickR1C88 brickR1C88 brickR1C90"
+      "brickR1C1 brickR1C1 brickR1C3 brickR1C4 brickR1C4 brickR1C6 brickR1C6 brickR1C8 brickR1C8 brickR1C10 brickR1C10 brickR1C12 brickR1C12 brickR1C14 brickR1C14 brickR1C16 brickR1C16 brickR1C18 brickR1C18 brickR1C20 brickR1C20 brickR1C22 brickR1C22 brickR1C24 brickR1C24 brickR1C26 brickR1C26 brickR1C28 brickR1C28 brickR1C30 brickR1C30 brickR1C32 brickR1C32 brickR1C34 brickR1C34 brickR1C36 brickR1C36 brickR1C38 brickR1C38 brickR1C40 brickR1C40 brickR1C42 brickR1C42 brickR1C44 brickR1C44 brickR1C46 brickR1C46 brickR1C48 brickR1C48 brickR1C50 brickR1C50 brickR1C52 brickR1C52 brickR1C54 brickR1C54 brickR1C56 brickR1C56 brickR1C58 brickR1C58 brickR1C60 brickR1C60 brickR1C62 brickR1C62 brickR1C64 brickR1C64 brickR1C66 brickR1C66 brickR1C68 brickR1C68 brickR1C70 brickR1C70 brickR1C72 brickR1C72 brickR1C74 brickR1C74 brickR1C76 brickR1C76 brickR1C78 brickR1C78 brickR1C80 brickR1C80 brickR1C82 brickR1C82 brickR1C84 brickR1C84 brickR1C86 brickR1C86 brickR1C88 brickR1C89 brickR1C89"
       "brickR2C1 brickR2C1 brickR2C3 brickR2C3 brickR2C5 brickR2C5 brickR2C7 brickR2C7 brickR2C9 brickR2C9 brickR2C11 brickR2C11 brickR2C13 brickR2C13 brickR2C15 brickR2C15 brickR2C17 brickR2C17 brickR2C19 brickR2C19 brickR2C21 brickR2C21 brickR2C23 brickR2C23 brickR2C25 brickR2C25 brickR2C27 brickR2C27 brickR2C29 brickR2C29 brickR2C31 brickR2C31 brickR2C33 brickR2C33 brickR2C35 brickR2C35 brickR2C37 brickR2C37 brickR2C39 brickR2C39 brickR2C41 brickR2C41 brickR2C43 brickR2C43 brickR2C45 brickR2C45 brickR2C47 brickR2C47 brickR2C49 brickR2C49 brickR2C51 brickR2C51 brickR2C53 brickR2C53 brickR2C55 brickR2C55 brickR2C57 brickR2C57 brickR2C59 brickR2C59 brickR2C61 brickR2C61 brickR2C63 brickR2C63 brickR2C65 brickR2C65 brickR2C67 brickR2C67 brickR2C69 brickR2C69 brickR2C71 brickR2C71 brickR2C73 brickR2C73 brickR2C75 brickR2C75 brickR2C77 brickR2C77 brickR2C79 brickR2C79 brickR2C81 brickR2C81 brickR2C83 brickR2C83 brickR2C85 brickR2C85 brickR2C87 brickR2C87 brickR2C89 brickR2C89"
       "brickR3C1 brickR3C2 brickR3C2 brickR3C4 brickR3C4 brickR3C6 brickR3C6 brickR3C8 brickR3C8 brickR3C10 brickR3C10 brickR3C12 brickR3C12 brickR3C14 brickR3C14 brickR3C16 brickR3C16 brickR4C18 brickR4C18 brickR3C20 brickR3C20 brickR3C22 brickR3C22 brickR3C24 brickR3C24 brickR3C26 brickR3C26 brickR3C28 brickR3C28 brickR3C30 brickR3C30 brickR3C32 brickR3C32 brickR3C34 brickR3C34 brickR3C36 brickR4C37 brickR4C37 brickR3C39 brickR3C39 brickR4C41 brickR4C41 brickR3C43 brickR3C44 brickR3C44 brickR3C46 brickR3C46 brickR3C48 brickR3C48 brickR3C50 brickR4C51 brickR4C51 brickR3C53 brickR3C54 brickR3C54 brickR3C56 brickR3C56 brickR3C58 brickR3C58 brickR3C60 brickR3C61 brickR3C61 brickR4C63 brickR4C63 brickR3C65 brickR3C65 brickR3C67 brickR3C68 brickR3C68 brickR3C70 brickR3C70 brickR3C72 brickR3C72 brickR3C74 brickR3C74 brickR3C76 brickR3C76 brickR3C78 brickR3C78 brickR3C80 brickR3C80 brickR3C82 brickR3C82 brickR3C84 brickR3C84 brickR3C86 brickR3C86 brickR3C88 brickR3C88 brickR3C90"
       "brickR4C1 brickR4C1 brickR4C3 brickR5C4 brickR5C4 brickR4C6 brickR4C7 brickR4C7 brickR4C9 brickR4C9 brickR4C11 brickR4C11 brickR4C13 brickR4C13 brickR4C15 brickR4C15 brickR4C17 brickR4C18 brickR4C18 brickR4C20 brickR4C21 brickR4C21 brickR4C23 brickR4C23 brickR4C25 brickR4C25 brickR4C27 brickR4C27 brickR4C29 brickR4C29 brickR4C31 brickR4C31 brickR4C33 brickR4C33 brickR4C35 brickR4C35 brickR4C37 brickR4C37 brickR4C39 brickR4C39 brickR4C41 brickR4C41 brickR4C43 brickR4C43 brickR4C45 brickR4C45 brickR4C47 brickR4C47 brickR4C49 brickR4C49 brickR4C51 brickR4C51 brickR4C53 brickR4C53 brickR4C55 brickR4C55 brickR4C57 brickR4C57 brickR4C59 brickR4C59 brickR4C61 brickR4C61 brickR4C63 brickR4C63 brickR4C65 brickR4C65 brickR4C67 brickR4C67 brickR4C69 brickR5C70 brickR5C70 brickR4C72 brickR4C73 brickR4C73 brickR4C75 brickR4C75 brickR4C77 brickR4C77 brickR4C79 brickR4C79 brickR5C81 brickR5C81 brickR4C83 brickR4C83 brickR4C85 brickR4C85 brickR4C87 brickR4C87 brickR4C89 brickR4C89"
@@ -33,6 +85,7 @@ body {
     border-color: blue;
     border-style: solid;
     border-width: 1px;
+    font-size: 10px;
   }
   
   .brickR1C1 { grid-area: brickR1C1; }
@@ -1116,12 +1169,19 @@ body {
   .brickR12C89 { grid-area: brickR12C89; }
   .brickR12C90 { grid-area: brickR12C90; }
   
-  @media (max-aspect-ratio: 7.5/1) {
+  /*@media (max-aspect-ratio: 7.5/1) {
     .parent {
   
       width: 750vh;
       height: 100vh;
   
+    }
+  }*/
+
+  @media (min-aspect-ratio: 15/2){
+    .wrapper{
+      max-width: 100%;
+      width: 100%;
     }
   }
   /* Popup container */

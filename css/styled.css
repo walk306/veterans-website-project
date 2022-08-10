@@ -1,3 +1,55 @@
+.mainBody{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 75%;
+}
+
+.wrapper {
+  --frame-max-height: 40rem;
+  --frame-ratio-w: 4;
+  --frame-ratio-h: 3;
+  background-color: orange;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: var(--frame-max-height);
+  margin: 0 auto;
+}
+
+.bodyFrame {
+    /* Padding is width/height, since % padding is based off the element's width */
+    --ratio: calc(var(--frame-ratio-h, 1) / var(--frame-ratio-w, 1) * 100%);
+    /**
+     * The height of the frame is either the calculated padding value, or a maximum
+     * passed in (using --frame-max-height). This effectively clamps the height.
+     */
+    --frame-height: min(var(--ratio), var(--frame-max-height));
+    position: relative;
+    padding-bottom: var(--frame-height);
+    /** 
+     * The width should be 100% where possible, but should maintain aspect ratio
+     * first and foremost. In order to do so we can take the calculated height
+     * and reverse engineer the width.
+     */
+    width: min(calc(var(--frame-height, 0) * (var(--frame-ratio-w) / var(--frame-ratio-h))), 100%);
+    height: 0;
+    
+    /**
+     * Irrelevant
+     */
+    background-color: orange;
+    margin: 0 auto;
+}
+
+.gridParent{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
 body {
   margin: 0px;
   background-color: orange;
@@ -9,8 +61,8 @@ body {
   grid-template-rows: repeat(24, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  width: 132vh;
-  height: 99vh;
+  width: inherit;
+  height: inherit;
   padding: 0px; 
   margin: 0px;
   
@@ -46,6 +98,7 @@ body {
   border-color: blue;
   border-style: solid;
   border-width: 1px;
+  font-size: 10px;
 }
 
 .brickR1C1 { grid-area: brickR1C1; }
