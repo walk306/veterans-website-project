@@ -66,15 +66,15 @@ function brickClicked(brick)
 			var popup = document.getElementById('myPopup');
 			document.getElementById('myPopup').innerHTML = "";
 			var popupArr = this.responseText.split('|');
-
-			for (var i = 0; i < popupArr.length; i++){
-				if (i == popupArr.length - 1){
-					document.getElementById('myPopup').innerHTML += popupArr[i];
-				}
-				else {
-					document.getElementById('myPopup').innerHTML += popupArr[i] + "<br/>";
-				}
-			}
+			document.getElementById('myPopup').innerHTML = popupArr;
+			// for (var i = 0; i < popupArr.length; i++){
+			// 	if (i == popupArr.length - 1){
+			// 		document.getElementById('myPopup').innerHTML += popupArr[i];
+			// 	}
+			// 	else {
+			// 		document.getElementById('myPopup').innerHTML += popupArr[i] + "<br/>";
+			// 	}
+			// }
 			//popup.classList.toggle("show");
 		}
 	};

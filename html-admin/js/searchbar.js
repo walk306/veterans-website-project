@@ -19,7 +19,6 @@ function loadUpSearchBar(){
 let input = document.getElementById("searchbar");
 
 input.addEventListener("keydown", function(event) {
-	console.log("are we getting here?!?!?");
 	if(event.key === "Enter"){
 		event.preventDefault();
 		return false;
@@ -33,7 +32,7 @@ function filter(str) {
 		document.getElementById("tem").innerHTML = this.responseText;
 	  }
 	};
-	xhttp.open("GET", "searchBar.php?q="+str, true);
+	xhttp.open("GET", "searchBarAdmin.php?q="+str, true);
 	xhttp.send();
 	document.getElementById("tem").innerHTML = "got here";
   
@@ -53,7 +52,7 @@ function searchBar(str) {
   
 	  let variables = "input=" + str + "&filter=" + document.getElementById("searchFilter").value;
 	  console.log(variables);
-	  xmlhttp.open("GET", "searchBar.php?" + variables, true);
+	  xmlhttp.open("GET", "searchBarAdmin.php?" + variables, true);
 	  xmlhttp.send();
 	}
   }

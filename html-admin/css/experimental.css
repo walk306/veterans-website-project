@@ -13,6 +13,8 @@ body {
   padding: 0px; 
   margin: 0px;
 
+
+
   grid-template-areas: 
   "brickR1C1 brickR1C2 brickR1C3 brickR1C4 brickR1C5 brickR1C6 brickR1C7 brickR1C8 brickR1C9 brickR1C10 brickR1C11 brickR1C12 brickR1C13 brickR1C14 brickR1C15 brickR1C16 brickR1C17 brickR1C18 brickR1C19 brickR1C20 brickR1C21"
   "brickR2C1 brickR2C2 brickR2C3 brickR2C4 brickR2C5 brickR2C6 brickR2C7 brickR2C8 brickR2C9 brickR2C10 brickR2C11 brickR2C12 brickR2C13 brickR2C14 brickR2C15 brickR2C16 brickR2C17 brickR2C18 brickR2C19 brickR2C20 brickR2C21"
