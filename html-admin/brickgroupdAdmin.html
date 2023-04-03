@@ -272,9 +272,24 @@
       </div>
     </div>
   </div>
-  <div class="popup">
-    <span class="popuptext" id="myPopup"></span>
+  <div class="popup" id="myPopup">
+    <form action="/veterans-website-project/html-admin/updateDB.php" class="form-container">
+      <h1>Brick Editor</h1>
+  
+      <label for="firstName"><b>First Name</b></label>
+      <input type="text" id="firstInputBox" placeholder="Enter Veteran First Name" name="firstName" required>
+      <label for="lastName"><b>Last Name</b></label>
+      <input type="text" id="lastInputBox" placeholder="Enter Veteran Last Name" name="lastName" required>
+      <label for="brickDescription"> Brick Description (all text on the brick, including first and last name):</label>
+      <textarea id="brickDescription" name="brickDescription" rows="4" cols="35"></textarea>
+      <input type="hidden" id="groupName" name="groupName" />
+      <input type="hidden" id="brickNumber" name="brickNumber" />
+      <button type="button" class="btn" onClick="updateBrick()">Save</button>
+      <button type="button" class="btn cancel" onclick="closeEditPopup()">Cancel</button>
+    </form>
+  </div>
+  <div class="popup" id="myCoolerPopup">
+    <span class="popuptext"></span>
   </div>
 </body>
-
 </html>
