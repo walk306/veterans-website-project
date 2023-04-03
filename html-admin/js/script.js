@@ -108,12 +108,26 @@ function closeModalSpan() {
   var bgmodal = document.getElementById("bgmodal");
 
   bamodal.style.display = "none";
+  modalDoc = document.getElementById("ba").contentDocument || document.getElementById("ba").contentWindow.document;
+  modalDoc.getElementById("myPopup").style.display = "none"; 
   bbmodal.style.display = "none";
+  modalDoc = document.getElementById("bb").contentDocument || document.getElementById("bb").contentWindow.document;
+  modalDoc.getElementById("myPopup").style.display = "none"; 
   bcmodal.style.display = "none";
+  modalDoc = document.getElementById("bc").contentDocument || document.getElementById("bc").contentWindow.document;
+  modalDoc.getElementById("myPopup").style.display = "none"; 
   bdmodal.style.display = "none";
+  modalDoc = document.getElementById("bd").contentDocument || document.getElementById("bd").contentWindow.document;
+  modalDoc.getElementById("myPopup").style.display = "none"; 
   bemodal.style.display = "none";
+  modalDoc = document.getElementById("be").contentDocument || document.getElementById("be").contentWindow.document;
+  modalDoc.getElementById("myPopup").style.display = "none"; 
   bfmodal.style.display = "none";
+  modalDoc = document.getElementById("bf").contentDocument || document.getElementById("bf").contentWindow.document;
+  modalDoc.getElementById("myPopup").style.display = "none"; 
   bgmodal.style.display = "none";
+  modalDoc = document.getElementById("bg").contentDocument || document.getElementById("bg").contentWindow.document;
+  modalDoc.getElementById("myPopup").style.display = "none"; 
 }
 
 function closeModalWindow(event) {
@@ -127,27 +141,42 @@ function closeModalWindow(event) {
 
   if(event.target == bamodal) {
     bamodal.style.display = "none";
+    modalDoc = document.getElementById("ba").contentDocument || document.getElementById("ba").contentWindow.document;
+    modalDoc.getElementById("myPopup").style.display = "none"; 
   }
   else if(event.target == bbmodal) {
     bbmodal.style.display = "none";
+    modalDoc = document.getElementById("bb").contentDocument || document.getElementById("bb").contentWindow.document;
+    modalDoc.getElementById("myPopup").style.display = "none"; 
   }
   else if(event.target == bcmodal) {
     bcmodal.style.display = "none";
+    modalDoc = document.getElementById("bc").contentDocument || document.getElementById("bc").contentWindow.document;
+    modalDoc.getElementById("myPopup").style.display = "none"; 
   }
   else if(event.target == bdmodal) {
     bdmodal.style.display = "none";
+    modalDoc = document.getElementById("bd").contentDocument || document.getElementById("bd").contentWindow.document;
+    modalDoc.getElementById("myPopup").style.display = "none"; 
   }
   else if(event.target == bemodal) {
     bemodal.style.display = "none";
+    modalDoc = document.getElementById("be").contentDocument || document.getElementById("be").contentWindow.document;
+    modalDoc.getElementById("myPopup").style.display = "none"; 
   }
   else if(event.target == bfmodal) {
     bfmodal.style.display = "none";
+    modalDoc = document.getElementById("bf").contentDocument || document.getElementById("bf").contentWindow.document;
+    modalDoc.getElementById("myPopup").style.display = "none"; 
   }
   else if(event.target == bgmodal) {
     bgmodal.style.display = "none";
+    modalDoc = document.getElementById("bg").contentDocument || document.getElementById("bg").contentWindow.document;
+    modalDoc.getElementById("myPopup").style.display = "none"; 
   }
 }
 
 function model_size() {
   //document.getElementById("p2").style.color = "blue";
 }
+

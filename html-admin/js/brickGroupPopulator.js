@@ -9,7 +9,7 @@ function populatorOfBricks(table) {
             modalDoc = brickGroup.contentDocument || brickGroup.contentWindow.document;
 
             if(!modalDoc){
-                throw "WE CAN't GET IT!";
+                throw "WE CAN'T GET IT!";
                 console.log("nevermind");
                 
             }
@@ -40,6 +40,6 @@ function populatorOfBricks(table) {
 
     //Sending data to the PHP file
     let variable = "table=" + table;
-	xmlhttp.open("GET", "brickGroupPopulator.php?" + variable, true);
+	xmlhttp.open("GET", "brickGroupPopulatorAdmin.php?" + variable, true);
 	xmlhttp.send();
 }

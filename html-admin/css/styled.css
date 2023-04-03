@@ -69,27 +69,27 @@ body {
   grid-template-areas: 
   "brickR1C1 brickR1C2 brickR1C2 brickR1C4 brickR1C4 brickR1C6 brickR1C6 brickR1C8 brickR1C8 brickR1C10 brickR1C10 brickR1C12 brickR1C12 brickR1C14 brickR1C14 brickR1C16 brickR1C16 brickR1C18"
   "brickR2C1 brickR2C1 brickR2C3 brickR2C3 brickR2C5 brickR2C5 brickR2C7 brickR2C7 brickR2C9 brickR2C9 brickR2C11 brickR2C11 brickR2C13 brickR2C13 brickR2C15 brickR2C15 brickR2C17 brickR2C17"
-  "brickR3C1 brickR3C2 brickR3C2 brickR3C4 brickR3C4 brickR3C6 brickR3C7 brickR3C7 brickR3C9 brickR3C10 brickR3C10 brickR3C12 brickR3C12 brickR3C14 brickR3C14 brickR3C16 brickR3C16 brickR3C18"
-  "brickR4C1 brickR4C1 brickR4C3 brickR4C3 brickR4C5 brickR4C5 brickR3C7 brickR3C7 brickR4C9 brickR4C9 brickR4C11 brickR4C11 brickR4C13 brickR4C13 brickR4C15 brickR4C16 brickR4C16 brickR4C18"
+  "brickR3C1 brickR3C2 brickR3C2 brickR3C4 brickR3C4 brickR3C6 brickR3C6 brickR3C8 brickR3C8 brickR3C10 brickR3C10 brickR3C12 brickR3C12 brickR3C14 brickR3C14 brickR3C16 brickR3C16 brickR3C18"
+  "brickR4C1 brickR3C2 brickR3C2 brickR4C4 brickR4C5 brickR4C5 brickR4C7 brickR4C7 brickR4C9 brickR4C9 brickR4C11 brickR4C11 brickR4C13 brickR4C13 brickR4C15 brickR4C16 brickR4C16 brickR4C18"
   "brickR5C1 brickR5C2 brickR5C2 brickR5C4 brickR5C4 brickR5C6 brickR5C6 brickR5C8 brickR5C8 brickR5C10 brickR5C10 brickR5C12 brickR5C12 brickR5C14 brickR5C14 brickR4C16 brickR4C16 brickR5C18"
-  "brickR6C1 brickR6C1 brickR6C3 brickR6C3 brickR6C5 brickR6C6 brickR6C6 brickR6C8 brickR6C9 brickR6C9 brickR6C11 brickR6C11 brickR6C13 brickR6C13 brickR6C15 brickR6C15 brickR6C17 brickR6C17"
-  "brickR7C1 brickR7C2 brickR7C2 brickR7C4 brickR7C4 brickR6C6 brickR6C6 brickR7C8 brickR7C8 brickR7C10 brickR6C11 brickR6C11 brickR7C13 brickR7C14 brickR7C14 brickR7C16 brickR7C16 brickR7C18"
-  "brickR8C1 brickR8C1 brickR8C3 brickR8C4 brickR8C4 brickR8C6 brickR8C7 brickR7C8 brickR7C8 brickR8C10 brickR8C11 brickR8C11 brickR8C13 brickR8C13 brickR8C15 brickR8C15 brickR8C17 brickR8C17"
-  "brickR9C1 brickR9C2 brickR9C2 brickR8C4 brickR8C4 brickR9C6 brickR9C6 brickR9C8 brickR9C8 brickR9C10 brickR9C10 brickR9C12 brickR9C12 brickR9C14 brickR9C14 brickR9C16 brickR9C16 brickR9C18"
-  "brickR10C1 brickR10C1 brickR10C3 brickR10C3 brickR10C5 brickR10C5 brickR10C7 brickR10C7 brickR10C9 brickR10C9 brickR10C11 brickR10C11 brickR10C13 brickR10C13 brickR10C15 brickR10C16 brickR10C16 brickR10C18"
-  "brickR11C1 brickR11C2 brickR11C2 brickR11C4 brickR11C4 brickR11C6 brickR10C7 brickR10C7 brickR11C9 brickR11C10 brickR11C10 brickR11C12 brickR11C12 brickR11C14 brickR11C14 brickR10C16 brickR10C16 brickR11C18"
-  "brickR12C1 brickR12C1 brickR12C3 brickR12C3 brickR12C5 brickR12C5 brickR12C7 brickR12C7 brickR12C9 brickR12C9 brickR12C11 brickR12C11 brickR12C13 brickR12C13 brickR12C15 brickR12C15 brickR12C17 brickR12C17"
-  "brickR13C1 brickR13C2 brickR13C2 brickR13C4 brickR13C4 brickR13C6 brickR13C6 brickR13C8 brickR13C8 brickR13C10 brickR13C10 brickR13C12 brickR13C12 brickR13C14 brickR13C14 brickR13C16 brickR13C16 brickR13C18"
-  "brickR14C1 brickR14C1 brickR14C3 brickR14C3 brickR14C5 brickR14C5 brickR14C7 brickR14C7 brickR14C9 brickR14C9 brickR14C11 brickR14C12 brickR14C12 brickR14C14 brickR14C15 brickR14C15 brickR14C17 brickR14C17"
-  "brickR15C1 brickR15C2 brickR15C2 brickR15C4 brickR15C4 brickR15C6 brickR15C6 brickR15C8 brickR15C8 brickR15C10 brickR15C10 brickR14C12 brickR14C12 brickR15C14 brickR15C14 brickR15C16 brickR15C16 brickR15C18"
-  "brickR16C1 brickR16C1 brickR16C3 brickR16C3 brickR16C5 brickR16C5 brickR16C7 brickR16C7 brickR16C9 brickR16C9 brickR16C11 brickR16C11 brickR16C13 brickR16C13 brickR16C15 brickR16C15 brickR16C17 brickR16C17"
-  "brickR17C1 brickR17C2 brickR17C3 brickR17C3 brickR17C5 brickR17C6 brickR17C6 brickR17C8 brickR17C8 brickR17C10 brickR17C10 brickR17C12 brickR17C12 brickR17C14 brickR17C14 brickR17C16 brickR17C16 brickR17C18"
-  "brickR18C1 brickR18C1 brickR17C3 brickR17C3 brickR18C5 brickR18C5 brickR18C7 brickR18C7 brickR18C9 brickR18C9 brickR18C11 brickR18C11 brickR18C13 brickR18C13 brickR18C15 brickR18C15 brickR18C17 brickR18C17"
-  "brickR19C1 brickR19C2 brickR19C2 brickR19C4 brickR19C4 brickR19C6 brickR19C6 brickR19C8 brickR19C9 brickR19C9 brickR19C11 brickR19C12 brickR19C12 brickR19C14 brickR19C14 brickR19C16 brickR19C16 brickR19C18"
-  "brickR20C1 brickR20C1 brickR20C3 brickR20C3 brickR20C5 brickR20C5 brickR20C7 brickR20C7 brickR19C9 brickR19C9 brickR20C11 brickR20C11 brickR20C13 brickR20C13 brickR20C15 brickR20C15 brickR20C17 brickR20C17"
-  "brickR21C1 brickR21C2 brickR21C2 brickR21C4 brickR21C4 brickR21C6 brickR21C6 brickR21C8 brickR21C8 brickR21C10 brickR21C10 brickR21C12 brickR21C12 brickR21C14 brickR21C14 brickR21C16 brickR21C16 brickR21C18"
-  "brickR22C1 brickR22C1 brickR22C3 brickR22C3 brickR22C5 brickR22C5 brickR22C7 brickR22C7 brickR22C9 brickR22C9 brickR22C11 brickR22C11 brickR22C13 brickR22C13 brickR22C15 brickR21C16 brickR21C16 brickR22C18"
-  "brickR23C1 brickR23C2 brickR22C3 brickR22C3 brickR23C5 brickR23C6 brickR23C6 brickR23C8 brickR23C8 brickR23C10 brickR23C10 brickR23C12 brickR23C12 brickR23C14 brickR23C14 brickR23C16 brickR23C16 brickR23C18"
+  "brickR6C1 brickR6C1 brickR6C3 brickR6C3 brickR6C5 brickR6C5 brickR6C7 brickR6C7 brickR6C9 brickR6C9 brickR6C11 brickR6C11 brickR6C13 brickR6C13 brickR6C15 brickR6C15 brickR6C17 brickR6C17"
+  "brickR7C1 brickR7C2 brickR7C2 brickR7C4 brickR7C4 brickR7C6 brickR7C6 brickR7C8 brickR7C8 brickR7C10 brickR7C10 brickR7C12 brickR7C12 brickR7C14 brickR7C14 brickR7C16 brickR7C16 brickR7C18"
+  "brickR8C1 brickR8C1 brickR8C3 brickR8C3 brickR8C5 brickR8C5 brickR8C7 brickR8C7 brickR8C9 brickR8C9 brickR8C11 brickR8C11 brickR8C13 brickR8C14 brickR8C14 brickR8C16 brickR8C17 brickR8C17"
+  "brickR9C1 brickR9C2 brickR9C2 brickR9C4 brickR9C4 brickR9C6 brickR9C6 brickR9C8 brickR9C8 brickR9C10 brickR9C10 brickR9C12 brickR9C12 brickR8C14 brickR8C14 brickR9C16 brickR9C16 brickR9C18"
+  "brickR10C1 brickR10C1 brickR10C3 brickR10C3 brickR10C5 brickR10C5 brickR10C7 brickR10C7 brickR10C9 brickR10C9 brickR10C11 brickR10C11 brickR10C13 brickR10C13 brickR10C15 brickR10C15 brickR10C17 brickR10C17"
+  "brickR11C1 brickR11C2 brickR11C2 brickR11C4 brickR11C4 brickR11C6 brickR11C6 brickR11C8 brickR11C8 brickR11C10 brickR11C10 brickR11C12 brickR11C12 brickR11C14 brickR11C14 brickR11C16 brickR11C16 brickR11C18"
+  "brickR12C1 brickR12C2 brickR12C2 brickR12C4 brickR12C5 brickR12C5 brickR12C7 brickR12C7 brickR12C9 brickR12C9 brickR12C11 brickR12C11 brickR12C13 brickR11C14 brickR11C14 brickR12C16 brickR12C17 brickR12C17"
+  "brickR13C1 brickR12C2 brickR12C2 brickR13C4 brickR12C5 brickR12C5 brickR13C7 brickR13C8 brickR13C8 brickR13C10 brickR12C11 brickR12C11 brickR13C13 brickR13C14 brickR13C14 brickR13C16 brickR13C16 brickR13C18"
+  "brickR14C1 brickR14C1 brickR14C3 brickR14C3 brickR14C5 brickR14C5 brickR14C7 brickR14C7 brickR14C9 brickR14C9 brickR14C11 brickR14C11 brickR14C13 brickR14C13 brickR14C15 brickR14C15 brickR14C17 brickR14C17"
+  "brickR15C1 brickR15C2 brickR15C2 brickR15C4 brickR15C4 brickR15C6 brickR15C6 brickR15C8 brickR15C8 brickR15C10 brickR15C11 brickR15C11 brickR15C13 brickR15C14 brickR15C14 brickR15C16 brickR15C16 brickR15C18"
+  "brickR16C1 brickR16C1 brickR16C3 brickR16C3 brickR16C5 brickR16C5 brickR16C7 brickR16C7 brickR16C9 brickR16C9 brickR15C11 brickR15C11 brickR16C13 brickR16C13 brickR16C15 brickR16C15 brickR16C17 brickR16C17"
+  "brickR17C1 brickR17C2 brickR17C2 brickR17C4 brickR17C4 brickR17C6 brickR17C6 brickR17C8 brickR17C8 brickR17C10 brickR17C10 brickR17C12 brickR17C12 brickR17C14 brickR17C14 brickR17C16 brickR17C16 brickR17C18"
+  "brickR18C1 brickR18C1 brickR18C3 brickR18C3 brickR18C5 brickR18C5 brickR18C7 brickR18C7 brickR18C9 brickR18C9 brickR18C11 brickR18C11 brickR18C13 brickR18C13 brickR18C15 brickR18C16 brickR18C16 brickR18C18"
+  "brickR19C1 brickR19C2 brickR19C2 brickR19C4 brickR19C4 brickR19C6 brickR19C6 brickR19C8 brickR18C9 brickR18C9 brickR18C11 brickR18C11 brickR19C13 brickR19C14 brickR19C14 brickR18C16 brickR18C16 brickR19C18"
+  "brickR20C1 brickR20C1 brickR20C3 brickR20C3 brickR20C5 brickR20C5 brickR20C7 brickR20C7 brickR20C9 brickR20C10 brickR20C10 brickR20C12 brickR20C13 brickR20C13 brickR20C15 brickR20C15 brickR20C17 brickR20C17"
+  "brickR21C1 brickR21C2 brickR21C2 brickR21C4 brickR21C4 brickR21C6 brickR21C7 brickR21C7 brickR21C9 brickR21C10 brickR21C10 brickR21C12 brickR21C12 brickR21C14 brickR21C14 brickR21C16 brickR21C16 brickR21C18"
+  "brickR22C1 brickR22C1 brickR22C3 brickR22C3 brickR22C5 brickR22C5 brickR21C7 brickR21C7 brickR22C9 brickR22C9 brickR22C11 brickR22C11 brickR22C13 brickR22C13 brickR22C15 brickR22C15 brickR22C17 brickR22C17"
+  "brickR23C1 brickR23C2 brickR23C2 brickR23C4 brickR23C4 brickR23C6 brickR23C6 brickR23C8 brickR23C8 brickR23C10 brickR23C10 brickR23C12 brickR23C12 brickR23C14 brickR23C14 brickR23C16 brickR23C16 brickR23C18"
   "brickR24C1 brickR24C1 brickR24C3 brickR24C3 brickR24C5 brickR24C5 brickR24C7 brickR24C7 brickR24C9 brickR24C9 brickR24C11 brickR24C11 brickR24C13 brickR24C13 brickR24C15 brickR24C15 brickR24C17 brickR24C17";
 }
 
@@ -534,7 +534,6 @@ body {
 .brickR24C17 { grid-area: brickR24C17; }
 .brickR24C18 { grid-area: brickR24C18; }
 
-
   @media (max-aspect-ratio: 4/3) {
   .parent {
 
@@ -558,18 +557,12 @@ body {
   */
 }
 
-#myPopup {
-  opacity: 1;
-  color: black;
-}
-
 /* The actual popup (appears on top) */
 .popup .popuptext {
   /*by changing this to visible it works every time but no animation - thoughts?*/
-  visibility: hidden;
+  visibility: visible;
   max-width: 400px;
-  background-color: black;
-  opacity: 1;
+  background-color: #555;
   color: #fff;
   text-align: center;
   border-radius: 6px;
