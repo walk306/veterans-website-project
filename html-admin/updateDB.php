@@ -37,6 +37,55 @@
 					$stmt->bindParam(4, $brickNumber, PDO::PARAM_INT, 3);
 					$stmt->execute();
 					break;
+				case "b":
+					$stmt = $conn->prepare("UPDATE b_brick_group SET firstName = ?, lastName = ?, brickDescription = ? WHERE brickNum = ?");
+					$stmt->bindParam(1, $firstName, PDO::PARAM_INT, 50);
+					$stmt->bindParam(2, $lastName, PDO::PARAM_INT, 50);
+					$stmt->bindParam(3, $brickDescription, PDO::PARAM_INT, 255);
+					$stmt->bindParam(4, $brickNumber, PDO::PARAM_INT, 3);
+					$stmt->execute();
+					break;
+				case "c":
+					$stmt = $conn->prepare("UPDATE c_brick_group SET firstName = ?, lastName = ?, brickDescription = ? WHERE brickNum = ?");
+					$stmt->bindParam(1, $firstName, PDO::PARAM_INT, 50);
+					$stmt->bindParam(2, $lastName, PDO::PARAM_INT, 50);
+					$stmt->bindParam(3, $brickDescription, PDO::PARAM_INT, 255);
+					$stmt->bindParam(4, $brickNumber, PDO::PARAM_INT, 3);
+					$stmt->execute();
+					break;
+				case "d":
+					$stmt = $conn->prepare("UPDATE d_brick_group SET firstName = ?, lastName = ?, brickDescription = ? WHERE brickNum = ?");
+					$stmt->bindParam(1, $firstName, PDO::PARAM_INT, 50);
+					$stmt->bindParam(2, $lastName, PDO::PARAM_INT, 50);
+					$stmt->bindParam(3, $brickDescription, PDO::PARAM_INT, 255);
+					$stmt->bindParam(4, $brickNumber, PDO::PARAM_INT, 3);
+					$stmt->execute();
+					break;
+				case "e":
+					$stmt = $conn->prepare("UPDATE e_brick_group SET firstName = ?, lastName = ?, brickDescription = ? WHERE brickNum = ?");
+					$stmt->bindParam(1, $firstName, PDO::PARAM_INT, 50);
+					$stmt->bindParam(2, $lastName, PDO::PARAM_INT, 50);
+					$stmt->bindParam(3, $brickDescription, PDO::PARAM_INT, 255);
+					$stmt->bindParam(4, $brickNumber, PDO::PARAM_INT, 3);
+					$stmt->execute();
+					break;
+				case "f":
+					$stmt = $conn->prepare("UPDATE f_brick_group SET firstName = ?, lastName = ?, brickDescription = ? WHERE brickNum = ?");
+					$stmt->bindParam(1, $firstName, PDO::PARAM_INT, 50);
+					$stmt->bindParam(2, $lastName, PDO::PARAM_INT, 50);
+					$stmt->bindParam(3, $brickDescription, PDO::PARAM_INT, 255);
+					$stmt->bindParam(4, $brickNumber, PDO::PARAM_INT, 3);
+					$stmt->execute();
+					break;
+				case "g":
+					$stmt = $conn->prepare("UPDATE g_brick_group SET firstName = ?, lastName = ?, brickDescription = ? WHERE brickNum = ?");
+					$stmt->bindParam(1, $firstName, PDO::PARAM_INT, 50);
+					$stmt->bindParam(2, $lastName, PDO::PARAM_INT, 50);
+					$stmt->bindParam(3, $brickDescription, PDO::PARAM_INT, 255);
+					$stmt->bindParam(4, $brickNumber, PDO::PARAM_INT, 3);
+					$stmt->execute();
+					break;
+		
 				// case "a":
 				// 	$stmt = $conn->prepare("SELECT firstName, lastName, brickDescription FROM a_brick_group WHERE brickNum = ?");
 				//   $stmt->bindParam(1, $brickNumber, PDO::PARAM_INT, 3);

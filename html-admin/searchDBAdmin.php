@@ -38,27 +38,27 @@
 				  break;
 
 				case "c":
-						$stmt = $conn->prepare("SELECT firstName, lastName, brickDescription	FROM c_brick_group WHERE brickNum = ?");
+						$stmt = $conn->prepare("SELECT firstName, lastName, brickDescription FROM c_brick_group WHERE brickNum = ?");
 					$stmt->bindParam(1, $brickNumber, PDO::PARAM_INT, 3);
 					$stmt->execute();
 					break;
 				case "d":
-					$stmt = $conn->prepare("SELECT firstName, lastName, brickDescription	FROM d_brick_group WHERE brickNum = ?");
+					$stmt = $conn->prepare("SELECT firstName, lastName, brickDescription FROM d_brick_group WHERE brickNum = ?");
 				$stmt->bindParam(1, $brickNumber, PDO::PARAM_INT, 3);
 				$stmt->execute();
 				break;
 				case "e":
-					$stmt = $conn->prepare("SELECT firstName, lastName, brickDescription	FROM e_brick_group WHERE brickNum = ?");
+					$stmt = $conn->prepare("SELECT firstName, lastName, brickDescription FROM e_brick_group WHERE brickNum = ?");
 				$stmt->bindParam(1, $brickNumber, PDO::PARAM_INT, 3);
 				$stmt->execute();
 				break;
 				case "f":
-					$stmt = $conn->prepare("SELECT firstName, lastName, brickDescription	FROM f_brick_group WHERE brickNum = ?");
+					$stmt = $conn->prepare("SELECT firstName, lastName, brickDescription FROM f_brick_group WHERE brickNum = ?");
 				$stmt->bindParam(1, $brickNumber, PDO::PARAM_INT, 3);
 				$stmt->execute();
 				break;
 				case "g":
-					$stmt = $conn->prepare("SELECT firstName, lastName, brickDescription	FROM g_brick_group WHERE brickNum = ?");
+					$stmt = $conn->prepare("SELECT firstName, lastName, brickDescription FROM g_brick_group WHERE brickNum = ?");
 				$stmt->bindParam(1, $brickNumber, PDO::PARAM_INT, 3);
 				$stmt->execute();
 				break;

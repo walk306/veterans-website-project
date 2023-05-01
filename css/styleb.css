@@ -980,14 +980,14 @@ body{
 .brickR21C41 { grid-area: brickR21C41; }
 .brickR21C42 { grid-area: brickR21C42; }
 
-/*@media (max-aspect-ratio: 1/2) {
+@media (max-aspect-ratio: 1/2) {
   .parent {
 
     width: 46vh;
     height: 92vh;
 
   }
-}/*
+}
 
 /* Popup container */
 .popup {
@@ -1006,13 +1006,13 @@ body{
 
 #myPopup {
   opacity: 1;
-  color: black;
+  color: white;
 }
 
 /* The actual popup (appears on top) */
 .popup .popuptext {
   /*by changing this to visible it works every time but no animation - thoughts?*/
-  visibility: hidden;
+  visibility: show;
   max-width: 400px;
   background-color: black;
   opacity: 1;

@@ -480,8 +480,8 @@ grid-template-areas:
   @media (max-aspect-ratio: 7/6) {
   .parent {
 
-    /*width: 98vw;
-    height: 84vw;*/
+    width: 98vw;
+    height: 84vw;
 
   }
   .brickStyle{
@@ -509,13 +509,13 @@ grid-template-areas:
 
 #myPopup {
   opacity: 1;
-  color: black;
+  color: white;
 }
 
 /* The actual popup (appears on top) */
 .popup .popuptext {
   /*by changing this to visible it works every time but no animation - thoughts?*/
-  visibility: hidden;
+  visibility: show;
   max-width: 400px;
   background-color: black;
   opacity: 1;

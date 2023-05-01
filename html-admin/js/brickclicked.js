@@ -105,6 +105,7 @@ function brickClicked(brick)
 				}
 			}
 			document.getElementById("myPopup").style.display = "block";
+			console.log('are we here?');
 		}
 	};
 
@@ -158,6 +159,7 @@ function updateBrick(brick)
 				
 
 			}
+			console.log('here!Q!!');
 			document.getElementById("myCoolerPopup").style.display = "block";
 			setTimeout(getRidOfIt, 3000);
 		}
