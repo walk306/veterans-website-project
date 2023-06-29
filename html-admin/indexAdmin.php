@@ -2,6 +2,18 @@
 <html lang="en">
 
 <head>
+  <?php
+      session_start();
+      if($_SESSION["loggedIn"] == true){
+          echo "Welcome to the Admin page!";
+      }
+      else{
+          echo $_SESSION["loggedIn"];
+          echo "<script> window.location.href='/veterans-website-project/adminLogin.html' </script>";
+          echo "Incorrect username or password :(";
+      }
+  ?>
+  
   <title>Veterans Memorial</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +26,6 @@
   <script src="js/searchbar.js"></script>
   <script src="js/brickclicked.js"></script>
   <script src="js/brickGroupPopulator.js"></script>
-
-
 
   <style>
     .fakeimg {
@@ -228,5 +238,7 @@
     </div>
   </div>
 </body>
-
 </html>
+<?php
+  exit;
+?>
