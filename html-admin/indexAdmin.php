@@ -131,7 +131,7 @@
           <!-- Row 5 -->
           <div class="brickStyle brickR5C1"></div>
           <div class="brickStyle brickR5C2">
-            <iframe src="brickgroupaAdmin.html" id="ba" onclick="resize_model()">
+            <iframe src="brickgroupaAdmin.php" id="ba" onclick="resize_model()">
             </iframe>
           </div>
           <div class="brickStyle brickR5C3"></div>
@@ -172,7 +172,7 @@
     <!-- Modal content -->
     <div class="modal-content">
       <span class="close" onclick="closeModalSpan()">&times;</span>
-      <iframe src="brickgroupaAdmin.html" id="ma">
+      <iframe src="brickgroupaAdmin.php" id="ma">
       </iframe>
     </div>
   </div>
