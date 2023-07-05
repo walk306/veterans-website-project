@@ -106,10 +106,12 @@
     catch(PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
-    global $newStyle;
     $newStyle = 0;
-    function isThisStyleNew($newStyle, $number){
-
+    function isThisStyleNew($number){
+      global $newStyle;
+      if ($result[$number] == $result[$number - 1]){
+        
+      }
     }
   ?>
   <script src="js/brickclicked.js"></script>
