@@ -53,16 +53,17 @@
         tickUp(1);
       }
     }
+    $idIndex = 0;
     function tickUp($placeholder){
       global $idIndex;
       if ($placeholder == 0){
-        $idIndex = 0;
+        $idIndex = $idIndex;
       }
       else{
         $idIndex += 1;
       }
     }
-    function idGen($unitId, $hasThisBrickStyleBeenUsed){
+    function idGen($unitId){//, $hasThisBrickStyleBeenUsed){
       try{
         $servernameagainagain = "localhost";
         $dbnameagainagain = "manchester_veterans_memorial_database";
@@ -76,13 +77,17 @@
         $teststmt->execute();
         $answerresult = $teststmt->fetchAll(PDO::FETCH_COLUMN);
         // var_dump($answerresult);
-        if ($hasThisBrickStyleBeenUsed == false){
-          if ($answerresult[$unitId] !== NULL){
-            $id = $answerresult[$unitId];
-            $id = "'" . "a" . $id . "'";
-            return $id;
+        //if ($hasThisBrickStyleBeenUsed == false){
+        if ($answerresult[$unitId] !== NULL){
+          $id = $answerresult[$unitId];
+          $id = strval($id);
+          while (strlen($id) < 3){
+            $id = "0" . $id;
           }
+          $id = "'" . "a" . $id . "'";
+          return $id;
         }
+        //}
       }
       // function isThisBrickMultiLines()
       catch(PDOException $e) {
@@ -107,12 +112,12 @@
         echo "Error: " . $e->getMessage();
     }
     $newStyle = 0;
-    function isThisStyleNew($number){
-      global $newStyle;
-      if ($result[$number] == $result[$number - 1]){
+    // function isThisStyleNew($number){
+    //   global $newStyle;
+    //   if ($result[$number] == $result[$number - 1]){
         
-      }
-    }
+    //   }
+    // }
   ?>
   <script src="js/brickclicked.js"></script>
 </head>
@@ -717,9 +722,404 @@
           <div class="parent">
             <?php tickUp(0); ?>
             <!-- Row 1 -->
-            <?php toCommentOrNot(isItANewBrick(0), 1); 
-                  echo('<div class="brickStyle ' . $result[0] . '" id=' . idGen(0, ) . 'onclick="brickClicked(' . idGen(0) . ')"></div>'); 
-                  toCommentOrNot(isItANewBrick(0), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(0), 1); echo('<div class="brickStyle ' . $result[0] . '" id=' . idGen(0) . 'onclick="brickClicked(' . idGen(0) . ')"></div>'); toCommentOrNot(isItANewBrick(0), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(1), 1); echo('<div class="brickStyle ' . $result[1] . '" id=' . idGen(1) . 'onclick="brickClicked(' . idGen(1) . ')"></div>'); toCommentOrNot(isItANewBrick(1), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(2), 1); echo('<div class="brickStyle ' . $result[2] . '" id=' . idGen(2) . 'onclick="brickClicked(' . idGen(2) . ')"></div>'); toCommentOrNot(isItANewBrick(2), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(3), 1); echo('<div class="brickStyle ' . $result[3] . '" id=' . idGen(3) . 'onclick="brickClicked(' . idGen(3) . ')"></div>'); toCommentOrNot(isItANewBrick(3), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(4), 1); echo('<div class="brickStyle ' . $result[4] . '" id=' . idGen(4) . 'onclick="brickClicked(' . idGen(4) . ')"></div>'); toCommentOrNot(isItANewBrick(4), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(5), 1); echo('<div class="brickStyle ' . $result[5] . '" id=' . idGen(5) . 'onclick="brickClicked(' . idGen(5) . ')"></div>'); toCommentOrNot(isItANewBrick(5), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(6), 1); echo('<div class="brickStyle ' . $result[6] . '" id=' . idGen(6) . 'onclick="brickClicked(' . idGen(6) . ')"></div>'); toCommentOrNot(isItANewBrick(6), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(7), 1); echo('<div class="brickStyle ' . $result[7] . '" id=' . idGen(7) . 'onclick="brickClicked(' . idGen(7) . ')"></div>'); toCommentOrNot(isItANewBrick(7), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(8), 1); echo('<div class="brickStyle ' . $result[8] . '" id=' . idGen(8) . 'onclick="brickClicked(' . idGen(8) . ')"></div>'); toCommentOrNot(isItANewBrick(8), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(9), 1); echo('<div class="brickStyle ' . $result[9] . '" id=' . idGen(9) . 'onclick="brickClicked(' . idGen(9) . ')"></div>'); toCommentOrNot(isItANewBrick(9), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(10), 1); echo('<div class="brickStyle ' . $result[10] . '" id=' . idGen(10) . 'onclick="brickClicked(' . idGen(10) . ')"></div>'); toCommentOrNot(isItANewBrick(10), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(11), 1); echo('<div class="brickStyle ' . $result[11] . '" id=' . idGen(11) . 'onclick="brickClicked(' . idGen(11) . ')"></div>'); toCommentOrNot(isItANewBrick(11), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(12), 1); echo('<div class="brickStyle ' . $result[12] . '" id=' . idGen(12) . 'onclick="brickClicked(' . idGen(12) . ')"></div>'); toCommentOrNot(isItANewBrick(12), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(13), 1); echo('<div class="brickStyle ' . $result[13] . '" id=' . idGen(13) . 'onclick="brickClicked(' . idGen(13) . ')"></div>'); toCommentOrNot(isItANewBrick(13), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(14), 1); echo('<div class="brickStyle ' . $result[14] . '" id=' . idGen(14) . 'onclick="brickClicked(' . idGen(14) . ')"></div>'); toCommentOrNot(isItANewBrick(14), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(15), 1); echo('<div class="brickStyle ' . $result[15] . '" id=' . idGen(15) . 'onclick="brickClicked(' . idGen(15) . ')"></div>'); toCommentOrNot(isItANewBrick(15), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(16), 1); echo('<div class="brickStyle ' . $result[16] . '" id=' . idGen(16) . 'onclick="brickClicked(' . idGen(16) . ')"></div>'); toCommentOrNot(isItANewBrick(16), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(17), 1); echo('<div class="brickStyle ' . $result[17] . '" id=' . idGen(17) . 'onclick="brickClicked(' . idGen(17) . ')"></div>'); toCommentOrNot(isItANewBrick(17), 2); ?>
+            <!-- Row 2 -->
+            <?php toCommentOrNot(isItANewBrick(18), 1); echo('<div class="brickStyle ' . $result[18] . '" id=' . idGen(18) . 'onclick="brickClicked(' . idGen(18) . ')"></div>'); toCommentOrNot(isItANewBrick(18), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(19), 1); echo('<div class="brickStyle ' . $result[19] . '" id=' . idGen(19) . 'onclick="brickClicked(' . idGen(19) . ')"></div>'); toCommentOrNot(isItANewBrick(19), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(20), 1); echo('<div class="brickStyle ' . $result[20] . '" id=' . idGen(20) . 'onclick="brickClicked(' . idGen(20) . ')"></div>'); toCommentOrNot(isItANewBrick(20), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(21), 1); echo('<div class="brickStyle ' . $result[21] . '" id=' . idGen(21) . 'onclick="brickClicked(' . idGen(21) . ')"></div>'); toCommentOrNot(isItANewBrick(21), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(22), 1); echo('<div class="brickStyle ' . $result[22] . '" id=' . idGen(22) . 'onclick="brickClicked(' . idGen(22) . ')"></div>'); toCommentOrNot(isItANewBrick(22), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(23), 1); echo('<div class="brickStyle ' . $result[23] . '" id=' . idGen(23) . 'onclick="brickClicked(' . idGen(23) . ')"></div>'); toCommentOrNot(isItANewBrick(23), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(24), 1); echo('<div class="brickStyle ' . $result[24] . '" id=' . idGen(24) . 'onclick="brickClicked(' . idGen(24) . ')"></div>'); toCommentOrNot(isItANewBrick(24), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(25), 1); echo('<div class="brickStyle ' . $result[25] . '" id=' . idGen(25) . 'onclick="brickClicked(' . idGen(25) . ')"></div>'); toCommentOrNot(isItANewBrick(25), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(26), 1); echo('<div class="brickStyle ' . $result[26] . '" id=' . idGen(26) . 'onclick="brickClicked(' . idGen(26) . ')"></div>'); toCommentOrNot(isItANewBrick(26), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(27), 1); echo('<div class="brickStyle ' . $result[27] . '" id=' . idGen(27) . 'onclick="brickClicked(' . idGen(27) . ')"></div>'); toCommentOrNot(isItANewBrick(27), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(28), 1); echo('<div class="brickStyle ' . $result[28] . '" id=' . idGen(28) . 'onclick="brickClicked(' . idGen(28) . ')"></div>'); toCommentOrNot(isItANewBrick(28), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(29), 1); echo('<div class="brickStyle ' . $result[29] . '" id=' . idGen(29) . 'onclick="brickClicked(' . idGen(29) . ')"></div>'); toCommentOrNot(isItANewBrick(29), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(30), 1); echo('<div class="brickStyle ' . $result[30] . '" id=' . idGen(30) . 'onclick="brickClicked(' . idGen(30) . ')"></div>'); toCommentOrNot(isItANewBrick(30), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(31), 1); echo('<div class="brickStyle ' . $result[31] . '" id=' . idGen(31) . 'onclick="brickClicked(' . idGen(31) . ')"></div>'); toCommentOrNot(isItANewBrick(31), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(32), 1); echo('<div class="brickStyle ' . $result[32] . '" id=' . idGen(32) . 'onclick="brickClicked(' . idGen(32) . ')"></div>'); toCommentOrNot(isItANewBrick(32), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(33), 1); echo('<div class="brickStyle ' . $result[33] . '" id=' . idGen(33) . 'onclick="brickClicked(' . idGen(33) . ')"></div>'); toCommentOrNot(isItANewBrick(33), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(34), 1); echo('<div class="brickStyle ' . $result[34] . '" id=' . idGen(34) . 'onclick="brickClicked(' . idGen(34) . ')"></div>'); toCommentOrNot(isItANewBrick(34), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(35), 1); echo('<div class="brickStyle ' . $result[35] . '" id=' . idGen(35) . 'onclick="brickClicked(' . idGen(35) . ')"></div>'); toCommentOrNot(isItANewBrick(35), 2); ?>
+            <!-- Row 3 -->
+            <?php toCommentOrNot(isItANewBrick(36), 1); echo('<div class="brickStyle ' . $result[36] . '" id=' . idGen(36) . 'onclick="brickClicked(' . idGen(36) . ')"></div>'); toCommentOrNot(isItANewBrick(36), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(37), 1); echo('<div class="brickStyle ' . $result[37] . '" id=' . idGen(37) . 'onclick="brickClicked(' . idGen(37) . ')"></div>'); toCommentOrNot(isItANewBrick(37), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(38), 1); echo('<div class="brickStyle ' . $result[38] . '" id=' . idGen(38) . 'onclick="brickClicked(' . idGen(38) . ')"></div>'); toCommentOrNot(isItANewBrick(38), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(39), 1); echo('<div class="brickStyle ' . $result[39] . '" id=' . idGen(39) . 'onclick="brickClicked(' . idGen(39) . ')"></div>'); toCommentOrNot(isItANewBrick(39), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(40), 1); echo('<div class="brickStyle ' . $result[40] . '" id=' . idGen(40) . 'onclick="brickClicked(' . idGen(40) . ')"></div>'); toCommentOrNot(isItANewBrick(40), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(41), 1); echo('<div class="brickStyle ' . $result[41] . '" id=' . idGen(41) . 'onclick="brickClicked(' . idGen(41) . ')"></div>'); toCommentOrNot(isItANewBrick(41), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(42), 1); echo('<div class="brickStyle ' . $result[42] . '" id=' . idGen(42) . 'onclick="brickClicked(' . idGen(42) . ')"></div>'); toCommentOrNot(isItANewBrick(42), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(43), 1); echo('<div class="brickStyle ' . $result[43] . '" id=' . idGen(43) . 'onclick="brickClicked(' . idGen(43) . ')"></div>'); toCommentOrNot(isItANewBrick(43), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(44), 1); echo('<div class="brickStyle ' . $result[44] . '" id=' . idGen(44) . 'onclick="brickClicked(' . idGen(44) . ')"></div>'); toCommentOrNot(isItANewBrick(44), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(45), 1); echo('<div class="brickStyle ' . $result[45] . '" id=' . idGen(45) . 'onclick="brickClicked(' . idGen(45) . ')"></div>'); toCommentOrNot(isItANewBrick(45), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(46), 1); echo('<div class="brickStyle ' . $result[46] . '" id=' . idGen(46) . 'onclick="brickClicked(' . idGen(46) . ')"></div>'); toCommentOrNot(isItANewBrick(46), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(47), 1); echo('<div class="brickStyle ' . $result[47] . '" id=' . idGen(47) . 'onclick="brickClicked(' . idGen(47) . ')"></div>'); toCommentOrNot(isItANewBrick(47), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(48), 1); echo('<div class="brickStyle ' . $result[48] . '" id=' . idGen(48) . 'onclick="brickClicked(' . idGen(48) . ')"></div>'); toCommentOrNot(isItANewBrick(48), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(49), 1); echo('<div class="brickStyle ' . $result[49] . '" id=' . idGen(49) . 'onclick="brickClicked(' . idGen(49) . ')"></div>'); toCommentOrNot(isItANewBrick(49), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(50), 1); echo('<div class="brickStyle ' . $result[50] . '" id=' . idGen(50) . 'onclick="brickClicked(' . idGen(50) . ')"></div>'); toCommentOrNot(isItANewBrick(50), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(51), 1); echo('<div class="brickStyle ' . $result[51] . '" id=' . idGen(51) . 'onclick="brickClicked(' . idGen(51) . ')"></div>'); toCommentOrNot(isItANewBrick(51), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(52), 1); echo('<div class="brickStyle ' . $result[52] . '" id=' . idGen(52) . 'onclick="brickClicked(' . idGen(52) . ')"></div>'); toCommentOrNot(isItANewBrick(52), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(53), 1); echo('<div class="brickStyle ' . $result[53] . '" id=' . idGen(53) . 'onclick="brickClicked(' . idGen(53) . ')"></div>'); toCommentOrNot(isItANewBrick(53), 2); ?>
+            <!-- Row 4 -->
+            <?php toCommentOrNot(isItANewBrick(54), 1); echo('<div class="brickStyle ' . $result[54] . '" id=' . idGen(54) . 'onclick="brickClicked(' . idGen(54) . ')"></div>'); toCommentOrNot(isItANewBrick(54), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(55), 1); echo('<div class="brickStyle ' . $result[55] . '" id=' . idGen(55) . 'onclick="brickClicked(' . idGen(55) . ')"></div>'); toCommentOrNot(isItANewBrick(55), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(56), 1); echo('<div class="brickStyle ' . $result[56] . '" id=' . idGen(56) . 'onclick="brickClicked(' . idGen(56) . ')"></div>'); toCommentOrNot(isItANewBrick(56), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(57), 1); echo('<div class="brickStyle ' . $result[57] . '" id=' . idGen(57) . 'onclick="brickClicked(' . idGen(57) . ')"></div>'); toCommentOrNot(isItANewBrick(57), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(58), 1); echo('<div class="brickStyle ' . $result[58] . '" id=' . idGen(58) . 'onclick="brickClicked(' . idGen(58) . ')"></div>'); toCommentOrNot(isItANewBrick(58), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(59), 1); echo('<div class="brickStyle ' . $result[59] . '" id=' . idGen(59) . 'onclick="brickClicked(' . idGen(59) . ')"></div>'); toCommentOrNot(isItANewBrick(59), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(60), 1); echo('<div class="brickStyle ' . $result[60] . '" id=' . idGen(60) . 'onclick="brickClicked(' . idGen(60) . ')"></div>'); toCommentOrNot(isItANewBrick(60), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(61), 1); echo('<div class="brickStyle ' . $result[61] . '" id=' . idGen(61) . 'onclick="brickClicked(' . idGen(61) . ')"></div>'); toCommentOrNot(isItANewBrick(61), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(62), 1); echo('<div class="brickStyle ' . $result[62] . '" id=' . idGen(62) . 'onclick="brickClicked(' . idGen(62) . ')"></div>'); toCommentOrNot(isItANewBrick(62), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(63), 1); echo('<div class="brickStyle ' . $result[63] . '" id=' . idGen(63) . 'onclick="brickClicked(' . idGen(63) . ')"></div>'); toCommentOrNot(isItANewBrick(63), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(64), 1); echo('<div class="brickStyle ' . $result[64] . '" id=' . idGen(64) . 'onclick="brickClicked(' . idGen(64) . ')"></div>'); toCommentOrNot(isItANewBrick(64), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(65), 1); echo('<div class="brickStyle ' . $result[65] . '" id=' . idGen(65) . 'onclick="brickClicked(' . idGen(65) . ')"></div>'); toCommentOrNot(isItANewBrick(65), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(66), 1); echo('<div class="brickStyle ' . $result[66] . '" id=' . idGen(66) . 'onclick="brickClicked(' . idGen(66) . ')"></div>'); toCommentOrNot(isItANewBrick(66), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(67), 1); echo('<div class="brickStyle ' . $result[67] . '" id=' . idGen(67) . 'onclick="brickClicked(' . idGen(67) . ')"></div>'); toCommentOrNot(isItANewBrick(67), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(68), 1); echo('<div class="brickStyle ' . $result[68] . '" id=' . idGen(68) . 'onclick="brickClicked(' . idGen(68) . ')"></div>'); toCommentOrNot(isItANewBrick(68), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(69), 1); echo('<div class="brickStyle ' . $result[69] . '" id=' . idGen(69) . 'onclick="brickClicked(' . idGen(69) . ')"></div>'); toCommentOrNot(isItANewBrick(69), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(70), 1); echo('<div class="brickStyle ' . $result[70] . '" id=' . idGen(70) . 'onclick="brickClicked(' . idGen(70) . ')"></div>'); toCommentOrNot(isItANewBrick(70), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(71), 1); echo('<div class="brickStyle ' . $result[71] . '" id=' . idGen(71) . 'onclick="brickClicked(' . idGen(71) . ')"></div>'); toCommentOrNot(isItANewBrick(71), 2); ?>
+            <!-- Row 5 -->
+            <?php toCommentOrNot(isItANewBrick(72), 1); echo('<div class="brickStyle ' . $result[72] . '" id=' . idGen(72) . 'onclick="brickClicked(' . idGen(72) . ')"></div>'); toCommentOrNot(isItANewBrick(72), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(73), 1); echo('<div class="brickStyle ' . $result[73] . '" id=' . idGen(73) . 'onclick="brickClicked(' . idGen(73) . ')"></div>'); toCommentOrNot(isItANewBrick(73), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(74), 1); echo('<div class="brickStyle ' . $result[74] . '" id=' . idGen(74) . 'onclick="brickClicked(' . idGen(74) . ')"></div>'); toCommentOrNot(isItANewBrick(74), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(75), 1); echo('<div class="brickStyle ' . $result[75] . '" id=' . idGen(75) . 'onclick="brickClicked(' . idGen(75) . ')"></div>'); toCommentOrNot(isItANewBrick(75), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(76), 1); echo('<div class="brickStyle ' . $result[76] . '" id=' . idGen(76) . 'onclick="brickClicked(' . idGen(76) . ')"></div>'); toCommentOrNot(isItANewBrick(76), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(77), 1); echo('<div class="brickStyle ' . $result[77] . '" id=' . idGen(77) . 'onclick="brickClicked(' . idGen(77) . ')"></div>'); toCommentOrNot(isItANewBrick(77), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(78), 1); echo('<div class="brickStyle ' . $result[78] . '" id=' . idGen(78) . 'onclick="brickClicked(' . idGen(78) . ')"></div>'); toCommentOrNot(isItANewBrick(78), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(79), 1); echo('<div class="brickStyle ' . $result[79] . '" id=' . idGen(79) . 'onclick="brickClicked(' . idGen(79) . ')"></div>'); toCommentOrNot(isItANewBrick(79), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(80), 1); echo('<div class="brickStyle ' . $result[80] . '" id=' . idGen(80) . 'onclick="brickClicked(' . idGen(80) . ')"></div>'); toCommentOrNot(isItANewBrick(80), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(81), 1); echo('<div class="brickStyle ' . $result[81] . '" id=' . idGen(81) . 'onclick="brickClicked(' . idGen(81) . ')"></div>'); toCommentOrNot(isItANewBrick(81), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(82), 1); echo('<div class="brickStyle ' . $result[82] . '" id=' . idGen(82) . 'onclick="brickClicked(' . idGen(82) . ')"></div>'); toCommentOrNot(isItANewBrick(82), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(83), 1); echo('<div class="brickStyle ' . $result[83] . '" id=' . idGen(83) . 'onclick="brickClicked(' . idGen(83) . ')"></div>'); toCommentOrNot(isItANewBrick(83), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(84), 1); echo('<div class="brickStyle ' . $result[84] . '" id=' . idGen(84) . 'onclick="brickClicked(' . idGen(84) . ')"></div>'); toCommentOrNot(isItANewBrick(84), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(85), 1); echo('<div class="brickStyle ' . $result[85] . '" id=' . idGen(85) . 'onclick="brickClicked(' . idGen(85) . ')"></div>'); toCommentOrNot(isItANewBrick(85), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(86), 1); echo('<div class="brickStyle ' . $result[86] . '" id=' . idGen(86) . 'onclick="brickClicked(' . idGen(86) . ')"></div>'); toCommentOrNot(isItANewBrick(86), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(87), 1); echo('<div class="brickStyle ' . $result[87] . '" id=' . idGen(87) . 'onclick="brickClicked(' . idGen(87) . ')"></div>'); toCommentOrNot(isItANewBrick(87), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(88), 1); echo('<div class="brickStyle ' . $result[88] . '" id=' . idGen(88) . 'onclick="brickClicked(' . idGen(88) . ')"></div>'); toCommentOrNot(isItANewBrick(88), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(89), 1); echo('<div class="brickStyle ' . $result[89] . '" id=' . idGen(89) . 'onclick="brickClicked(' . idGen(89) . ')"></div>'); toCommentOrNot(isItANewBrick(89), 2); ?>
+            <!-- Row 6 -->
+            <?php toCommentOrNot(isItANewBrick(90), 1); echo('<div class="brickStyle ' . $result[90] . '" id=' . idGen(90) . 'onclick="brickClicked(' . idGen(90) . ')"></div>'); toCommentOrNot(isItANewBrick(90), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(91), 1); echo('<div class="brickStyle ' . $result[91] . '" id=' . idGen(91) . 'onclick="brickClicked(' . idGen(91) . ')"></div>'); toCommentOrNot(isItANewBrick(91), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(92), 1); echo('<div class="brickStyle ' . $result[92] . '" id=' . idGen(92) . 'onclick="brickClicked(' . idGen(92) . ')"></div>'); toCommentOrNot(isItANewBrick(92), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(93), 1); echo('<div class="brickStyle ' . $result[93] . '" id=' . idGen(93) . 'onclick="brickClicked(' . idGen(93) . ')"></div>'); toCommentOrNot(isItANewBrick(93), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(94), 1); echo('<div class="brickStyle ' . $result[94] . '" id=' . idGen(94) . 'onclick="brickClicked(' . idGen(94) . ')"></div>'); toCommentOrNot(isItANewBrick(94), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(95), 1); echo('<div class="brickStyle ' . $result[95] . '" id=' . idGen(95) . 'onclick="brickClicked(' . idGen(95) . ')"></div>'); toCommentOrNot(isItANewBrick(95), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(96), 1); echo('<div class="brickStyle ' . $result[96] . '" id=' . idGen(96) . 'onclick="brickClicked(' . idGen(96) . ')"></div>'); toCommentOrNot(isItANewBrick(96), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(97), 1); echo('<div class="brickStyle ' . $result[97] . '" id=' . idGen(97) . 'onclick="brickClicked(' . idGen(97) . ')"></div>'); toCommentOrNot(isItANewBrick(97), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(98), 1); echo('<div class="brickStyle ' . $result[98] . '" id=' . idGen(98) . 'onclick="brickClicked(' . idGen(98) . ')"></div>'); toCommentOrNot(isItANewBrick(98), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(99), 1); echo('<div class="brickStyle ' . $result[99] . '" id=' . idGen(99) . 'onclick="brickClicked(' . idGen(99) . ')"></div>'); toCommentOrNot(isItANewBrick(99), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(100), 1); echo('<div class="brickStyle ' . $result[100] . '" id=' . idGen(100) . 'onclick="brickClicked(' . idGen(100) . ')"></div>'); toCommentOrNot(isItANewBrick(100), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(101), 1); echo('<div class="brickStyle ' . $result[101] . '" id=' . idGen(101) . 'onclick="brickClicked(' . idGen(101) . ')"></div>'); toCommentOrNot(isItANewBrick(101), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(102), 1); echo('<div class="brickStyle ' . $result[102] . '" id=' . idGen(102) . 'onclick="brickClicked(' . idGen(102) . ')"></div>'); toCommentOrNot(isItANewBrick(102), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(103), 1); echo('<div class="brickStyle ' . $result[103] . '" id=' . idGen(103) . 'onclick="brickClicked(' . idGen(103) . ')"></div>'); toCommentOrNot(isItANewBrick(103), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(104), 1); echo('<div class="brickStyle ' . $result[104] . '" id=' . idGen(104) . 'onclick="brickClicked(' . idGen(104) . ')"></div>'); toCommentOrNot(isItANewBrick(104), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(105), 1); echo('<div class="brickStyle ' . $result[105] . '" id=' . idGen(105) . 'onclick="brickClicked(' . idGen(105) . ')"></div>'); toCommentOrNot(isItANewBrick(105), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(106), 1); echo('<div class="brickStyle ' . $result[106] . '" id=' . idGen(106) . 'onclick="brickClicked(' . idGen(106) . ')"></div>'); toCommentOrNot(isItANewBrick(106), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(107), 1); echo('<div class="brickStyle ' . $result[107] . '" id=' . idGen(107) . 'onclick="brickClicked(' . idGen(107) . ')"></div>'); toCommentOrNot(isItANewBrick(107), 2); ?>
+            <!-- Row 7 -->
+            <?php toCommentOrNot(isItANewBrick(108), 1); echo('<div class="brickStyle ' . $result[108] . '" id=' . idGen(108) . 'onclick="brickClicked(' . idGen(108) . ')"></div>'); toCommentOrNot(isItANewBrick(108), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(109), 1); echo('<div class="brickStyle ' . $result[109] . '" id=' . idGen(109) . 'onclick="brickClicked(' . idGen(109) . ')"></div>'); toCommentOrNot(isItANewBrick(109), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(110), 1); echo('<div class="brickStyle ' . $result[110] . '" id=' . idGen(110) . 'onclick="brickClicked(' . idGen(110) . ')"></div>'); toCommentOrNot(isItANewBrick(110), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(111), 1); echo('<div class="brickStyle ' . $result[111] . '" id=' . idGen(111) . 'onclick="brickClicked(' . idGen(111) . ')"></div>'); toCommentOrNot(isItANewBrick(111), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(112), 1); echo('<div class="brickStyle ' . $result[112] . '" id=' . idGen(112) . 'onclick="brickClicked(' . idGen(112) . ')"></div>'); toCommentOrNot(isItANewBrick(112), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(113), 1); echo('<div class="brickStyle ' . $result[113] . '" id=' . idGen(113) . 'onclick="brickClicked(' . idGen(113) . ')"></div>'); toCommentOrNot(isItANewBrick(113), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(114), 1); echo('<div class="brickStyle ' . $result[114] . '" id=' . idGen(114) . 'onclick="brickClicked(' . idGen(114) . ')"></div>'); toCommentOrNot(isItANewBrick(114), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(115), 1); echo('<div class="brickStyle ' . $result[115] . '" id=' . idGen(115) . 'onclick="brickClicked(' . idGen(115) . ')"></div>'); toCommentOrNot(isItANewBrick(115), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(116), 1); echo('<div class="brickStyle ' . $result[116] . '" id=' . idGen(116) . 'onclick="brickClicked(' . idGen(116) . ')"></div>'); toCommentOrNot(isItANewBrick(116), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(117), 1); echo('<div class="brickStyle ' . $result[117] . '" id=' . idGen(117) . 'onclick="brickClicked(' . idGen(117) . ')"></div>'); toCommentOrNot(isItANewBrick(117), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(118), 1); echo('<div class="brickStyle ' . $result[118] . '" id=' . idGen(118) . 'onclick="brickClicked(' . idGen(118) . ')"></div>'); toCommentOrNot(isItANewBrick(118), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(119), 1); echo('<div class="brickStyle ' . $result[119] . '" id=' . idGen(119) . 'onclick="brickClicked(' . idGen(119) . ')"></div>'); toCommentOrNot(isItANewBrick(119), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(120), 1); echo('<div class="brickStyle ' . $result[120] . '" id=' . idGen(120) . 'onclick="brickClicked(' . idGen(120) . ')"></div>'); toCommentOrNot(isItANewBrick(120), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(121), 1); echo('<div class="brickStyle ' . $result[121] . '" id=' . idGen(121) . 'onclick="brickClicked(' . idGen(121) . ')"></div>'); toCommentOrNot(isItANewBrick(121), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(122), 1); echo('<div class="brickStyle ' . $result[122] . '" id=' . idGen(122) . 'onclick="brickClicked(' . idGen(122) . ')"></div>'); toCommentOrNot(isItANewBrick(122), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(123), 1); echo('<div class="brickStyle ' . $result[123] . '" id=' . idGen(123) . 'onclick="brickClicked(' . idGen(123) . ')"></div>'); toCommentOrNot(isItANewBrick(123), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(124), 1); echo('<div class="brickStyle ' . $result[124] . '" id=' . idGen(124) . 'onclick="brickClicked(' . idGen(124) . ')"></div>'); toCommentOrNot(isItANewBrick(124), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(125), 1); echo('<div class="brickStyle ' . $result[125] . '" id=' . idGen(125) . 'onclick="brickClicked(' . idGen(125) . ')"></div>'); toCommentOrNot(isItANewBrick(125), 2); ?>
+            <!-- Row 8 -->
+            <?php toCommentOrNot(isItANewBrick(126), 1); echo('<div class="brickStyle ' . $result[126] . '" id=' . idGen(126) . 'onclick="brickClicked(' . idGen(126) . ')"></div>'); toCommentOrNot(isItANewBrick(126), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(127), 1); echo('<div class="brickStyle ' . $result[127] . '" id=' . idGen(127) . 'onclick="brickClicked(' . idGen(127) . ')"></div>'); toCommentOrNot(isItANewBrick(127), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(128), 1); echo('<div class="brickStyle ' . $result[128] . '" id=' . idGen(128) . 'onclick="brickClicked(' . idGen(128) . ')"></div>'); toCommentOrNot(isItANewBrick(128), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(129), 1); echo('<div class="brickStyle ' . $result[129] . '" id=' . idGen(129) . 'onclick="brickClicked(' . idGen(129) . ')"></div>'); toCommentOrNot(isItANewBrick(129), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(130), 1); echo('<div class="brickStyle ' . $result[130] . '" id=' . idGen(130) . 'onclick="brickClicked(' . idGen(130) . ')"></div>'); toCommentOrNot(isItANewBrick(130), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(131), 1); echo('<div class="brickStyle ' . $result[131] . '" id=' . idGen(131) . 'onclick="brickClicked(' . idGen(131) . ')"></div>'); toCommentOrNot(isItANewBrick(131), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(132), 1); echo('<div class="brickStyle ' . $result[132] . '" id=' . idGen(132) . 'onclick="brickClicked(' . idGen(132) . ')"></div>'); toCommentOrNot(isItANewBrick(132), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(133), 1); echo('<div class="brickStyle ' . $result[133] . '" id=' . idGen(133) . 'onclick="brickClicked(' . idGen(133) . ')"></div>'); toCommentOrNot(isItANewBrick(133), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(134), 1); echo('<div class="brickStyle ' . $result[134] . '" id=' . idGen(134) . 'onclick="brickClicked(' . idGen(134) . ')"></div>'); toCommentOrNot(isItANewBrick(134), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(135), 1); echo('<div class="brickStyle ' . $result[135] . '" id=' . idGen(135) . 'onclick="brickClicked(' . idGen(135) . ')"></div>'); toCommentOrNot(isItANewBrick(135), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(136), 1); echo('<div class="brickStyle ' . $result[136] . '" id=' . idGen(136) . 'onclick="brickClicked(' . idGen(136) . ')"></div>'); toCommentOrNot(isItANewBrick(136), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(137), 1); echo('<div class="brickStyle ' . $result[137] . '" id=' . idGen(137) . 'onclick="brickClicked(' . idGen(137) . ')"></div>'); toCommentOrNot(isItANewBrick(137), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(138), 1); echo('<div class="brickStyle ' . $result[138] . '" id=' . idGen(138) . 'onclick="brickClicked(' . idGen(138) . ')"></div>'); toCommentOrNot(isItANewBrick(138), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(139), 1); echo('<div class="brickStyle ' . $result[139] . '" id=' . idGen(139) . 'onclick="brickClicked(' . idGen(139) . ')"></div>'); toCommentOrNot(isItANewBrick(139), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(140), 1); echo('<div class="brickStyle ' . $result[140] . '" id=' . idGen(140) . 'onclick="brickClicked(' . idGen(140) . ')"></div>'); toCommentOrNot(isItANewBrick(140), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(141), 1); echo('<div class="brickStyle ' . $result[141] . '" id=' . idGen(141) . 'onclick="brickClicked(' . idGen(141) . ')"></div>'); toCommentOrNot(isItANewBrick(141), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(142), 1); echo('<div class="brickStyle ' . $result[142] . '" id=' . idGen(142) . 'onclick="brickClicked(' . idGen(142) . ')"></div>'); toCommentOrNot(isItANewBrick(142), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(143), 1); echo('<div class="brickStyle ' . $result[143] . '" id=' . idGen(143) . 'onclick="brickClicked(' . idGen(143) . ')"></div>'); toCommentOrNot(isItANewBrick(143), 2); ?>
+            <!-- Row 9 -->
+            <?php toCommentOrNot(isItANewBrick(144), 1); echo('<div class="brickStyle ' . $result[144] . '" id=' . idGen(144) . 'onclick="brickClicked(' . idGen(144) . ')"></div>'); toCommentOrNot(isItANewBrick(144), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(145), 1); echo('<div class="brickStyle ' . $result[145] . '" id=' . idGen(145) . 'onclick="brickClicked(' . idGen(145) . ')"></div>'); toCommentOrNot(isItANewBrick(145), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(146), 1); echo('<div class="brickStyle ' . $result[146] . '" id=' . idGen(146) . 'onclick="brickClicked(' . idGen(146) . ')"></div>'); toCommentOrNot(isItANewBrick(146), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(147), 1); echo('<div class="brickStyle ' . $result[147] . '" id=' . idGen(147) . 'onclick="brickClicked(' . idGen(147) . ')"></div>'); toCommentOrNot(isItANewBrick(147), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(148), 1); echo('<div class="brickStyle ' . $result[148] . '" id=' . idGen(148) . 'onclick="brickClicked(' . idGen(148) . ')"></div>'); toCommentOrNot(isItANewBrick(148), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(149), 1); echo('<div class="brickStyle ' . $result[149] . '" id=' . idGen(149) . 'onclick="brickClicked(' . idGen(149) . ')"></div>'); toCommentOrNot(isItANewBrick(149), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(150), 1); echo('<div class="brickStyle ' . $result[150] . '" id=' . idGen(150) . 'onclick="brickClicked(' . idGen(150) . ')"></div>'); toCommentOrNot(isItANewBrick(150), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(151), 1); echo('<div class="brickStyle ' . $result[151] . '" id=' . idGen(151) . 'onclick="brickClicked(' . idGen(151) . ')"></div>'); toCommentOrNot(isItANewBrick(151), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(152), 1); echo('<div class="brickStyle ' . $result[152] . '" id=' . idGen(152) . 'onclick="brickClicked(' . idGen(152) . ')"></div>'); toCommentOrNot(isItANewBrick(152), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(153), 1); echo('<div class="brickStyle ' . $result[153] . '" id=' . idGen(153) . 'onclick="brickClicked(' . idGen(153) . ')"></div>'); toCommentOrNot(isItANewBrick(153), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(154), 1); echo('<div class="brickStyle ' . $result[154] . '" id=' . idGen(154) . 'onclick="brickClicked(' . idGen(154) . ')"></div>'); toCommentOrNot(isItANewBrick(154), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(155), 1); echo('<div class="brickStyle ' . $result[155] . '" id=' . idGen(155) . 'onclick="brickClicked(' . idGen(155) . ')"></div>'); toCommentOrNot(isItANewBrick(155), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(156), 1); echo('<div class="brickStyle ' . $result[156] . '" id=' . idGen(156) . 'onclick="brickClicked(' . idGen(156) . ')"></div>'); toCommentOrNot(isItANewBrick(156), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(157), 1); echo('<div class="brickStyle ' . $result[157] . '" id=' . idGen(157) . 'onclick="brickClicked(' . idGen(157) . ')"></div>'); toCommentOrNot(isItANewBrick(157), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(158), 1); echo('<div class="brickStyle ' . $result[158] . '" id=' . idGen(158) . 'onclick="brickClicked(' . idGen(158) . ')"></div>'); toCommentOrNot(isItANewBrick(158), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(159), 1); echo('<div class="brickStyle ' . $result[159] . '" id=' . idGen(159) . 'onclick="brickClicked(' . idGen(159) . ')"></div>'); toCommentOrNot(isItANewBrick(159), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(160), 1); echo('<div class="brickStyle ' . $result[160] . '" id=' . idGen(160) . 'onclick="brickClicked(' . idGen(160) . ')"></div>'); toCommentOrNot(isItANewBrick(160), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(161), 1); echo('<div class="brickStyle ' . $result[161] . '" id=' . idGen(161) . 'onclick="brickClicked(' . idGen(161) . ')"></div>'); toCommentOrNot(isItANewBrick(161), 2); ?>
+            <!-- Row 10 -->
+            <?php toCommentOrNot(isItANewBrick(162), 1); echo('<div class="brickStyle ' . $result[162] . '" id=' . idGen(162) . 'onclick="brickClicked(' . idGen(162) . ')"></div>'); toCommentOrNot(isItANewBrick(162), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(163), 1); echo('<div class="brickStyle ' . $result[163] . '" id=' . idGen(163) . 'onclick="brickClicked(' . idGen(163) . ')"></div>'); toCommentOrNot(isItANewBrick(163), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(164), 1); echo('<div class="brickStyle ' . $result[164] . '" id=' . idGen(164) . 'onclick="brickClicked(' . idGen(164) . ')"></div>'); toCommentOrNot(isItANewBrick(164), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(165), 1); echo('<div class="brickStyle ' . $result[165] . '" id=' . idGen(165) . 'onclick="brickClicked(' . idGen(165) . ')"></div>'); toCommentOrNot(isItANewBrick(165), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(166), 1); echo('<div class="brickStyle ' . $result[166] . '" id=' . idGen(166) . 'onclick="brickClicked(' . idGen(166) . ')"></div>'); toCommentOrNot(isItANewBrick(166), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(167), 1); echo('<div class="brickStyle ' . $result[167] . '" id=' . idGen(167) . 'onclick="brickClicked(' . idGen(167) . ')"></div>'); toCommentOrNot(isItANewBrick(167), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(168), 1); echo('<div class="brickStyle ' . $result[168] . '" id=' . idGen(168) . 'onclick="brickClicked(' . idGen(168) . ')"></div>'); toCommentOrNot(isItANewBrick(168), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(169), 1); echo('<div class="brickStyle ' . $result[169] . '" id=' . idGen(169) . 'onclick="brickClicked(' . idGen(169) . ')"></div>'); toCommentOrNot(isItANewBrick(169), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(170), 1); echo('<div class="brickStyle ' . $result[170] . '" id=' . idGen(170) . 'onclick="brickClicked(' . idGen(170) . ')"></div>'); toCommentOrNot(isItANewBrick(170), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(171), 1); echo('<div class="brickStyle ' . $result[171] . '" id=' . idGen(171) . 'onclick="brickClicked(' . idGen(171) . ')"></div>'); toCommentOrNot(isItANewBrick(171), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(172), 1); echo('<div class="brickStyle ' . $result[172] . '" id=' . idGen(172) . 'onclick="brickClicked(' . idGen(172) . ')"></div>'); toCommentOrNot(isItANewBrick(172), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(173), 1); echo('<div class="brickStyle ' . $result[173] . '" id=' . idGen(173) . 'onclick="brickClicked(' . idGen(173) . ')"></div>'); toCommentOrNot(isItANewBrick(173), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(174), 1); echo('<div class="brickStyle ' . $result[174] . '" id=' . idGen(174) . 'onclick="brickClicked(' . idGen(174) . ')"></div>'); toCommentOrNot(isItANewBrick(174), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(175), 1); echo('<div class="brickStyle ' . $result[175] . '" id=' . idGen(175) . 'onclick="brickClicked(' . idGen(175) . ')"></div>'); toCommentOrNot(isItANewBrick(175), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(176), 1); echo('<div class="brickStyle ' . $result[176] . '" id=' . idGen(176) . 'onclick="brickClicked(' . idGen(176) . ')"></div>'); toCommentOrNot(isItANewBrick(176), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(177), 1); echo('<div class="brickStyle ' . $result[177] . '" id=' . idGen(177) . 'onclick="brickClicked(' . idGen(177) . ')"></div>'); toCommentOrNot(isItANewBrick(177), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(178), 1); echo('<div class="brickStyle ' . $result[178] . '" id=' . idGen(178) . 'onclick="brickClicked(' . idGen(178) . ')"></div>'); toCommentOrNot(isItANewBrick(178), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(179), 1); echo('<div class="brickStyle ' . $result[179] . '" id=' . idGen(179) . 'onclick="brickClicked(' . idGen(179) . ')"></div>'); toCommentOrNot(isItANewBrick(179), 2); ?>
+            <!-- Row 11 -->
+            <?php toCommentOrNot(isItANewBrick(180), 1); echo('<div class="brickStyle ' . $result[180] . '" id=' . idGen(180) . 'onclick="brickClicked(' . idGen(180) . ')"></div>'); toCommentOrNot(isItANewBrick(180), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(181), 1); echo('<div class="brickStyle ' . $result[181] . '" id=' . idGen(181) . 'onclick="brickClicked(' . idGen(181) . ')"></div>'); toCommentOrNot(isItANewBrick(181), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(182), 1); echo('<div class="brickStyle ' . $result[182] . '" id=' . idGen(182) . 'onclick="brickClicked(' . idGen(182) . ')"></div>'); toCommentOrNot(isItANewBrick(182), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(183), 1); echo('<div class="brickStyle ' . $result[183] . '" id=' . idGen(183) . 'onclick="brickClicked(' . idGen(183) . ')"></div>'); toCommentOrNot(isItANewBrick(183), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(184), 1); echo('<div class="brickStyle ' . $result[184] . '" id=' . idGen(184) . 'onclick="brickClicked(' . idGen(184) . ')"></div>'); toCommentOrNot(isItANewBrick(184), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(185), 1); echo('<div class="brickStyle ' . $result[185] . '" id=' . idGen(185) . 'onclick="brickClicked(' . idGen(185) . ')"></div>'); toCommentOrNot(isItANewBrick(185), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(186), 1); echo('<div class="brickStyle ' . $result[186] . '" id=' . idGen(186) . 'onclick="brickClicked(' . idGen(186) . ')"></div>'); toCommentOrNot(isItANewBrick(186), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(187), 1); echo('<div class="brickStyle ' . $result[187] . '" id=' . idGen(187) . 'onclick="brickClicked(' . idGen(187) . ')"></div>'); toCommentOrNot(isItANewBrick(187), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(188), 1); echo('<div class="brickStyle ' . $result[188] . '" id=' . idGen(188) . 'onclick="brickClicked(' . idGen(188) . ')"></div>'); toCommentOrNot(isItANewBrick(188), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(189), 1); echo('<div class="brickStyle ' . $result[189] . '" id=' . idGen(189) . 'onclick="brickClicked(' . idGen(189) . ')"></div>'); toCommentOrNot(isItANewBrick(189), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(190), 1); echo('<div class="brickStyle ' . $result[190] . '" id=' . idGen(190) . 'onclick="brickClicked(' . idGen(190) . ')"></div>'); toCommentOrNot(isItANewBrick(190), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(191), 1); echo('<div class="brickStyle ' . $result[191] . '" id=' . idGen(191) . 'onclick="brickClicked(' . idGen(191) . ')"></div>'); toCommentOrNot(isItANewBrick(191), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(192), 1); echo('<div class="brickStyle ' . $result[192] . '" id=' . idGen(192) . 'onclick="brickClicked(' . idGen(192) . ')"></div>'); toCommentOrNot(isItANewBrick(192), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(193), 1); echo('<div class="brickStyle ' . $result[193] . '" id=' . idGen(193) . 'onclick="brickClicked(' . idGen(193) . ')"></div>'); toCommentOrNot(isItANewBrick(193), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(194), 1); echo('<div class="brickStyle ' . $result[194] . '" id=' . idGen(194) . 'onclick="brickClicked(' . idGen(194) . ')"></div>'); toCommentOrNot(isItANewBrick(194), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(195), 1); echo('<div class="brickStyle ' . $result[195] . '" id=' . idGen(195) . 'onclick="brickClicked(' . idGen(195) . ')"></div>'); toCommentOrNot(isItANewBrick(195), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(196), 1); echo('<div class="brickStyle ' . $result[196] . '" id=' . idGen(196) . 'onclick="brickClicked(' . idGen(196) . ')"></div>'); toCommentOrNot(isItANewBrick(196), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(197), 1); echo('<div class="brickStyle ' . $result[197] . '" id=' . idGen(197) . 'onclick="brickClicked(' . idGen(197) . ')"></div>'); toCommentOrNot(isItANewBrick(197), 2); ?>
+            <!-- Row 12 -->
+            <?php toCommentOrNot(isItANewBrick(198), 1); echo('<div class="brickStyle ' . $result[198] . '" id=' . idGen(198) . 'onclick="brickClicked(' . idGen(198) . ')"></div>'); toCommentOrNot(isItANewBrick(198), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(199), 1); echo('<div class="brickStyle ' . $result[199] . '" id=' . idGen(199) . 'onclick="brickClicked(' . idGen(199) . ')"></div>'); toCommentOrNot(isItANewBrick(199), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(200), 1); echo('<div class="brickStyle ' . $result[200] . '" id=' . idGen(200) . 'onclick="brickClicked(' . idGen(200) . ')"></div>'); toCommentOrNot(isItANewBrick(200), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(201), 1); echo('<div class="brickStyle ' . $result[201] . '" id=' . idGen(201) . 'onclick="brickClicked(' . idGen(201) . ')"></div>'); toCommentOrNot(isItANewBrick(201), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(202), 1); echo('<div class="brickStyle ' . $result[202] . '" id=' . idGen(202) . 'onclick="brickClicked(' . idGen(202) . ')"></div>'); toCommentOrNot(isItANewBrick(202), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(203), 1); echo('<div class="brickStyle ' . $result[203] . '" id=' . idGen(203) . 'onclick="brickClicked(' . idGen(203) . ')"></div>'); toCommentOrNot(isItANewBrick(203), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(204), 1); echo('<div class="brickStyle ' . $result[204] . '" id=' . idGen(204) . 'onclick="brickClicked(' . idGen(204) . ')"></div>'); toCommentOrNot(isItANewBrick(204), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(205), 1); echo('<div class="brickStyle ' . $result[205] . '" id=' . idGen(205) . 'onclick="brickClicked(' . idGen(205) . ')"></div>'); toCommentOrNot(isItANewBrick(205), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(206), 1); echo('<div class="brickStyle ' . $result[206] . '" id=' . idGen(206) . 'onclick="brickClicked(' . idGen(206) . ')"></div>'); toCommentOrNot(isItANewBrick(206), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(207), 1); echo('<div class="brickStyle ' . $result[207] . '" id=' . idGen(207) . 'onclick="brickClicked(' . idGen(207) . ')"></div>'); toCommentOrNot(isItANewBrick(207), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(208), 1); echo('<div class="brickStyle ' . $result[208] . '" id=' . idGen(208) . 'onclick="brickClicked(' . idGen(208) . ')"></div>'); toCommentOrNot(isItANewBrick(208), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(209), 1); echo('<div class="brickStyle ' . $result[209] . '" id=' . idGen(209) . 'onclick="brickClicked(' . idGen(209) . ')"></div>'); toCommentOrNot(isItANewBrick(209), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(210), 1); echo('<div class="brickStyle ' . $result[210] . '" id=' . idGen(210) . 'onclick="brickClicked(' . idGen(210) . ')"></div>'); toCommentOrNot(isItANewBrick(210), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(211), 1); echo('<div class="brickStyle ' . $result[211] . '" id=' . idGen(211) . 'onclick="brickClicked(' . idGen(211) . ')"></div>'); toCommentOrNot(isItANewBrick(211), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(212), 1); echo('<div class="brickStyle ' . $result[212] . '" id=' . idGen(212) . 'onclick="brickClicked(' . idGen(212) . ')"></div>'); toCommentOrNot(isItANewBrick(212), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(213), 1); echo('<div class="brickStyle ' . $result[213] . '" id=' . idGen(213) . 'onclick="brickClicked(' . idGen(213) . ')"></div>'); toCommentOrNot(isItANewBrick(213), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(214), 1); echo('<div class="brickStyle ' . $result[214] . '" id=' . idGen(214) . 'onclick="brickClicked(' . idGen(214) . ')"></div>'); toCommentOrNot(isItANewBrick(214), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(215), 1); echo('<div class="brickStyle ' . $result[215] . '" id=' . idGen(215) . 'onclick="brickClicked(' . idGen(215) . ')"></div>'); toCommentOrNot(isItANewBrick(215), 2); ?>
+            <!-- Row 13 -->
+            <?php toCommentOrNot(isItANewBrick(216), 1); echo('<div class="brickStyle ' . $result[216] . '" id=' . idGen(216) . 'onclick="brickClicked(' . idGen(216) . ')"></div>'); toCommentOrNot(isItANewBrick(216), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(217), 1); echo('<div class="brickStyle ' . $result[217] . '" id=' . idGen(217) . 'onclick="brickClicked(' . idGen(217) . ')"></div>'); toCommentOrNot(isItANewBrick(217), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(218), 1); echo('<div class="brickStyle ' . $result[218] . '" id=' . idGen(218) . 'onclick="brickClicked(' . idGen(218) . ')"></div>'); toCommentOrNot(isItANewBrick(218), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(219), 1); echo('<div class="brickStyle ' . $result[219] . '" id=' . idGen(219) . 'onclick="brickClicked(' . idGen(219) . ')"></div>'); toCommentOrNot(isItANewBrick(219), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(220), 1); echo('<div class="brickStyle ' . $result[220] . '" id=' . idGen(220) . 'onclick="brickClicked(' . idGen(220) . ')"></div>'); toCommentOrNot(isItANewBrick(220), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(221), 1); echo('<div class="brickStyle ' . $result[221] . '" id=' . idGen(221) . 'onclick="brickClicked(' . idGen(221) . ')"></div>'); toCommentOrNot(isItANewBrick(221), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(222), 1); echo('<div class="brickStyle ' . $result[222] . '" id=' . idGen(222) . 'onclick="brickClicked(' . idGen(222) . ')"></div>'); toCommentOrNot(isItANewBrick(222), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(223), 1); echo('<div class="brickStyle ' . $result[223] . '" id=' . idGen(223) . 'onclick="brickClicked(' . idGen(223) . ')"></div>'); toCommentOrNot(isItANewBrick(223), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(224), 1); echo('<div class="brickStyle ' . $result[224] . '" id=' . idGen(224) . 'onclick="brickClicked(' . idGen(224) . ')"></div>'); toCommentOrNot(isItANewBrick(224), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(225), 1); echo('<div class="brickStyle ' . $result[225] . '" id=' . idGen(225) . 'onclick="brickClicked(' . idGen(225) . ')"></div>'); toCommentOrNot(isItANewBrick(225), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(226), 1); echo('<div class="brickStyle ' . $result[226] . '" id=' . idGen(226) . 'onclick="brickClicked(' . idGen(226) . ')"></div>'); toCommentOrNot(isItANewBrick(226), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(227), 1); echo('<div class="brickStyle ' . $result[227] . '" id=' . idGen(227) . 'onclick="brickClicked(' . idGen(227) . ')"></div>'); toCommentOrNot(isItANewBrick(227), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(228), 1); echo('<div class="brickStyle ' . $result[228] . '" id=' . idGen(228) . 'onclick="brickClicked(' . idGen(228) . ')"></div>'); toCommentOrNot(isItANewBrick(228), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(229), 1); echo('<div class="brickStyle ' . $result[229] . '" id=' . idGen(229) . 'onclick="brickClicked(' . idGen(229) . ')"></div>'); toCommentOrNot(isItANewBrick(229), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(230), 1); echo('<div class="brickStyle ' . $result[230] . '" id=' . idGen(230) . 'onclick="brickClicked(' . idGen(230) . ')"></div>'); toCommentOrNot(isItANewBrick(230), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(231), 1); echo('<div class="brickStyle ' . $result[231] . '" id=' . idGen(231) . 'onclick="brickClicked(' . idGen(231) . ')"></div>'); toCommentOrNot(isItANewBrick(231), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(232), 1); echo('<div class="brickStyle ' . $result[232] . '" id=' . idGen(232) . 'onclick="brickClicked(' . idGen(232) . ')"></div>'); toCommentOrNot(isItANewBrick(232), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(233), 1); echo('<div class="brickStyle ' . $result[233] . '" id=' . idGen(233) . 'onclick="brickClicked(' . idGen(233) . ')"></div>'); toCommentOrNot(isItANewBrick(233), 2); ?>
+            <!-- Row 14 -->
+            <?php toCommentOrNot(isItANewBrick(234), 1); echo('<div class="brickStyle ' . $result[234] . '" id=' . idGen(234) . 'onclick="brickClicked(' . idGen(234) . ')"></div>'); toCommentOrNot(isItANewBrick(234), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(235), 1); echo('<div class="brickStyle ' . $result[235] . '" id=' . idGen(235) . 'onclick="brickClicked(' . idGen(235) . ')"></div>'); toCommentOrNot(isItANewBrick(235), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(236), 1); echo('<div class="brickStyle ' . $result[236] . '" id=' . idGen(236) . 'onclick="brickClicked(' . idGen(236) . ')"></div>'); toCommentOrNot(isItANewBrick(236), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(237), 1); echo('<div class="brickStyle ' . $result[237] . '" id=' . idGen(237) . 'onclick="brickClicked(' . idGen(237) . ')"></div>'); toCommentOrNot(isItANewBrick(237), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(238), 1); echo('<div class="brickStyle ' . $result[238] . '" id=' . idGen(238) . 'onclick="brickClicked(' . idGen(238) . ')"></div>'); toCommentOrNot(isItANewBrick(238), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(239), 1); echo('<div class="brickStyle ' . $result[239] . '" id=' . idGen(239) . 'onclick="brickClicked(' . idGen(239) . ')"></div>'); toCommentOrNot(isItANewBrick(239), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(240), 1); echo('<div class="brickStyle ' . $result[240] . '" id=' . idGen(240) . 'onclick="brickClicked(' . idGen(240) . ')"></div>'); toCommentOrNot(isItANewBrick(240), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(241), 1); echo('<div class="brickStyle ' . $result[241] . '" id=' . idGen(241) . 'onclick="brickClicked(' . idGen(241) . ')"></div>'); toCommentOrNot(isItANewBrick(241), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(242), 1); echo('<div class="brickStyle ' . $result[242] . '" id=' . idGen(242) . 'onclick="brickClicked(' . idGen(242) . ')"></div>'); toCommentOrNot(isItANewBrick(242), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(243), 1); echo('<div class="brickStyle ' . $result[243] . '" id=' . idGen(243) . 'onclick="brickClicked(' . idGen(243) . ')"></div>'); toCommentOrNot(isItANewBrick(243), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(244), 1); echo('<div class="brickStyle ' . $result[244] . '" id=' . idGen(244) . 'onclick="brickClicked(' . idGen(244) . ')"></div>'); toCommentOrNot(isItANewBrick(244), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(245), 1); echo('<div class="brickStyle ' . $result[245] . '" id=' . idGen(245) . 'onclick="brickClicked(' . idGen(245) . ')"></div>'); toCommentOrNot(isItANewBrick(245), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(246), 1); echo('<div class="brickStyle ' . $result[246] . '" id=' . idGen(246) . 'onclick="brickClicked(' . idGen(246) . ')"></div>'); toCommentOrNot(isItANewBrick(246), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(247), 1); echo('<div class="brickStyle ' . $result[247] . '" id=' . idGen(247) . 'onclick="brickClicked(' . idGen(247) . ')"></div>'); toCommentOrNot(isItANewBrick(247), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(248), 1); echo('<div class="brickStyle ' . $result[248] . '" id=' . idGen(248) . 'onclick="brickClicked(' . idGen(248) . ')"></div>'); toCommentOrNot(isItANewBrick(248), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(249), 1); echo('<div class="brickStyle ' . $result[249] . '" id=' . idGen(249) . 'onclick="brickClicked(' . idGen(249) . ')"></div>'); toCommentOrNot(isItANewBrick(249), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(250), 1); echo('<div class="brickStyle ' . $result[250] . '" id=' . idGen(250) . 'onclick="brickClicked(' . idGen(250) . ')"></div>'); toCommentOrNot(isItANewBrick(250), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(251), 1); echo('<div class="brickStyle ' . $result[251] . '" id=' . idGen(251) . 'onclick="brickClicked(' . idGen(251) . ')"></div>'); toCommentOrNot(isItANewBrick(251), 2); ?>
+            <!-- Row 15 -->
+            <?php toCommentOrNot(isItANewBrick(252), 1); echo('<div class="brickStyle ' . $result[252] . '" id=' . idGen(252) . 'onclick="brickClicked(' . idGen(252) . ')"></div>'); toCommentOrNot(isItANewBrick(252), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(253), 1); echo('<div class="brickStyle ' . $result[253] . '" id=' . idGen(253) . 'onclick="brickClicked(' . idGen(253) . ')"></div>'); toCommentOrNot(isItANewBrick(253), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(254), 1); echo('<div class="brickStyle ' . $result[254] . '" id=' . idGen(254) . 'onclick="brickClicked(' . idGen(254) . ')"></div>'); toCommentOrNot(isItANewBrick(254), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(255), 1); echo('<div class="brickStyle ' . $result[255] . '" id=' . idGen(255) . 'onclick="brickClicked(' . idGen(255) . ')"></div>'); toCommentOrNot(isItANewBrick(255), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(256), 1); echo('<div class="brickStyle ' . $result[256] . '" id=' . idGen(256) . 'onclick="brickClicked(' . idGen(256) . ')"></div>'); toCommentOrNot(isItANewBrick(256), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(257), 1); echo('<div class="brickStyle ' . $result[257] . '" id=' . idGen(257) . 'onclick="brickClicked(' . idGen(257) . ')"></div>'); toCommentOrNot(isItANewBrick(257), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(258), 1); echo('<div class="brickStyle ' . $result[258] . '" id=' . idGen(258) . 'onclick="brickClicked(' . idGen(258) . ')"></div>'); toCommentOrNot(isItANewBrick(258), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(259), 1); echo('<div class="brickStyle ' . $result[259] . '" id=' . idGen(259) . 'onclick="brickClicked(' . idGen(259) . ')"></div>'); toCommentOrNot(isItANewBrick(259), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(260), 1); echo('<div class="brickStyle ' . $result[260] . '" id=' . idGen(260) . 'onclick="brickClicked(' . idGen(260) . ')"></div>'); toCommentOrNot(isItANewBrick(260), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(261), 1); echo('<div class="brickStyle ' . $result[261] . '" id=' . idGen(261) . 'onclick="brickClicked(' . idGen(261) . ')"></div>'); toCommentOrNot(isItANewBrick(261), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(262), 1); echo('<div class="brickStyle ' . $result[262] . '" id=' . idGen(262) . 'onclick="brickClicked(' . idGen(262) . ')"></div>'); toCommentOrNot(isItANewBrick(262), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(263), 1); echo('<div class="brickStyle ' . $result[263] . '" id=' . idGen(263) . 'onclick="brickClicked(' . idGen(263) . ')"></div>'); toCommentOrNot(isItANewBrick(263), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(264), 1); echo('<div class="brickStyle ' . $result[264] . '" id=' . idGen(264) . 'onclick="brickClicked(' . idGen(264) . ')"></div>'); toCommentOrNot(isItANewBrick(264), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(265), 1); echo('<div class="brickStyle ' . $result[265] . '" id=' . idGen(265) . 'onclick="brickClicked(' . idGen(265) . ')"></div>'); toCommentOrNot(isItANewBrick(265), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(266), 1); echo('<div class="brickStyle ' . $result[266] . '" id=' . idGen(266) . 'onclick="brickClicked(' . idGen(266) . ')"></div>'); toCommentOrNot(isItANewBrick(266), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(267), 1); echo('<div class="brickStyle ' . $result[267] . '" id=' . idGen(267) . 'onclick="brickClicked(' . idGen(267) . ')"></div>'); toCommentOrNot(isItANewBrick(267), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(268), 1); echo('<div class="brickStyle ' . $result[268] . '" id=' . idGen(268) . 'onclick="brickClicked(' . idGen(268) . ')"></div>'); toCommentOrNot(isItANewBrick(268), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(269), 1); echo('<div class="brickStyle ' . $result[269] . '" id=' . idGen(269) . 'onclick="brickClicked(' . idGen(269) . ')"></div>'); toCommentOrNot(isItANewBrick(269), 2); ?>
+            <!-- Row 16 -->
+            <?php toCommentOrNot(isItANewBrick(270), 1); echo('<div class="brickStyle ' . $result[270] . '" id=' . idGen(270) . 'onclick="brickClicked(' . idGen(270) . ')"></div>'); toCommentOrNot(isItANewBrick(270), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(271), 1); echo('<div class="brickStyle ' . $result[271] . '" id=' . idGen(271) . 'onclick="brickClicked(' . idGen(271) . ')"></div>'); toCommentOrNot(isItANewBrick(271), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(272), 1); echo('<div class="brickStyle ' . $result[272] . '" id=' . idGen(272) . 'onclick="brickClicked(' . idGen(272) . ')"></div>'); toCommentOrNot(isItANewBrick(272), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(273), 1); echo('<div class="brickStyle ' . $result[273] . '" id=' . idGen(273) . 'onclick="brickClicked(' . idGen(273) . ')"></div>'); toCommentOrNot(isItANewBrick(273), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(274), 1); echo('<div class="brickStyle ' . $result[274] . '" id=' . idGen(274) . 'onclick="brickClicked(' . idGen(274) . ')"></div>'); toCommentOrNot(isItANewBrick(274), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(275), 1); echo('<div class="brickStyle ' . $result[275] . '" id=' . idGen(275) . 'onclick="brickClicked(' . idGen(275) . ')"></div>'); toCommentOrNot(isItANewBrick(275), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(276), 1); echo('<div class="brickStyle ' . $result[276] . '" id=' . idGen(276) . 'onclick="brickClicked(' . idGen(276) . ')"></div>'); toCommentOrNot(isItANewBrick(276), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(277), 1); echo('<div class="brickStyle ' . $result[277] . '" id=' . idGen(277) . 'onclick="brickClicked(' . idGen(277) . ')"></div>'); toCommentOrNot(isItANewBrick(277), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(278), 1); echo('<div class="brickStyle ' . $result[278] . '" id=' . idGen(278) . 'onclick="brickClicked(' . idGen(278) . ')"></div>'); toCommentOrNot(isItANewBrick(278), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(279), 1); echo('<div class="brickStyle ' . $result[279] . '" id=' . idGen(279) . 'onclick="brickClicked(' . idGen(279) . ')"></div>'); toCommentOrNot(isItANewBrick(279), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(280), 1); echo('<div class="brickStyle ' . $result[280] . '" id=' . idGen(280) . 'onclick="brickClicked(' . idGen(280) . ')"></div>'); toCommentOrNot(isItANewBrick(280), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(281), 1); echo('<div class="brickStyle ' . $result[281] . '" id=' . idGen(281) . 'onclick="brickClicked(' . idGen(281) . ')"></div>'); toCommentOrNot(isItANewBrick(281), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(282), 1); echo('<div class="brickStyle ' . $result[282] . '" id=' . idGen(282) . 'onclick="brickClicked(' . idGen(282) . ')"></div>'); toCommentOrNot(isItANewBrick(282), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(283), 1); echo('<div class="brickStyle ' . $result[283] . '" id=' . idGen(283) . 'onclick="brickClicked(' . idGen(283) . ')"></div>'); toCommentOrNot(isItANewBrick(283), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(284), 1); echo('<div class="brickStyle ' . $result[284] . '" id=' . idGen(284) . 'onclick="brickClicked(' . idGen(284) . ')"></div>'); toCommentOrNot(isItANewBrick(284), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(285), 1); echo('<div class="brickStyle ' . $result[285] . '" id=' . idGen(285) . 'onclick="brickClicked(' . idGen(285) . ')"></div>'); toCommentOrNot(isItANewBrick(285), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(286), 1); echo('<div class="brickStyle ' . $result[286] . '" id=' . idGen(286) . 'onclick="brickClicked(' . idGen(286) . ')"></div>'); toCommentOrNot(isItANewBrick(286), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(287), 1); echo('<div class="brickStyle ' . $result[287] . '" id=' . idGen(287) . 'onclick="brickClicked(' . idGen(287) . ')"></div>'); toCommentOrNot(isItANewBrick(287), 2); ?>
+            <!-- Row 17 -->
+            <?php toCommentOrNot(isItANewBrick(288), 1); echo('<div class="brickStyle ' . $result[288] . '" id=' . idGen(288) . 'onclick="brickClicked(' . idGen(288) . ')"></div>'); toCommentOrNot(isItANewBrick(288), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(289), 1); echo('<div class="brickStyle ' . $result[289] . '" id=' . idGen(289) . 'onclick="brickClicked(' . idGen(289) . ')"></div>'); toCommentOrNot(isItANewBrick(289), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(290), 1); echo('<div class="brickStyle ' . $result[290] . '" id=' . idGen(290) . 'onclick="brickClicked(' . idGen(290) . ')"></div>'); toCommentOrNot(isItANewBrick(290), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(291), 1); echo('<div class="brickStyle ' . $result[291] . '" id=' . idGen(291) . 'onclick="brickClicked(' . idGen(291) . ')"></div>'); toCommentOrNot(isItANewBrick(291), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(292), 1); echo('<div class="brickStyle ' . $result[292] . '" id=' . idGen(292) . 'onclick="brickClicked(' . idGen(292) . ')"></div>'); toCommentOrNot(isItANewBrick(292), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(293), 1); echo('<div class="brickStyle ' . $result[293] . '" id=' . idGen(293) . 'onclick="brickClicked(' . idGen(293) . ')"></div>'); toCommentOrNot(isItANewBrick(293), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(294), 1); echo('<div class="brickStyle ' . $result[294] . '" id=' . idGen(294) . 'onclick="brickClicked(' . idGen(294) . ')"></div>'); toCommentOrNot(isItANewBrick(294), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(295), 1); echo('<div class="brickStyle ' . $result[295] . '" id=' . idGen(295) . 'onclick="brickClicked(' . idGen(295) . ')"></div>'); toCommentOrNot(isItANewBrick(295), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(296), 1); echo('<div class="brickStyle ' . $result[296] . '" id=' . idGen(296) . 'onclick="brickClicked(' . idGen(296) . ')"></div>'); toCommentOrNot(isItANewBrick(296), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(297), 1); echo('<div class="brickStyle ' . $result[297] . '" id=' . idGen(297) . 'onclick="brickClicked(' . idGen(297) . ')"></div>'); toCommentOrNot(isItANewBrick(297), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(298), 1); echo('<div class="brickStyle ' . $result[298] . '" id=' . idGen(298) . 'onclick="brickClicked(' . idGen(298) . ')"></div>'); toCommentOrNot(isItANewBrick(298), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(299), 1); echo('<div class="brickStyle ' . $result[299] . '" id=' . idGen(299) . 'onclick="brickClicked(' . idGen(299) . ')"></div>'); toCommentOrNot(isItANewBrick(299), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(300), 1); echo('<div class="brickStyle ' . $result[300] . '" id=' . idGen(300) . 'onclick="brickClicked(' . idGen(300) . ')"></div>'); toCommentOrNot(isItANewBrick(300), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(301), 1); echo('<div class="brickStyle ' . $result[301] . '" id=' . idGen(301) . 'onclick="brickClicked(' . idGen(301) . ')"></div>'); toCommentOrNot(isItANewBrick(301), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(302), 1); echo('<div class="brickStyle ' . $result[302] . '" id=' . idGen(302) . 'onclick="brickClicked(' . idGen(302) . ')"></div>'); toCommentOrNot(isItANewBrick(302), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(303), 1); echo('<div class="brickStyle ' . $result[303] . '" id=' . idGen(303) . 'onclick="brickClicked(' . idGen(303) . ')"></div>'); toCommentOrNot(isItANewBrick(303), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(304), 1); echo('<div class="brickStyle ' . $result[304] . '" id=' . idGen(304) . 'onclick="brickClicked(' . idGen(304) . ')"></div>'); toCommentOrNot(isItANewBrick(304), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(305), 1); echo('<div class="brickStyle ' . $result[305] . '" id=' . idGen(305) . 'onclick="brickClicked(' . idGen(305) . ')"></div>'); toCommentOrNot(isItANewBrick(305), 2); ?>
+            <!-- Row 18 -->
+            <?php toCommentOrNot(isItANewBrick(306), 1); echo('<div class="brickStyle ' . $result[306] . '" id=' . idGen(306) . 'onclick="brickClicked(' . idGen(306) . ')"></div>'); toCommentOrNot(isItANewBrick(306), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(307), 1); echo('<div class="brickStyle ' . $result[307] . '" id=' . idGen(307) . 'onclick="brickClicked(' . idGen(307) . ')"></div>'); toCommentOrNot(isItANewBrick(307), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(308), 1); echo('<div class="brickStyle ' . $result[308] . '" id=' . idGen(308) . 'onclick="brickClicked(' . idGen(308) . ')"></div>'); toCommentOrNot(isItANewBrick(308), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(309), 1); echo('<div class="brickStyle ' . $result[309] . '" id=' . idGen(309) . 'onclick="brickClicked(' . idGen(309) . ')"></div>'); toCommentOrNot(isItANewBrick(309), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(310), 1); echo('<div class="brickStyle ' . $result[310] . '" id=' . idGen(310) . 'onclick="brickClicked(' . idGen(310) . ')"></div>'); toCommentOrNot(isItANewBrick(310), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(311), 1); echo('<div class="brickStyle ' . $result[311] . '" id=' . idGen(311) . 'onclick="brickClicked(' . idGen(311) . ')"></div>'); toCommentOrNot(isItANewBrick(311), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(312), 1); echo('<div class="brickStyle ' . $result[312] . '" id=' . idGen(312) . 'onclick="brickClicked(' . idGen(312) . ')"></div>'); toCommentOrNot(isItANewBrick(312), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(313), 1); echo('<div class="brickStyle ' . $result[313] . '" id=' . idGen(313) . 'onclick="brickClicked(' . idGen(313) . ')"></div>'); toCommentOrNot(isItANewBrick(313), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(314), 1); echo('<div class="brickStyle ' . $result[314] . '" id=' . idGen(314) . 'onclick="brickClicked(' . idGen(314) . ')"></div>'); toCommentOrNot(isItANewBrick(314), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(315), 1); echo('<div class="brickStyle ' . $result[315] . '" id=' . idGen(315) . 'onclick="brickClicked(' . idGen(315) . ')"></div>'); toCommentOrNot(isItANewBrick(315), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(316), 1); echo('<div class="brickStyle ' . $result[316] . '" id=' . idGen(316) . 'onclick="brickClicked(' . idGen(316) . ')"></div>'); toCommentOrNot(isItANewBrick(316), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(317), 1); echo('<div class="brickStyle ' . $result[317] . '" id=' . idGen(317) . 'onclick="brickClicked(' . idGen(317) . ')"></div>'); toCommentOrNot(isItANewBrick(317), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(318), 1); echo('<div class="brickStyle ' . $result[318] . '" id=' . idGen(318) . 'onclick="brickClicked(' . idGen(318) . ')"></div>'); toCommentOrNot(isItANewBrick(318), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(319), 1); echo('<div class="brickStyle ' . $result[319] . '" id=' . idGen(319) . 'onclick="brickClicked(' . idGen(319) . ')"></div>'); toCommentOrNot(isItANewBrick(319), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(320), 1); echo('<div class="brickStyle ' . $result[320] . '" id=' . idGen(320) . 'onclick="brickClicked(' . idGen(320) . ')"></div>'); toCommentOrNot(isItANewBrick(320), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(321), 1); echo('<div class="brickStyle ' . $result[321] . '" id=' . idGen(321) . 'onclick="brickClicked(' . idGen(321) . ')"></div>'); toCommentOrNot(isItANewBrick(321), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(322), 1); echo('<div class="brickStyle ' . $result[322] . '" id=' . idGen(322) . 'onclick="brickClicked(' . idGen(322) . ')"></div>'); toCommentOrNot(isItANewBrick(322), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(323), 1); echo('<div class="brickStyle ' . $result[323] . '" id=' . idGen(323) . 'onclick="brickClicked(' . idGen(323) . ')"></div>'); toCommentOrNot(isItANewBrick(323), 2); ?>
+            <!-- Row 19 -->
+            <?php toCommentOrNot(isItANewBrick(324), 1); echo('<div class="brickStyle ' . $result[324] . '" id=' . idGen(324) . 'onclick="brickClicked(' . idGen(324) . ')"></div>'); toCommentOrNot(isItANewBrick(324), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(325), 1); echo('<div class="brickStyle ' . $result[325] . '" id=' . idGen(325) . 'onclick="brickClicked(' . idGen(325) . ')"></div>'); toCommentOrNot(isItANewBrick(325), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(326), 1); echo('<div class="brickStyle ' . $result[326] . '" id=' . idGen(326) . 'onclick="brickClicked(' . idGen(326) . ')"></div>'); toCommentOrNot(isItANewBrick(326), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(327), 1); echo('<div class="brickStyle ' . $result[327] . '" id=' . idGen(327) . 'onclick="brickClicked(' . idGen(327) . ')"></div>'); toCommentOrNot(isItANewBrick(327), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(328), 1); echo('<div class="brickStyle ' . $result[328] . '" id=' . idGen(328) . 'onclick="brickClicked(' . idGen(328) . ')"></div>'); toCommentOrNot(isItANewBrick(328), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(329), 1); echo('<div class="brickStyle ' . $result[329] . '" id=' . idGen(329) . 'onclick="brickClicked(' . idGen(329) . ')"></div>'); toCommentOrNot(isItANewBrick(329), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(330), 1); echo('<div class="brickStyle ' . $result[330] . '" id=' . idGen(330) . 'onclick="brickClicked(' . idGen(330) . ')"></div>'); toCommentOrNot(isItANewBrick(330), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(331), 1); echo('<div class="brickStyle ' . $result[331] . '" id=' . idGen(331) . 'onclick="brickClicked(' . idGen(331) . ')"></div>'); toCommentOrNot(isItANewBrick(331), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(332), 1); echo('<div class="brickStyle ' . $result[332] . '" id=' . idGen(332) . 'onclick="brickClicked(' . idGen(332) . ')"></div>'); toCommentOrNot(isItANewBrick(332), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(333), 1); echo('<div class="brickStyle ' . $result[333] . '" id=' . idGen(333) . 'onclick="brickClicked(' . idGen(333) . ')"></div>'); toCommentOrNot(isItANewBrick(333), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(334), 1); echo('<div class="brickStyle ' . $result[334] . '" id=' . idGen(334) . 'onclick="brickClicked(' . idGen(334) . ')"></div>'); toCommentOrNot(isItANewBrick(334), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(335), 1); echo('<div class="brickStyle ' . $result[335] . '" id=' . idGen(335) . 'onclick="brickClicked(' . idGen(335) . ')"></div>'); toCommentOrNot(isItANewBrick(335), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(336), 1); echo('<div class="brickStyle ' . $result[336] . '" id=' . idGen(336) . 'onclick="brickClicked(' . idGen(336) . ')"></div>'); toCommentOrNot(isItANewBrick(336), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(337), 1); echo('<div class="brickStyle ' . $result[337] . '" id=' . idGen(337) . 'onclick="brickClicked(' . idGen(337) . ')"></div>'); toCommentOrNot(isItANewBrick(337), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(338), 1); echo('<div class="brickStyle ' . $result[338] . '" id=' . idGen(338) . 'onclick="brickClicked(' . idGen(338) . ')"></div>'); toCommentOrNot(isItANewBrick(338), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(339), 1); echo('<div class="brickStyle ' . $result[339] . '" id=' . idGen(339) . 'onclick="brickClicked(' . idGen(339) . ')"></div>'); toCommentOrNot(isItANewBrick(339), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(340), 1); echo('<div class="brickStyle ' . $result[340] . '" id=' . idGen(340) . 'onclick="brickClicked(' . idGen(340) . ')"></div>'); toCommentOrNot(isItANewBrick(340), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(341), 1); echo('<div class="brickStyle ' . $result[341] . '" id=' . idGen(341) . 'onclick="brickClicked(' . idGen(341) . ')"></div>'); toCommentOrNot(isItANewBrick(341), 2); ?>
+            <!-- Row 20 -->
+            <?php toCommentOrNot(isItANewBrick(342), 1); echo('<div class="brickStyle ' . $result[342] . '" id=' . idGen(342) . 'onclick="brickClicked(' . idGen(342) . ')"></div>'); toCommentOrNot(isItANewBrick(342), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(343), 1); echo('<div class="brickStyle ' . $result[343] . '" id=' . idGen(343) . 'onclick="brickClicked(' . idGen(343) . ')"></div>'); toCommentOrNot(isItANewBrick(343), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(344), 1); echo('<div class="brickStyle ' . $result[344] . '" id=' . idGen(344) . 'onclick="brickClicked(' . idGen(344) . ')"></div>'); toCommentOrNot(isItANewBrick(344), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(345), 1); echo('<div class="brickStyle ' . $result[345] . '" id=' . idGen(345) . 'onclick="brickClicked(' . idGen(345) . ')"></div>'); toCommentOrNot(isItANewBrick(345), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(346), 1); echo('<div class="brickStyle ' . $result[346] . '" id=' . idGen(346) . 'onclick="brickClicked(' . idGen(346) . ')"></div>'); toCommentOrNot(isItANewBrick(346), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(347), 1); echo('<div class="brickStyle ' . $result[347] . '" id=' . idGen(347) . 'onclick="brickClicked(' . idGen(347) . ')"></div>'); toCommentOrNot(isItANewBrick(347), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(348), 1); echo('<div class="brickStyle ' . $result[348] . '" id=' . idGen(348) . 'onclick="brickClicked(' . idGen(348) . ')"></div>'); toCommentOrNot(isItANewBrick(348), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(349), 1); echo('<div class="brickStyle ' . $result[349] . '" id=' . idGen(349) . 'onclick="brickClicked(' . idGen(349) . ')"></div>'); toCommentOrNot(isItANewBrick(349), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(350), 1); echo('<div class="brickStyle ' . $result[350] . '" id=' . idGen(350) . 'onclick="brickClicked(' . idGen(350) . ')"></div>'); toCommentOrNot(isItANewBrick(350), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(351), 1); echo('<div class="brickStyle ' . $result[351] . '" id=' . idGen(351) . 'onclick="brickClicked(' . idGen(351) . ')"></div>'); toCommentOrNot(isItANewBrick(351), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(352), 1); echo('<div class="brickStyle ' . $result[352] . '" id=' . idGen(352) . 'onclick="brickClicked(' . idGen(352) . ')"></div>'); toCommentOrNot(isItANewBrick(352), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(353), 1); echo('<div class="brickStyle ' . $result[353] . '" id=' . idGen(353) . 'onclick="brickClicked(' . idGen(353) . ')"></div>'); toCommentOrNot(isItANewBrick(353), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(354), 1); echo('<div class="brickStyle ' . $result[354] . '" id=' . idGen(354) . 'onclick="brickClicked(' . idGen(354) . ')"></div>'); toCommentOrNot(isItANewBrick(354), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(355), 1); echo('<div class="brickStyle ' . $result[355] . '" id=' . idGen(355) . 'onclick="brickClicked(' . idGen(355) . ')"></div>'); toCommentOrNot(isItANewBrick(355), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(356), 1); echo('<div class="brickStyle ' . $result[356] . '" id=' . idGen(356) . 'onclick="brickClicked(' . idGen(356) . ')"></div>'); toCommentOrNot(isItANewBrick(356), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(357), 1); echo('<div class="brickStyle ' . $result[357] . '" id=' . idGen(357) . 'onclick="brickClicked(' . idGen(357) . ')"></div>'); toCommentOrNot(isItANewBrick(357), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(358), 1); echo('<div class="brickStyle ' . $result[358] . '" id=' . idGen(358) . 'onclick="brickClicked(' . idGen(358) . ')"></div>'); toCommentOrNot(isItANewBrick(358), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(359), 1); echo('<div class="brickStyle ' . $result[359] . '" id=' . idGen(359) . 'onclick="brickClicked(' . idGen(359) . ')"></div>'); toCommentOrNot(isItANewBrick(359), 2); ?>
+            <!-- Row 21 -->
+            <?php toCommentOrNot(isItANewBrick(360), 1); echo('<div class="brickStyle ' . $result[360] . '" id=' . idGen(360) . 'onclick="brickClicked(' . idGen(360) . ')"></div>'); toCommentOrNot(isItANewBrick(360), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(361), 1); echo('<div class="brickStyle ' . $result[361] . '" id=' . idGen(361) . 'onclick="brickClicked(' . idGen(361) . ')"></div>'); toCommentOrNot(isItANewBrick(361), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(362), 1); echo('<div class="brickStyle ' . $result[362] . '" id=' . idGen(362) . 'onclick="brickClicked(' . idGen(362) . ')"></div>'); toCommentOrNot(isItANewBrick(362), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(363), 1); echo('<div class="brickStyle ' . $result[363] . '" id=' . idGen(363) . 'onclick="brickClicked(' . idGen(363) . ')"></div>'); toCommentOrNot(isItANewBrick(363), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(364), 1); echo('<div class="brickStyle ' . $result[364] . '" id=' . idGen(364) . 'onclick="brickClicked(' . idGen(364) . ')"></div>'); toCommentOrNot(isItANewBrick(364), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(365), 1); echo('<div class="brickStyle ' . $result[365] . '" id=' . idGen(365) . 'onclick="brickClicked(' . idGen(365) . ')"></div>'); toCommentOrNot(isItANewBrick(365), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(366), 1); echo('<div class="brickStyle ' . $result[366] . '" id=' . idGen(366) . 'onclick="brickClicked(' . idGen(366) . ')"></div>'); toCommentOrNot(isItANewBrick(366), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(367), 1); echo('<div class="brickStyle ' . $result[367] . '" id=' . idGen(367) . 'onclick="brickClicked(' . idGen(367) . ')"></div>'); toCommentOrNot(isItANewBrick(367), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(368), 1); echo('<div class="brickStyle ' . $result[368] . '" id=' . idGen(368) . 'onclick="brickClicked(' . idGen(368) . ')"></div>'); toCommentOrNot(isItANewBrick(368), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(369), 1); echo('<div class="brickStyle ' . $result[369] . '" id=' . idGen(369) . 'onclick="brickClicked(' . idGen(369) . ')"></div>'); toCommentOrNot(isItANewBrick(369), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(370), 1); echo('<div class="brickStyle ' . $result[370] . '" id=' . idGen(370) . 'onclick="brickClicked(' . idGen(370) . ')"></div>'); toCommentOrNot(isItANewBrick(370), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(371), 1); echo('<div class="brickStyle ' . $result[371] . '" id=' . idGen(371) . 'onclick="brickClicked(' . idGen(371) . ')"></div>'); toCommentOrNot(isItANewBrick(371), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(372), 1); echo('<div class="brickStyle ' . $result[372] . '" id=' . idGen(372) . 'onclick="brickClicked(' . idGen(372) . ')"></div>'); toCommentOrNot(isItANewBrick(372), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(373), 1); echo('<div class="brickStyle ' . $result[373] . '" id=' . idGen(373) . 'onclick="brickClicked(' . idGen(373) . ')"></div>'); toCommentOrNot(isItANewBrick(373), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(374), 1); echo('<div class="brickStyle ' . $result[374] . '" id=' . idGen(374) . 'onclick="brickClicked(' . idGen(374) . ')"></div>'); toCommentOrNot(isItANewBrick(374), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(375), 1); echo('<div class="brickStyle ' . $result[375] . '" id=' . idGen(375) . 'onclick="brickClicked(' . idGen(375) . ')"></div>'); toCommentOrNot(isItANewBrick(375), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(376), 1); echo('<div class="brickStyle ' . $result[376] . '" id=' . idGen(376) . 'onclick="brickClicked(' . idGen(376) . ')"></div>'); toCommentOrNot(isItANewBrick(376), 2); ?>
+            <?php toCommentOrNot(isItANewBrick(377), 1); echo('<div class="brickStyle ' . $result[377] . '" id=' . idGen(377) . 'onclick="brickClicked(' . idGen(377) . ')"></div>'); toCommentOrNot(isItANewBrick(377), 2); ?>
           </div>
         </div>
       </div>
