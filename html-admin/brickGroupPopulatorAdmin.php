@@ -23,25 +23,25 @@
 			$stmt = null;
 			//$table .= '%';
 			if($table === "a"){
-				$stmt = $conn->prepare("SELECT 'a' as source, brickNum, firstName, lastName FROM a_brick_group");
+				$stmt = $conn->prepare("SELECT 'a' as source, id, firstName, lastName FROM a_brick_group");
 			}
 			else if($table === "b"){
-				$stmt = $conn->prepare("SELECT 'b' as source, brickNum, firstName, lastName FROM b_brick_group");
+				$stmt = $conn->prepare("SELECT 'b' as source, id, firstName, lastName FROM b_brick_group");
 			}
 			else if($table === "c"){
-				$stmt = $conn->prepare("SELECT 'c' as source, brickNum, firstName, lastName FROM c_brick_group");
+				$stmt = $conn->prepare("SELECT 'c' as source, id, firstName, lastName FROM c_brick_group");
 			}
 			else if($table === "d"){
-				$stmt = $conn->prepare("SELECT 'd' as source, brickNum, firstName, lastName FROM d_brick_group");
+				$stmt = $conn->prepare("SELECT 'd' as source, id, firstName, lastName FROM d_brick_group");
 			}
 			else if($table === "e"){
-				$stmt = $conn->prepare("SELECT 'e' as source, brickNum, firstName, lastName FROM e_brick_group");
+				$stmt = $conn->prepare("SELECT 'e' as source, id, firstName, lastName FROM e_brick_group");
 			}
 			else if($table === "f"){
-				$stmt = $conn->prepare("SELECT 'f' as source, brickNum, firstName, lastName FROM f_brick_group");
+				$stmt = $conn->prepare("SELECT 'f' as source, id, firstName, lastName FROM f_brick_group");
 			}
 			else if($table === "g"){
-				$stmt = $conn->prepare("SELECT 'g' as source, brickNum, firstName, lastName FROM g_brick_group");
+				$stmt = $conn->prepare("SELECT 'g' as source, id, firstName, lastName FROM g_brick_group");
 			}
 			$stmt->execute();
 
@@ -54,11 +54,11 @@
 				//foreach($result as $assocArray)
 				for ($i = 0; $i < count($result); $i++) 
 			   {
-				   $tempString = $result[$i]["brickNum"]; //strlen($result[$i]["brickNum"]
-				   for($j = strlen($result[$i]["brickNum"]); $j < 3; $j++){
+				   $tempString = $result[$i]["id"]; //strlen($result[$i]["id"]
+				   for($j = strlen($result[$i]["id"]); $j < 3; $j++){
 					   $tempString = "0" . $tempString; 
 				   }
-				   $result[$i]["brickNum"] = $result[$i]["source"] . $tempString;
+				   $result[$i]["id"] = $result[$i]["source"] . $tempString;
 				}
 				echo json_encode($result);
 			}
