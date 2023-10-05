@@ -9,7 +9,7 @@
       }
       else{
           echo $_SESSION["loggedIn"];
-          echo "<script> window.location.href='/veterans-website-project/adminLogin.html' </script>";
+          echo "<script> window.location.href='/veterans-website-project/adminLogin.php' </script>";
           echo "Incorrect username or password :(";
       }
   ?>
