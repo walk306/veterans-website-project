@@ -150,8 +150,8 @@ function updateBrick()
 {
 	var xmlhttp = new XMLHttpRequest();
 
-	let groupName = document.getElementById('groupName').value;
-	let brickID = document.getElementById('brickID').value;
+	let brickID = lastBrickClicked;
+	let groupName = brickID[0];
 	let firstName = document.getElementById('firstInputBox').value;
 	let lastName = document.getElementById('lastInputBox').value;
 	let brickDescription = document.getElementById('brickDescription').value;
