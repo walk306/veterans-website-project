@@ -24,7 +24,7 @@
 		  	$conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); // For max SQL injection safety
 
 			$stmt = null;
-			$stmt = $conn->prepare("SELECT firstName, lastName, brickDescription FROM allNames WHERE brickID = ?");
+			$stmt = $conn->prepare("SELECT firstName, lastName, brickDescription, brickID FROM allNames WHERE brickID = ?");
 			$stmt->bindParam(1, $brickID, PDO::PARAM_STR, 4);
 			$stmt->execute();
 
@@ -71,7 +71,7 @@
 				switch($groupName)
 				{
 					case "a":
-						$finalAnswer = $conn->prepare("SELECT firstName, lastName, brickDescription FROM allNames WHERE brickID = 
+						$finalAnswer = $conn->prepare("SELECT firstName, lastName, brickDescription, brickID FROM allNames WHERE brickID = 
 						(SELECT brickID FROM a_brick_group WHERE id = 
 						(SELECT MIN(id) FROM a_brick_group WHERE gridTemplateAreasId = 
 						(SELECT gridTemplateAreasId FROM a_brick_group WHERE brickID = ?)))");
@@ -80,7 +80,7 @@
 						break;
 
 					case "b":
-						$finalAnswer = $conn->prepare("SELECT firstName, lastName, brickDescription FROM allNames WHERE brickID = 
+						$finalAnswer = $conn->prepare("SELECT firstName, lastName, brickDescription, brickID FROM allNames WHERE brickID = 
 						(SELECT brickID FROM b_brick_group WHERE id = 
 						(SELECT MIN(id) FROM b_brick_group WHERE gridTemplateAreasId = 
 						(SELECT gridTemplateAreasId FROM b_brick_group WHERE brickID = ?)))");
@@ -89,7 +89,7 @@
 						break;
 
 					case "c":
-						$finalAnswer = $conn->prepare("SELECT firstName, lastName, brickDescription FROM allNames WHERE brickID = 
+						$finalAnswer = $conn->prepare("SELECT firstName, lastName, brickDescription, brickID FROM allNames WHERE brickID = 
 						(SELECT brickID FROM c_brick_group WHERE id = 
 						(SELECT MIN(id) FROM c_brick_group WHERE gridTemplateAreasId = 
 						(SELECT gridTemplateAreasId FROM c_brick_group WHERE brickID = ?)))");
@@ -98,7 +98,7 @@
 						break;
 
 					case "d":
-						$finalAnswer = $conn->prepare("SELECT firstName, lastName, brickDescription FROM allNames WHERE brickID = 
+						$finalAnswer = $conn->prepare("SELECT firstName, lastName, brickDescription, brickID FROM allNames WHERE brickID = 
 						(SELECT brickID FROM d_brick_group WHERE id = 
 						(SELECT MIN(id) FROM d_brick_group WHERE gridTemplateAreasId = 
 						(SELECT gridTemplateAreasId FROM d_brick_group WHERE brickID = ?)))");
@@ -107,7 +107,7 @@
 						break;
 
 					case "e":
-						$finalAnswer = $conn->prepare("SELECT firstName, lastName, brickDescription FROM allNames WHERE brickID = 
+						$finalAnswer = $conn->prepare("SELECT firstName, lastName, brickDescription, brickID FROM allNames WHERE brickID = 
 						(SELECT brickID FROM e_brick_group WHERE id = 
 						(SELECT MIN(id) FROM e_brick_group WHERE gridTemplateAreasId = 
 						(SELECT gridTemplateAreasId FROM e_brick_group WHERE brickID = ?)))");
@@ -116,7 +116,7 @@
 						break;
 
 					case "f":
-						$finalAnswer = $conn->prepare("SELECT firstName, lastName, brickDescription FROM allNames WHERE brickID = 
+						$finalAnswer = $conn->prepare("SELECT firstName, lastName, brickDescription, brickID FROM allNames WHERE brickID = 
 						(SELECT brickID FROM f_brick_group WHERE id = 
 						(SELECT MIN(id) FROM f_brick_group WHERE gridTemplateAreasId = 
 						(SELECT gridTemplateAreasId FROM f_brick_group WHERE brickID = ?)))");
@@ -125,7 +125,7 @@
 						break;
 
 					case "g":
-						$finalAnswer = $conn->prepare("SELECT firstName, lastName, brickDescription FROM allNames WHERE brickID = 
+						$finalAnswer = $conn->prepare("SELECT firstName, lastName, brickDescription, brickID FROM allNames WHERE brickID = 
 						(SELECT brickID FROM g_brick_group WHERE id = 
 						(SELECT MIN(id) FROM g_brick_group WHERE gridTemplateAreasId = 
 						(SELECT gridTemplateAreasId FROM g_brick_group WHERE brickID = ?)))");
@@ -136,7 +136,7 @@
 				$output = $finalAnswer->setFetchMode(PDO::FETCH_ASSOC);
 				$output = $finalAnswer->fetchAll();
 				if(!$output){
-					echo "default state";
+					echo $brickID;
 				}
 				else{
 					echo json_encode($output);

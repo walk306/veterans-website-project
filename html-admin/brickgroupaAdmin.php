@@ -67,6 +67,9 @@
         tickUp(1);
       }
     }
+
+    
+
     $idIndex = 0;
     function tickUp($placeholder){
       global $idIndex;
@@ -195,10 +198,18 @@
 
     .brickStyle{
     border-color: blue;
+    opacity: 1;
     border-style: solid;
     border-width: 1px;
     font-size: 10px;
+    /* background-color: orange; */
     }
+
+    /* .doodad:checked + .brickStyle{
+      opacity: 0;
+      background-color: purple;
+    } */
+    
 
     <?php echo("." . $result[0] . " { grid-area: " . $result[0] . "; }");?>
     <?php echo("." . $result[1] . " { grid-area: " . $result[1] . "; }");?>
@@ -1099,14 +1110,17 @@
         </div>
       </div>
     </div>
-  </div>
+    <input type="checkbox" id="modifyMode" class="doodad" > <!-- Toggle switch -->
+    <label for="colorToggle">Enable Layout Modification</label>
+    <!-- <button type="button" class="btn" id="styleModifier" onclick="modifierOfBricks()">Edit Brick Layout</button> -->
+  </div> 
   <div class="popup" id="myPopup">
-    <form action="/veterans-website-project/html-admin/updateDB.php" class="form-container">
+    <form action="/veterans-website-project/html-admin/updateDB.php" class="form-container" id="inputForm">
       <h1>Brick Editor</h1>
   
-      <label for="firstName"><b>First Name</b></label>
+      <label for="firstInputBox"><b>First Name</b></label>
       <input type="text" id="firstInputBox" placeholder="Enter Veteran First Name" name="firstName" required>
-      <label for="lastName"><b>Last Name</b></label>
+      <label for="lastInputBox"><b>Last Name</b></label>
       <input type="text" id="lastInputBox" placeholder="Enter Veteran Last Name" name="lastName" required>
       <label for="brickDescription"> Brick Description (all text on the brick, including first and last name):</label>
       <textarea id="brickDescription" name="brickDescription" placeholder="Enter brick description here including first and last name... NOTE: Line breaks should be entered as they appear on the brick." rows="4" cols="35"></textarea>
@@ -1121,3 +1135,5 @@
   </div>
 </body>
 </html>
+
+<!-- try to change the color using css:hover -->
