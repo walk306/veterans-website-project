@@ -1,13 +1,7 @@
 var lastBrickClicked = "";
 var lastModal = "";
 var popupArr = [];
-
-// document.getElementById('myPopup').addEventListener("visibilitychange", () => {
-// 	if(document.visibilityState === 'visible'){
-// 		document.getElementById('first').value = popupArr[0];
-// 	}
-// });
-
+var matchBrick;
 
 function searchNameClicked(brick)
 {
@@ -58,7 +52,7 @@ function searchNameClicked(brick)
 	
 
 	//Sending data to the PHP file
-	let variables = "groupName=" + brick[0] + "&brickNumber=" + brick[1] + brick[2] + brick[3];
+	let variables = "groupName=" + brick[0] + "&brickID=" + brick[1] + brick[2] + brick[3];
 	console.log(variables);
 	xmlhttp.open("GET", "searchDBAdmin.php?" + variables, true);
 	xmlhttp.send();
@@ -66,77 +60,126 @@ function searchNameClicked(brick)
 
 function brickClicked(brick)
 {
+	// var bgColor = document.getElementById(brick);
 	lastBrickClicked = brick;
 	var xmlhttp = new XMLHttpRequest();
-
-	// This Receiving Data back from PHP
-	xmlhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			var popup = document.getElementById('myPopup');
+	var checkbox = document.getElementById('modifyMode').checked;
+	
+	console.log(brick);
+	// console.log(bgColor);
+	if(checkbox == true){
+		switch(document.getElementById(brick).style.backgroundColor){
+			case "":
+				document.getElementById(brick).style.backgroundColor = 'green';
+				break;
+			case "green":
+				document.getElementById(brick).style.backgroundColor = '';
+				break;
+		}
+	}
+		// This Receiving Data back from PHP
+		// console.log(document.getElementById(brick).style.backgroundColor);
+		xmlhttp.onreadystatechange = function() {
+			//make this change color once per click - why is it switching to green, then immediately back to orange?
 			
-			//document.getElementById('myPopup').innerHTML = "";
-			
-			// potentially could add in /n instead of using |
-			var popupArr = this.responseText.split('^');
-			var brickDescriptionArray = popupArr[2].split('|');
+			// if (checkbox == true && document.getElementById(brick).style.backgroundColor == ""){
+			// 	document.getElementById(brick).style.backgroundColor = 'green';
+			// }
+			// //MAKE THIS WORK NEXT
+			// else if (checkbox == true && document.getElementById(brick).style.backgroundColor == 'green'){
+			// 	document.getElementById(brick).style.backgroundColor = "";
+			// }
+			if (checkbox == false && this.readyState == 4 && this.status == 200) {
+				var popup = document.getElementById('myPopup');
+				// document.getElementById('myPopup').innerHTML = "";
+				// console.log(this.responseText);
+				// potentially could add in /n instead of using |
 
-			document.getElementById('firstInputBox').setAttribute('value', popupArr[0]);
-			document.getElementById('lastInputBox').setAttribute('value', popupArr[1]);
-		
-			//console.log(popupArr[2])
-			if (popupArr[2].length == 1){
-				document.getElementById('brickDescription').innerHTML = null;
-				document.getElementById('brickDescription').placeholder = "Enter brick description here including first and last name... NOTE: Line breaks should be entered as they appear on the brick.";
+				console.log(this.responseText);
+				var popupArr = null;
+				if (this.responseText == lastBrickClicked + " "){
+					popupArr = "empty";
+					matchBrick = lastBrickClicked;
+				}
+				else{
+					popupArr = JSON.parse(this.responseText)
+				}
+				// popupArr = popupArr.split('^');
+				if (popupArr !== "empty" && popupArr !== null){
+					var brickDescriptionArray = popupArr[0]['brickDescription'].split('|');
+					console.log(popupArr[0]['firstName']);
+					matchBrick = popupArr[0]['brickID'];
+					(document.getElementById(brick)).setAttribute('id', matchBrick);
+					// var newBrickClicked = "brickClicked('" + matchBrick + "')";
+					// (document.getElementById(brick)).setAttribute('onclick', newBrickClicked);
+					document.getElementById('firstInputBox').innerHTML = popupArr[0]["firstName"];
+					document.getElementById('firstInputBox').setAttribute('value', popupArr[0]["firstName"]);
+					//figure out why firstInputBox is not working
+					document.getElementById('lastInputBox').setAttribute('value', popupArr[0]['lastName']);
 				
-			}
-			else{
-				document.getElementById('brickDescription').innerHTML = '';
-			}
-
-			// document.getElementById('brickDescription').value = '';
-			if (popupArr[2].length > 1){
-				for (var i = 0; i < brickDescriptionArray.length; i++){
-					if (i == brickDescriptionArray.length - 1){
-						document.getElementById('brickDescription').innerHTML += brickDescriptionArray[i];
+					//console.log(popupArr[2])
+					if (popupArr[0]['brickDescription'].length == 1){
+						document.getElementById('brickDescription').innerHTML = null;
+						// document.getElementById('brickDescription').placeholder = "Enter brick description here including first and last name... NOTE: Line breaks should be entered as they appear on the brick.";
+						
 					}
-					else {
-						document.getElementById('brickDescription').innerHTML += brickDescriptionArray[i] + "\n";
+					else{
+						document.getElementById('brickDescription').innerHTML = '';
+					}
+
+					// document.getElementById('brickDescription').value = '';
+					if (popupArr[0].brickDescription.length > 1){
+						document.getElementById('brickDescription').value = "";
+						for (var i = 0; i < brickDescriptionArray.length; i++){
+							if (i == brickDescriptionArray.length - 1){
+								document.getElementById('brickDescription').value += brickDescriptionArray[i];
+							}
+							else {
+								document.getElementById('brickDescription').value += brickDescriptionArray[i] + "\n";
+							}
+						}
 					}
 				}
+				else if(popupArr == "empty"){
+					makeItEmpty();
+				}
+				document.getElementById("myPopup").style.display = "block";
+				console.log('are we here?');
+				
+				console.log(matchBrick);
 			}
-			document.getElementById("myPopup").style.display = "block";
-			console.log('are we here?');
-		}
-	};
+		};
 
-	//Sending data to the PHP file
-	let groupName = brick[0];
-	let brickNumber = brick[1] + brick[2] + brick[3];
-	document.getElementById('groupName').setAttribute('value', groupName);
-	document.getElementById('brickNumber').setAttribute('value', brickNumber);
-	let variables = "groupName=" + groupName + "&brickNumber=" + brickNumber;
-	xmlhttp.open("GET", "searchDBAdmin.php?" + variables, true);
-	xmlhttp.send();
+		//Sending data to the PHP file
+		// let groupName = brick[0];
+		// let brickID = brick[1] + brick[2] + brick[3];
+		// document.getElementById('groupName').setAttribute('value', groupName);
+		// document.getElementById('brickID').setAttribute('value', brickID);
+		// let variables = "groupName=" + groupName + "&brickID=" + brickID;
+		let variables = "brick=" + brick; //+ "&groupName=" + brick[0];
+		console.log(variables);
+		xmlhttp.open("GET", "searchDBAdmin.php?" + variables, true);
+		xmlhttp.send();
+		
+
+		// When the user clicks on <div>, open the popup
+		/*function myFunction() {
+			var popup = document.getElementById("myPopup");
+			popup.classList.toggle("show");
+		}*/
+	}
 	
 
-	// When the user clicks on <div>, open the popup
-	/*function myFunction() {
-        var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
-      }*/
-	
-}
-
-function updateBrick(brick)
+function updateBrick()
 {
 	var xmlhttp = new XMLHttpRequest();
 
-	let groupName = document.getElementById('groupName').value;
-	let brickNumber = document.getElementById('brickNumber').value;
+	let brickID = matchBrick;
+	let groupName = matchBrick[0];
 	let firstName = document.getElementById('firstInputBox').value;
 	let lastName = document.getElementById('lastInputBox').value;
 	let brickDescription = document.getElementById('brickDescription').value;
-	let variables = "groupName=" + groupName + "&brickNumber=" + brickNumber 
+	let variables = "groupName=" + groupName + "&brickID=" + brickID 
 	+ "&firstName=" + firstName + "&lastName=" + lastName + "&brickDescription=" 
 	+ brickDescription;
 
@@ -147,19 +190,21 @@ function updateBrick(brick)
 			//populatorOfBricks("a");
 			//console.log(this.responseText);
 			var rText = (this.responseText);
-			//console.log(rText);
+			console.log(rText);
 			if (rText.localeCompare(groupName)){
 				console.log("Successfully updated the database!");
 				populatorOfBricks(groupName);
+				makeItEmpty();
 				closeEditPopup();
 				
 				var popup = document.getElementById('myCoolerPopup');
 				document.getElementById('myCoolerPopup').innerHTML = "Saved Successfully";
+				makeItEmpty();
 				// popup.classList.toggle("show");
 				
 
 			}
-			console.log('here!Q!!');
+			// console.log('here!Q!!');
 			document.getElementById("myCoolerPopup").style.display = "block";
 			setTimeout(getRidOfIt, 3000);
 		}
@@ -178,6 +223,12 @@ function getRidOfIt(){
 	document.getElementById("myCoolerPopup").style.display = "none";
 	console.log("heehee");
 }
+function makeItEmpty(){
+	document.getElementById('inputForm').reset();
+	document.getElementById('firstInputBox').setAttribute('value', "");
+	document.getElementById('lastInputBox').setAttribute('value', "");
+	document.getElementById('brickDescription').value = "";
+}
 
 function populatorOfBricks(table) {
     var xmlhttp = new XMLHttpRequest();
@@ -193,14 +244,10 @@ function populatorOfBricks(table) {
 
             for(var i = 0; i < passedArray.length; i++){
                 if (passedArray[i].firstName !== null){
-                    console.log(passedArray[i].brickNum);
-                    document.getElementById(passedArray[i].brickNum).innerHTML = passedArray[i].firstName + " " + passedArray[i].lastName;
+                    console.log(passedArray[i].brickID);
+                    document.getElementById(passedArray[i].brickID).innerHTML = passedArray[i].firstName + " " + passedArray[i].lastName;
                 }
-                
             }
-            
-
-    
         }
     };
 
