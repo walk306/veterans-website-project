@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	session_destroy();
  	$servername = "localhost";
  	$dbname = "veterans_admin_logins";
  	$uname = "phpmyadmin";
@@ -24,14 +24,14 @@
 			$result = $stmt->rowCount();
 				if($result == 1){
 					session_start();
-					$_SESSION["loggedIn"] = true;
-					echo $_SESSION["loggedIn"];
+					// $_SESSION["userInfo"] = $adminUsername . $adminPassword;
+					// echo $_SESSION["userInfo"];
+					//echo $token;
+					header('Location: ' . indexAdmin.html);
 					exit;
 				}
 				//add a check for duplicate logins
 				else{
-					$_SESSION["loggedIn"] = false;
-					echo $_SESSION["loggedIn"];
 					echo "Incorrect username or password.";
 				}
 			}

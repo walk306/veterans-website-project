@@ -2,6 +2,18 @@
 <html lang="en">
 
 <head>
+  <?php
+      session_start();
+      if($_SESSION["loggedIn"] == true){
+          echo "Welcome to the Admin page!";
+      }
+      else{
+          echo $_SESSION["loggedIn"];
+          echo "<script> window.location.href='/veterans-website-project/adminLogin.php' </script>";
+          echo "Incorrect username or password :(";
+      }
+  ?>
+  
   <title>Veterans Memorial</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +26,6 @@
   <script src="js/searchbar.js"></script>
   <script src="js/brickclicked.js"></script>
   <script src="js/brickGroupPopulator.js"></script>
-
-
 
   <style>
     .fakeimg {
@@ -121,7 +131,7 @@
           <!-- Row 5 -->
           <div class="brickStyle brickR5C1"></div>
           <div class="brickStyle brickR5C2">
-            <iframe src="brickgroupaAdmin.html" id="ba" onclick="resize_model()">
+            <iframe src="brickgroupaAdmin.php" id="ba" onclick="resize_model()">
             </iframe>
           </div>
           <div class="brickStyle brickR5C3"></div>
@@ -162,7 +172,7 @@
     <!-- Modal content -->
     <div class="modal-content">
       <span class="close" onclick="closeModalSpan()">&times;</span>
-      <iframe src="brickgroupaAdmin.html" id="ma">
+      <iframe src="brickgroupaAdmin.php" id="ma">
       </iframe>
     </div>
   </div>
@@ -228,5 +238,7 @@
     </div>
   </div>
 </body>
-
 </html>
+<?php
+  exit;
+?>

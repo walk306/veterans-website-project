@@ -17,9 +17,8 @@ function populatorOfBricks(table) {
                 console.log("em k");
             }
             
-                       
             var passedArray = JSON.parse(this.response);
-
+            // console.log("log out the passed array {}", passedArray);
 
             //12 -> a012 getElementById(a012)
 
@@ -27,10 +26,11 @@ function populatorOfBricks(table) {
 
             for(var i = 0; i < passedArray.length; i++){
                 if (passedArray[i].firstName !== null){
-                    console.log(passedArray[i].brickNum);
-                    modalDoc.getElementById(passedArray[i].brickNum).innerHTML = passedArray[i].firstName + " " + passedArray[i].lastName;
+                    //console.log(passedArray[i].brickNum);
+                    //console.log(passedArray[i].firstName + " " + passedArray[i].lastName);
+                    console.log(passedArray[i].brickID);
+                    modalDoc.getElementById(passedArray[i].brickID).innerHTML = passedArray[i].firstName + " " + passedArray[i].lastName;
                 }
-                
             }
             
 
